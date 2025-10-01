@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Haiku Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/haiku-explorer.css">
+</head>
+<body>
+<header>
+  <a class="btn" href="index.html">Home</a>
+  <strong style="margin-left:8px;">Explore</strong>
+  <span class="muted" style="margin-left:8px;">Browse <code>/data</code> and preview haiku HTML</span>
+</header>
+<div class="wrap">
+  <section class="panel tree">
+    <div class="instructions">Expand the directories below to browse for files.</div>
+    <div class="controls">
+      <button class="btn" id="expandAll">Expand All</button>
+      <button class="btn" id="collapseAll">Collapse All</button>
+    </div>
+    <div id="tree"></div>
+  </section>
+  <section class="panel content">
+    <div class="row">
+      <div id="crumb" class="muted crumb">Select a file on the left to preview here or open in a new tab.</div>
+      <a id="openBtn" class="btn" href="#" target="_blank" rel="noreferrer">Open in new tab</a>
+    </div>
+    <iframe id="viewer" src=""></iframe>
+  </section>
+</div>
+
+<!-- Load manifests -->
+<script src="assets/manifest.js"></script>
+<script src="assets/tags.js"></script>
+
+<script>
+function buildTree(entries) {
+  const root = { name: "data", type: "dir", children: [] };
+  const years = {};
+
+  for (const item of entries) {
+    // Parse from item.id: "YYYYMMDD-NN"
+    const idDate = item.id.split("-")[0]; // e.g. "20250928"
+    const year = idDate.substring(0,4);
+    const month = idDate.substring(4,6);
+    const day = idDate.substring(6,8);
+
+    if (!years[year]) {
+      years[year] = { name: year, type: "dir", children: {} };
+      root.children.push(years[year]);
+    }
+    if (!years[year].children[month]) {
+      years[year].children[month] = { name: month, type: "dir", children: {} };
+    }
+    if (!years[year].children[month].children[day]) {
+      years[year].children[month].children[day] = { name: day, type: "dir", children: [] };
+    }
+
+    years[year].children[month].children[day].children.push({
+      name: item.id + ".html",
+      path: "./" + item.path_html,
+      type: "file"
+    });
+  }
+
+  // Normalize nested objects → arrays
+  function normalize(node) {
+    if (node.children && !Array.isArray(node.children)) {
+      node.children = Object.values(node.children);
+      node.children.forEach(normalize);
+    } else if (Array.isArray(node.children)) {
+      node.children.forEach(normalize);
+    }
+  }
+  normalize(root);
+  return root;
+}
+
+let currentSelected = null;
+
+function renderTree(node, container) {
+  if (!node.children) return;
+
+  node.children.forEach(child => {
+    const div = document.createElement("div");
+    div.className = "node";
+
+    const label = document.createElement("div");
+    label.className = "label";
+    if (child.type === "dir") {
+      const icon = document.createElement("span");
+      icon.className = "icon";
+      icon.textContent = "▾";
+      label.appendChild(icon);
+    } else {
+      const icon = document.createElement("span");
+      icon.className = "icon";
+      icon.textContent = "•";
+      label.appendChild(icon);
+    }
+    label.appendChild(document.createTextNode(child.name));
+
+    if (child.type === "file") {
+      label.addEventListener("click", () => {
+        document.getElementById("viewer").src = child.path;
+        document.getElementById("openBtn").href = child.path;
+        document.getElementById("crumb").textContent = child.path;
+
+        if (currentSelected) currentSelected.classList.remove("selected");
+        label.classList.add("selected");
+        currentSelected = label;
+      });
+      div.appendChild(label);
+      container.appendChild(div);
+
+    } else if (child.type === "dir") {
+      label.classList.add("dir");
+      const childrenContainer = document.createElement("div");
+      childrenContainer.style.display = "block"; // expanded by default
+
+      label.addEventListener("click", () => {
+        const isHidden = childrenContainer.style.display === "none";
+        childrenContainer.style.display = isHidden ? "block" : "none";
+        label.querySelector(".icon").textContent = isHidden ? "▾" : "▸";
+      });
+
+      div.appendChild(label);
+      div.appendChild(childrenContainer);
+      container.appendChild(div);
+
+      renderTree(child, childrenContainer);
+    }
+  });
+}
+
+document.addEventListener("manifestLoaded", () => {
+  const TREE = buildTree(window.HAIKU_ALL);
+  const container = document.getElementById("tree");
+  renderTree(TREE, container);
+});
+
+// Expand/Collapse all
+document.getElementById("expandAll").addEventListener("click", () => {
+  document.querySelectorAll(".node > div + div").forEach(el => el.style.display = "block");
+  document.querySelectorAll(".label.dir .icon").forEach(el => el.textContent = "▾");
+});
+document.getElementById("collapseAll").addEventListener("click", () => {
+  document.querySelectorAll(".node > div + div").forEach(el => el.style.display = "none");
+  document.querySelectorAll(".label.dir .icon").forEach(el => el.textContent = "▸");
+});
+</script>
+</body>
+</html>
