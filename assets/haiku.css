@@ -1,0 +1,13 @@
+
+:root{ --paper:url("../assets/Japanese-Paper.png"); --ink:#1f2937; --accent:#f5d3b8; --accent-border:#e6b08a; --card:#fffdfa; --shadow:0 14px 30px rgba(0,0,0,.18); --max:1100px; }
+*{box-sizing:border-box} html,body{height:100%}
+body{ margin:0; color:var(--ink); font-family:"EB Garamond", Georgia, serif; line-height:1.6;
+  background: linear-gradient(0deg, rgba(255,255,255,.40), rgba(255,255,255,.40)), var(--paper);
+  background-size:cover; background-position:center; background-attachment:fixed; }
+.label{ display:inline-block; background:var(--accent); border:1px solid var(--accent-border); border-radius:.6rem; padding:.35rem .9rem }
+.hdr{ text-align:center; margin-bottom:1rem } .meta{ font-variant-numeric:tabular-nums; margin-top:.35rem }
+.rule{ height:1px; background:rgba(0,0,0,.14); margin:.6rem auto 1rem; max-width:12rem; border:0 }
+.inner{ background:#fff; border:1px solid rgba(0,0,0,.10); border-radius:.6rem; padding:1rem }
+.poem{ text-align:center; margin-top:.25rem } .poem .strip{ display:inline-block; background:#e9dccd; padding:.6rem 1rem; border-radius:.25rem }
+.poem p{ margin:.35rem 0; font-family:"Satisfy","EB Garamond",serif; font-size:1.35rem }
+.bottombar{ display:flex; justify-content:center; margin-top:1rem } .bottombar a{ text-decoration:none; color:#111; background:var(--accent); border:1px solid var(--accent-border); border-radius:.6rem; padding:.45rem 1rem }
