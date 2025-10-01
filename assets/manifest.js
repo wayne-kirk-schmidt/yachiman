@@ -1,7 +1,7 @@
 (function () {
   async function loadManifest() {
     try {
-      const res = await fetch("/data/manifest.json");
+      const res = await fetch("./data/manifest.json");
       const data = await res.json();
 
       // Keep original for debugging
