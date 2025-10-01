@@ -1,0 +1,27 @@
+{
+  "id": "20200101-03",
+  "date": "2020-01-01",
+  "seq": 3,
+  "title": "2020-01-01.03",
+  "lines": [
+    "soft rain on the roof",
+    "awakens the sleeping seeds",
+    "dreams of blossoms rise"
+  ],
+  "tags": [
+    "awakens",
+    "blossoms",
+    "dreams",
+    "of",
+    "on",
+    "rain",
+    "rise",
+    "roof",
+    "seeds",
+    "sleeping",
+    "soft"
+  ],
+  "path_html": "data/2020/01/01/haiku.2020-01-01.03.html",
+  "path_json": "data/2020/01/01/haiku.2020-01-01.03.json",
+  "created": "2025-09-29T10:06:10.680924+00:00"
+}
