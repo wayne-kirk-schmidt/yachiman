@@ -117,13 +117,13 @@ iframe.embed {
 }
 
 #tag-cloud {
+  --row: 44px;  /* same unit size as .links */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 6px;
 
-  max-height: calc(var(--row) * 12 + 8px);
-
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 8px;
+  max-height: calc(var(--row) * 12 + 8px);  /* cap height same as .links */
+  overflow-y: auto;   /* vertical scroll */
+  overflow-x: hidden; /* no horizontal scroll */
+  padding-right: 8px; /* space for scrollbar */
 }
