@@ -115,3 +115,15 @@ iframe.embed {
   margin-bottom:.8rem;
 }
 
+#tag-cloud {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);  /* match file links layout */
+  gap: 6px;
+
+  height: 100%;         /* lock height to match sibling panels */
+  overflow-y: auto;     /* scroll when content exceeds height */
+  padding-right: 8px;   /* keep clear of scrollbar */
+}
+
+
+
