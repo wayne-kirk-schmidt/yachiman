@@ -1,0 +1,27 @@
+{
+  "id": "20200201-01",
+  "date": "2020-02-01",
+  "seq": 1,
+  "title": "2020-02-01.01",
+  "lines": [
+    "Morning bells ringing,",
+    "people rushing down the street,",
+    "footsteps blur like rain."
+  ],
+  "tags": [
+    "bells",
+    "blur",
+    "down",
+    "footsteps",
+    "like",
+    "morning",
+    "people",
+    "rain",
+    "ringing",
+    "rushing",
+    "street"
+  ],
+  "path_html": "data/2020/02/01/haiku.2020-02-01.01.html",
+  "path_json": "data/2020/02/01/haiku.2020-02-01.01.json",
+  "created": "2025-10-01T08:29:51.946466+00:00"
+}
