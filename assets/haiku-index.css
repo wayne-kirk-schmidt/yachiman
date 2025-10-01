@@ -118,11 +118,12 @@ iframe.embed {
 
 #tag-cloud {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);  /* same grid as file links */
+  grid-template-columns: repeat(12, 1fr);
   gap: 6px;
 
-  max-height: calc(var(--row) * 12 + 8px);  /* match file links panel height */
-  overflow-y: auto;      /* vertical scroll only */
-  overflow-x: hidden;    /* no horizontal scroll */
-  padding-right: 8px;    /* room for scrollbar */
+  max-height: calc(var(--row) * 12 + 8px);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
 }
