@@ -117,13 +117,11 @@ iframe.embed {
 
 #tag-cloud {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);  /* match file links layout */
+  grid-template-columns: repeat(12, 1fr);  /* same grid as file links */
   gap: 6px;
 
-  height: 100%;         /* lock height to match sibling panels */
-  overflow-y: auto;     /* scroll when content exceeds height */
-  padding-right: 8px;   /* keep clear of scrollbar */
+  height: 100%;          /* same vertical size as file list card */
+  overflow-y: auto;      /* vertical scroll when needed */
+  overflow-x: hidden;    /* prevent horizontal scroll */
+  padding-right: 8px;    /* room for scrollbar */
 }
-
-
-
