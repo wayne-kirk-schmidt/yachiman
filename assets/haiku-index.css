@@ -25,7 +25,8 @@ main { max-width:var(--max); margin:2.6rem auto 3rem; padding:0 1rem; }
 h1 { margin:.2rem 0 0; font-weight:600; }
 .contact-link { margin:.3rem 0 1.2rem; font-size:1.15rem; font-weight:500; }
 
-.row { display:grid; grid-template-columns: 1fr 1fr 260px; gap:18px; align-items:start; }
+.row { display:grid; grid-template-columns: 1fr 1fr 360px; gap:18px; align-items:start; }
+
 @media(max-width:980px){ .row{ grid-template-columns:1fr; } }
 
 .card {
