@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "id": "20200101-01",
+      "title": "2020-01-01.01",
+      "path_html": "data/2020/01/01/haiku.2020-01-01.01.html",
+      "path_json": "data/2020/01/01/haiku.2020-01-01.01.json",
+      "tags": [
+        "air",
+        "break",
+        "breathes",
+        "buds",
+        "earth",
+        "frost",
+        "green",
+        "grip",
+        "into",
+        "its",
+        "loosens",
+        "quiet",
+        "through"
+      ]
+    },
+    {
+      "id": "20200101-02",
+      "title": "2020-01-01.02",
+      "path_html": "data/2020/01/01/haiku.2020-01-01.02.html",
+      "path_json": "data/2020/01/01/haiku.2020-01-01.02.json",
+      "tags": [
+        "circles",
+        "drift",
+        "mirror",
+        "of",
+        "on",
+        "petals",
+        "pond",
+        "slowly",
+        "still",
+        "widening"
+      ]
+    },
+    {
+      "id": "20200101-03",
+      "title": "2020-01-01.03",
+      "path_html": "data/2020/01/01/haiku.2020-01-01.03.html",
+      "path_json": "data/2020/01/01/haiku.2020-01-01.03.json",
+      "tags": [
+        "awakens",
+        "blossoms",
+        "dreams",
+        "of",
+        "on",
+        "rain",
+        "rise",
+        "roof",
+        "seeds",
+        "sleeping",
+        "soft"
+      ]
+    }
+  ]
+}
