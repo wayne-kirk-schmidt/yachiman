@@ -7,6 +7,14 @@ from datetime import datetime, timezone
 import shutil
 from pathlib import PurePosixPath
 import re
+import nltk
+from nltk import word_tokenize, pos_tag
+
+# POS tags we allow (nouns + adjectives)
+NLTK_POS_ALLOW = {
+    "NN", "NNS", "NNP", "NNPS",
+    "JJ", "JJR", "JJS",
+}
 
 logger = logging.getLogger("haiku-build")
 
@@ -28,6 +36,27 @@ STOPWORDS = {
     "an", "a", "the", "they", "you", "we", "our",
     "is", "was", "that", "this", "these", "them"
 }
+
+# ----------------------------
+# filter word by POS helper
+# ----------------------------
+def filter_words_by_pos(words, text):
+    """
+    Filter a list of words using NLTK POS tagging.
+    Returns a subset of words (may be empty).
+    """
+    if not words:
+        return []
+
+    tokens = word_tokenize(text)
+    tagged = pos_tag(tokens)
+
+    allowed = set()
+    for token, pos in tagged:
+        if pos in NLTK_POS_ALLOW:
+            allowed.add(token.lower())
+
+    return [w for w in words if w in allowed]
 
 # ----------------------------
 # Clean helpers
@@ -111,7 +140,10 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
 
             # --- Extract tags (words minus stopwords) ---
             all_text = " ".join(lines)
-            tags = get_words(all_text, stopwords=STOPWORDS, unique=True)
+            ### tags = get_words(all_text, stopwords=STOPWORDS, unique=True)
+            words = get_words(all_text, stopwords=None, unique=True)
+            tags = filter_words_by_pos(words, all_text)
+
 
             # Build JSON metadata
             json_data = {
