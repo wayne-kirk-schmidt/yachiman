@@ -13,47 +13,52 @@
 body {
   margin:0;
   color:var(--ink);
-  background: linear-gradient(0deg, rgba(255,255,255,.40), rgba(255,255,255,.40)), var(--paper);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background:
+    linear-gradient(0deg, rgba(255,255,255,.40), rgba(255,255,255,.40)),
+    var(--paper);
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
   font-family:"EB Garamond", Georgia, serif;
   line-height:1.6;
 }
 
-main { 
-  max-width:var(--max); 
-  margin:2.6rem auto 3rem; 
-  padding:0 1rem; 
+main {
+  max-width:var(--max);
+  margin:2.6rem auto 3rem;
+  padding:0 1rem;
 }
 
-h1 { 
-  margin:.2rem 0 0; 
-  font-weight:600; 
+h1 {
+  margin:.2rem 0 0;
+  font-weight:600;
 }
 
-.contact-link { 
-  margin:.3rem 0 1.2rem; 
-  font-size:1.15rem; 
-  font-weight:500; 
+.contact-link {
+  margin:.3rem 0 1.2rem;
+  font-size:1.15rem;
+  font-weight:500;
 }
 
-/* ---------- GRID LAYOUT ---------- */
+/* ---------- GRID LAYOUT (HEIGHT CONTRACT) ---------- */
 
-.row { 
-  display:grid; 
-  grid-template-columns: 1fr 1fr 260px; 
-  gap:18px; 
-  align-items:stretch; /* CHANGED */
+.row {
+  display:grid;
+  grid-template-columns:1fr 1fr 260px;
+  gap:18px;
+
+  min-height:620px;        /* CRITICAL: real height contract */
+  align-items:stretch;
 }
 
-@media(max-width:980px){ 
-  .row{ 
-    grid-template-columns:1fr; 
-  } 
+@media (max-width:980px) {
+  .row {
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
 }
 
-/* ---------- CARDS ---------- */
+/* ---------- CARD CONTAINER ---------- */
 
 .card {
   background:#fffdfa;
@@ -62,13 +67,16 @@ h1 {
   padding:12px;
   box-shadow:var(--shadow);
 
-  display:flex;              /* ADDED */
-  flex-direction:column;     /* ADDED */
+  display:flex;
+  flex-direction:column;
+  min-height:0;
 }
 
-.title { 
-  text-align:center; 
-  margin:.15rem 0 .65rem; 
+/* ---------- CARD HEADER ---------- */
+
+.title {
+  text-align:center;
+  margin:.15rem 0 .65rem;
 }
 
 .title span {
@@ -80,46 +88,48 @@ h1 {
   font-weight:600;
 }
 
-.divider { 
-  height:1px; 
-  background:rgba(0,0,0,.14); 
-  margin:.5rem auto 1rem; 
-  max-width:12rem; 
+.divider {
+  height:1px;
+  background:rgba(0,0,0,.14);
+  margin:.5rem auto 1rem;
+  max-width:12rem;
 }
 
 /* ---------- CURRENT ENTRY ---------- */
 
 iframe.embed {
   width:100%;
-  height:480px;
   border:0;
+  border-radius:8px;
   display:block;
   background:#fff;
-  border-radius:8px;
 
-  flex:1 1 auto;             /* ADDED */
+  flex:1 1 auto;
+  min-height:0;
 }
 
-@media (max-width: 980px) { 
-  iframe.embed { height:400px; } 
+@media (max-width:980px) {
+  iframe.embed { max-height:400px; }
 }
 
-@media (max-width: 640px) { 
-  iframe.embed { height:300px; } 
+@media (max-width:640px) {
+  iframe.embed { max-height:300px; }
 }
 
 /* ---------- FILE LIST ---------- */
 
 .links {
   --row:44px;
-  max-height: calc(var(--row) * 12 + 8px);
+  max-height:calc(var(--row) * 12 + 8px);
   overflow:auto;
+
   padding:8px;
   border:1px solid rgba(0,0,0,.08);
   border-radius:10px;
   background:#fff;
 
-  flex:1 1 auto;             /* ADDED */
+  flex:1 1 auto;
+  min-height:0;
 }
 
 .links a {
@@ -128,40 +138,41 @@ iframe.embed {
   text-align:center;
   padding:.6rem;
   margin:.35rem 0;
-  border:1px solid #e6b08a;
+  border:1px solid var(--accent-border);
   border-radius:.6rem;
   color:#111;
   background:#fff;
 }
 
-.links a.active { 
-  background:var(--highlight); 
-  font-weight:600; 
+.links a.active {
+  background:var(--highlight);
+  font-weight:600;
 }
 
 /* ---------- TAGS ---------- */
 
 .tags {
   --row:32px;
-  max-height: calc(var(--row) * 12 + 8px);
+  max-height:calc(var(--row) * 12 + 8px);
   overflow:auto;
-  scrollbar-gutter: stable;
+  scrollbar-gutter:stable;
 
   display:flex;
-  gap:6px;
   flex-wrap:wrap;
+  gap:6px;
 
   padding:8px;
   border:1px solid rgba(0,0,0,.08);
   border-radius:10px;
   background:#fff;
 
-  flex:1 1 auto;             /* ADDED */
+  flex:1 1 auto;
+  min-height:0;
 }
 
 .tag {
   padding:.2rem .6rem;
-  border:1px solid #e6b08a;
+  border:1px solid var(--accent-border);
   background:#fff;
   border-radius:.7rem;
   cursor:pointer;
@@ -169,9 +180,9 @@ iframe.embed {
   line-height:1.2;
 }
 
-.tag.active { 
-  background:var(--accent); 
-  font-weight:600; 
+.tag.active {
+  background:var(--accent);
+  font-weight:600;
 }
 
 /* ---------- CONTROLS ---------- */
@@ -179,7 +190,7 @@ iframe.embed {
 .btn {
   display:inline-block;
   background:var(--accent);
-  border:1px solid #e6b08a;
+  border:1px solid var(--accent-border);
   border-radius:.6rem;
   padding:.45rem .9rem;
   cursor:pointer;
@@ -195,3 +206,4 @@ iframe.embed {
   border-radius:.6rem;
   margin-bottom:.8rem;
 }
+
