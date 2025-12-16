@@ -38,11 +38,13 @@ h1 {
   font-weight:500; 
 }
 
+/* ---------- GRID LAYOUT ---------- */
+
 .row { 
   display:grid; 
   grid-template-columns: 1fr 1fr 260px; 
   gap:18px; 
-  align-items:start; 
+  align-items:stretch; /* CHANGED */
 }
 
 @media(max-width:980px){ 
@@ -51,12 +53,17 @@ h1 {
   } 
 }
 
+/* ---------- CARDS ---------- */
+
 .card {
   background:#fffdfa;
   border:1px solid rgba(0,0,0,.10);
   border-radius:14px;
   padding:12px;
   box-shadow:var(--shadow);
+
+  display:flex;              /* ADDED */
+  flex-direction:column;     /* ADDED */
 }
 
 .title { 
@@ -80,6 +87,8 @@ h1 {
   max-width:12rem; 
 }
 
+/* ---------- CURRENT ENTRY ---------- */
+
 iframe.embed {
   width:100%;
   height:480px;
@@ -87,6 +96,8 @@ iframe.embed {
   display:block;
   background:#fff;
   border-radius:8px;
+
+  flex:1 1 auto;             /* ADDED */
 }
 
 @media (max-width: 980px) { 
@@ -97,7 +108,7 @@ iframe.embed {
   iframe.embed { height:300px; } 
 }
 
-/* -------- File list (reference scroll behavior) -------- */
+/* ---------- FILE LIST ---------- */
 
 .links {
   --row:44px;
@@ -107,6 +118,8 @@ iframe.embed {
   border:1px solid rgba(0,0,0,.08);
   border-radius:10px;
   background:#fff;
+
+  flex:1 1 auto;             /* ADDED */
 }
 
 .links a {
@@ -126,7 +139,7 @@ iframe.embed {
   font-weight:600; 
 }
 
-/* -------- Tags (UPDATED: scroll + lighter weight) -------- */
+/* ---------- TAGS ---------- */
 
 .tags {
   --row:32px;
@@ -142,6 +155,8 @@ iframe.embed {
   border:1px solid rgba(0,0,0,.08);
   border-radius:10px;
   background:#fff;
+
+  flex:1 1 auto;             /* ADDED */
 }
 
 .tag {
@@ -159,7 +174,7 @@ iframe.embed {
   font-weight:600; 
 }
 
-/* -------- Controls -------- */
+/* ---------- CONTROLS ---------- */
 
 .btn {
   display:inline-block;
