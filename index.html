@@ -33,15 +33,22 @@
       <div class="title"><span>Haiku Listing</span></div>
       <div class="divider"></div>
       <div id="haiku-count" class="muted" style="margin:.5rem 0; text-align:right;"></div>
-      <input type="text" id="search" class="search-box" placeholder="Search by date, ID, or tag...">
       <div class="links" id="list"></div>
     </section>
 
     <aside class="card">
-      <div class="title"><span>Filter by Tags</span></div>
+      <div class="title"><span>Search for Tags</span></div>
+      <div class="divider"></div>
+      <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="Type a tag">
       <div class="divider"></div>
       <div class="tags" id="tag-cloud"></div>
-      <div style="margin-top:.6rem;"><button class="btn" id="reset">Reset Filters</button></div>
+      <div class="reset-wrap">
+        <button class="btn" id="reset">Reset Filters</button>
+      </div>
     </aside>
   </div>
 </main>
@@ -88,6 +95,18 @@ function renderList(items){
   if (arr.length===0){
     listEl.innerHTML = '<div style="opacity:.7; text-align:center; padding:.75rem;">No matches found.</div>';
   }
+}
+
+function updateTagCloudFilter() {
+  const q = searchQuery.trim().toLowerCase();
+
+  cloud.querySelectorAll('.tag').forEach(btn => {
+    const raw = btn.textContent.toLowerCase();
+    const match = q === "" || raw.includes(q);
+
+    btn.style.display = match ? "" : "none";
+    btn.classList.toggle('match', q !== "" && match);
+  });
 }
 
 function update(){
@@ -142,6 +161,7 @@ function initUI(){
         activeTags.add(t); b.classList.add('active');
       }
       update();
+      updateTagCloudFilter();
     };
     cloud.appendChild(b);
   });

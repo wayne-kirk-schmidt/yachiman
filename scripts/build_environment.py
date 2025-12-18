@@ -16,6 +16,34 @@ NLTK_POS_ALLOW = {
     "JJ", "JJR", "JJS",
 }
 
+# ----------------------------
+# Ensure nltk is prepared
+# ----------------------------
+def ensure_nltk_ready():
+    """
+    Ensure required NLTK resources are available.
+    Self-healing, deterministic, one-time.
+    """
+    required = {
+        "tokenizers/punkt": "punkt",
+        "tokenizers/punkt_tab": "punkt_tab",
+        "taggers/averaged_perceptron_tagger": "averaged_perceptron_tagger",
+        "taggers/averaged_perceptron_tagger_eng": "averaged_perceptron_tagger_eng",
+    }
+
+    missing = []
+
+    for path, pkg in required.items():
+        try:
+            nltk.data.find(path)
+        except LookupError:
+            missing.append(pkg)
+
+    if missing:
+        logger.info(f"NLTK setup: downloading {', '.join(missing)}")
+        for pkg in missing:
+            nltk.download(pkg, quiet=True)
+
 logger = logging.getLogger("haiku-build")
 
 # ----------------------------
@@ -42,21 +70,68 @@ STOPWORDS = {
 # ----------------------------
 def filter_words_by_pos(words, text):
     """
-    Filter a list of words using NLTK POS tagging.
-    Returns a subset of words (may be empty).
+    Filter words using intrinsic NLTK POS tagging only.
+
+    Rule:
+    - Word must appear in the text
+    - Word must be intrinsically a noun or adjective
+    - If NLTK tags it as a verb, it is discarded
     """
-    if not words:
+
+    if not words or not text:
         return []
 
-    tokens = word_tokenize(text)
-    tagged = pos_tag(tokens)
+    tokens = set(word_tokenize(text.lower()))
+    filtered = []
 
-    allowed = set()
-    for token, pos in tagged:
-        if pos in NLTK_POS_ALLOW:
-            allowed.add(token.lower())
+    for w in words:
+        # must appear in text
+        if w not in tokens:
+            continue
 
-    return [w for w in words if w in allowed]
+        # intrinsic POS gate (authoritative)
+        w_pos = pos_tag([w])[0][1]
+        if w_pos not in NLTK_POS_ALLOW:
+            continue
+
+        filtered.append(w)
+
+    return sorted(set(filtered))
+
+# ----------------------------
+# Existing-tag filter helper
+# ----------------------------
+def filter_existing_tags_nltk(tags, text=None):
+    """
+    Filter an existing list of tags using intrinsic NLTK POS tagging only.
+
+    Rule:
+    - Tag must appear in the text
+    - Tag must be intrinsically a noun or adjective
+    - If NLTK tags it as a verb, it is discarded
+    """
+
+    if not tags or not text:
+        return []
+
+    tokens = set(word_tokenize(text.lower()))
+    filtered = []
+
+    for tag in tags:
+        tag_lc = tag.lower()
+
+        # must appear in text
+        if tag_lc not in tokens:
+            continue
+
+        # intrinsic POS gate (authoritative)
+        tag_pos = pos_tag([tag_lc])[0][1]
+        if tag_pos not in NLTK_POS_ALLOW:
+            continue
+
+        filtered.append(tag)
+
+    return sorted(set(filtered))
 
 # ----------------------------
 # Clean helpers
@@ -140,10 +215,12 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
 
             # --- Extract tags (words minus stopwords) ---
             all_text = " ".join(lines)
-            ### tags = get_words(all_text, stopwords=STOPWORDS, unique=True)
-            words = get_words(all_text, stopwords=None, unique=True)
-            tags = filter_words_by_pos(words, all_text)
 
+            ### tags = get_words(all_text, stopwords=STOPWORDS, unique=True)
+            ### words = get_words(all_text, stopwords=None, unique=True)
+
+            words = get_words(all_text, stopwords=STOPWORDS, unique=True)
+            tags = filter_words_by_pos(words, all_text)
 
             # Build JSON metadata
             json_data = {
@@ -184,82 +261,118 @@ def phase_tags(args, data_dir: Path):
 
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    manifest_json_path = data_dir / "manifest.json"
-
     tags_json_path = data_dir / "tags.json"
-    
+
     if args.mode == "clean":
         clean_tags(data_dir)
         return
 
     tags_map = {}
+
     for json_file in data_dir.rglob("*.json"):
         if json_file.name in ("tags.json", "manifest.json"):
             continue
+
         try:
             with json_file.open(encoding="utf-8") as f:
                 data = json.load(f)
-            for tag in data.get("tags", []):
+
+            raw_tags = data.get("tags", [])
+            text = " ".join(data.get("lines", []))
+
+            filtered_tags = filter_existing_tags_nltk(raw_tags, text)
+
+            for tag in filtered_tags:
                 tags_map.setdefault(tag, []).append(data["id"])
-            logger.debug(f"Processed {json_file}: {data.get('tags', [])}")
+
+            if args.verbose:
+                logger.debug(
+                    f"{data['id']}: tags {len(raw_tags)} → {len(filtered_tags)}"
+                )
+
         except Exception as e:
             logger.error(f"Failed to process {json_file}: {e}")
 
-    tags_json_path = data_dir / "tags.json"
     tags_data = {"tags": []}
     for tag, files in tags_map.items():
-        tags_data["tags"].append({"tag": tag, "count": len(files), "files": files})
+        tags_data["tags"].append({
+            "tag": tag,
+            "count": len(files),
+            "files": files,
+        })
 
-    tags_json_path.write_text(json.dumps(tags_data, indent=2), encoding="utf-8")
+    tags_json_path.write_text(
+        json.dumps(tags_data, indent=2),
+        encoding="utf-8"
+    )
+
     logger.info(f"Built {tags_json_path}")
 
 # ----------------------------
 # Manifest phase
 # ----------------------------
-def phase_manifest(args, project_root, data_dir, assets_dir):
+# ----------------------------
+# Manifest phase
+# ----------------------------
+def phase_manifest(args, project_root: Path, data_dir: Path, assets_dir: Path):
     """
-    Build manifest.json summarizing all haiku entries.
-    Each entry will include ID, title, paths, and tags.
+    Phase: build manifest.json from existing haiku JSON files in data_dir.
+    Does not modify haiku HTML or haiku JSON files.
+    Applies NLTK POS-based filtering (nouns + adjectives) to existing tags only.
     """
-    import glob
 
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    manifest_json_path = data_dir / "manifest.json"
+    manifest_path = data_dir / "manifest.json"
 
-    tags_json_path = data_dir / "tags.json"
+    if args.mode == "clean":
+        if manifest_path.exists():
+            manifest_path.unlink()
+            logger.info(f"Removed {manifest_path}")
+        return
 
-    manifest = {"items": []}
+    manifest = {
+        "generated": datetime.now(timezone.utc).isoformat(),
+        "items": [],
+    }
 
-    # Walk through all haiku JSON files
-    for json_file in glob.glob(str(data_dir / "**" / "haiku.*.json"), recursive=True):
+    for json_file in data_dir.rglob("*.json"):
+        if json_file.name in ("manifest.json", "tags.json"):
+            continue
+
         try:
-            with open(json_file, "r", encoding="utf-8") as f:
+            with json_file.open(encoding="utf-8") as f:
                 entry = json.load(f)
+
+            raw_tags = entry.get("tags", [])
+            text = " ".join(entry.get("lines", []))
+            filtered_tags = filter_existing_tags_nltk(raw_tags, text)
 
             item = {
                 "id": entry.get("id"),
                 "title": entry.get("title", ""),
                 "path_html": str(Path(entry["path_html"]).as_posix()),
                 "path_json": str(Path(entry["path_json"]).as_posix()),
-                "tags": entry.get("tags", []),
+                "tags": filtered_tags,
             }
+
             manifest["items"].append(item)
 
             if args.verbose:
-                logging.debug(f"Added {json_file} -> {item['id']} to manifest")
+                logger.debug(
+                    f"{entry.get('id')}: manifest tags "
+                    f"{len(raw_tags)} → {len(filtered_tags)}"
+                )
 
         except Exception as e:
-            logging.error(f"Failed to process {json_file}: {e}")
+            logger.error(f"Failed to process {json_file}: {e}")
 
-    # Write manifest.json into data directory
-    with open(manifest_json_path, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    manifest_path.write_text(
+        json.dumps(manifest, indent=2),
+        encoding="utf-8"
+    )
 
-        total = len(manifest["items"])
-    logging.info(f"Built {manifest_json_path} with {total} haikus")
-    print(f"Total haikus published: {total}")
-
+    logger.info(f"Built {manifest_path}")
 
 # ----------------------------
 # Main
@@ -289,6 +402,9 @@ def main():
     # logging setup
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO,
                         format="%(levelname)s: %(message)s")
+
+    # ensure nltk resources are present (one-time, self-healing)
+    ensure_nltk_ready()
 
     # resolve dirs
     project_root = Path(__file__).resolve().parent.parent
