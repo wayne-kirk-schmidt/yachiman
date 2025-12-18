@@ -135,6 +135,9 @@ function update(){
     const total = (window.HAIKU_ALL || []).length;
     counter.textContent = `Showing ${filtered.length} of ${total} haikus`;
   }
+
+  updateTagCloudFilter();
+
 }
 
 function initUI(){
@@ -161,7 +164,6 @@ function initUI(){
         activeTags.add(t); b.classList.add('active');
       }
       update();
-      updateTagCloudFilter();
     };
     cloud.appendChild(b);
   });
