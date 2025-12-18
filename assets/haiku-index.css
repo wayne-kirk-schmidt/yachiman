@@ -161,6 +161,7 @@ iframe.embed {
 
   display:flex;
   flex-wrap:wrap;
+  align-content:flex-start;
   gap:6px;
 
   padding:8px;
