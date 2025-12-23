@@ -16,16 +16,9 @@ This repository manages automated processing of haiku from raw sources into web-
    pip install -r requirements.txt
    ```
 
-2. Drop input files into `inbox/`.
+2. Follow the details of the workflow document
 
-3. Run the workflow:  
-   ```bash
-   python scripts/build_pages.py --verbose 1
-   python scripts/build_tags.py
-   python scripts/build_manifest.py
-   ```
-
-4. Commit results:  
+3. Commit results:  
    ```bash
    git add data archive manifest.json tags.json
    git commit -m "Add new haiku batch"
