@@ -1,5 +1,5 @@
 {
-  "generated": "2025-12-17T16:10:58.177924+00:00",
+  "generated": "2025-12-23T11:38:33.737439+00:00",
   "items": [
     {
       "id": "20220303-01",
@@ -14988,6 +14988,3280 @@
         "nighttime",
         "previous",
         "reflect"
+      ]
+    },
+    {
+      "id": "20251223-79",
+      "title": "2025-12-23.79",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.79.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.79.json",
+      "tags": [
+        "fill",
+        "ghosts",
+        "hallways",
+        "light",
+        "lungs",
+        "salt",
+        "sea",
+        "skin",
+        "stays",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-96",
+      "title": "2025-12-23.96",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.96.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.96.json",
+      "tags": [
+        "drums",
+        "light",
+        "morning",
+        "rain",
+        "return",
+        "returns",
+        "roof",
+        "stories",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-80",
+      "title": "2025-12-23.80",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.80.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.80.json",
+      "tags": [
+        "fade",
+        "feels",
+        "footprints",
+        "gate",
+        "heaven",
+        "laugh",
+        "oni"
+      ]
+    },
+    {
+      "id": "20251223-38",
+      "title": "2025-12-23.38",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.38.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.38.json",
+      "tags": [
+        "clouds",
+        "cut",
+        "eyes",
+        "halves",
+        "last",
+        "mountains",
+        "rest",
+        "river",
+        "sun",
+        "warms"
+      ]
+    },
+    {
+      "id": "20251223-43",
+      "title": "2025-12-23.43",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.43.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.43.json",
+      "tags": [
+        "bowls",
+        "grip",
+        "hands",
+        "heaven",
+        "joys",
+        "meal",
+        "midday",
+        "opens",
+        "rail",
+        "set",
+        "small"
+      ]
+    },
+    {
+      "id": "20251223-14",
+      "title": "2025-12-23.14",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.14.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.14.json",
+      "tags": [
+        "care",
+        "heaven",
+        "joys",
+        "opens",
+        "rain",
+        "roads",
+        "shine",
+        "small",
+        "strong"
+      ]
+    },
+    {
+      "id": "20251223-02",
+      "title": "2025-12-23.02",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.02.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.02.json",
+      "tags": [
+        "air",
+        "flame",
+        "glide",
+        "heat",
+        "leans",
+        "mountain",
+        "night",
+        "returns",
+        "tengu"
+      ]
+    },
+    {
+      "id": "20251223-55",
+      "title": "2025-12-23.55",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.55.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.55.json",
+      "tags": [
+        "birds",
+        "creak",
+        "doors",
+        "ghosts",
+        "hallways",
+        "light",
+        "trees",
+        "wait",
+        "wake",
+        "wind"
+      ]
+    },
+    {
+      "id": "20251223-22",
+      "title": "2025-12-23.22",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.22.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.22.json",
+      "tags": [
+        "care",
+        "fields",
+        "hangs",
+        "moon",
+        "noon",
+        "rests",
+        "roofs",
+        "strong"
+      ]
+    },
+    {
+      "id": "20251223-75",
+      "title": "2025-12-23.75",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.75.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.75.json",
+      "tags": [
+        "breath",
+        "dawns",
+        "equinox",
+        "fill",
+        "ice",
+        "light",
+        "lungs",
+        "spring",
+        "world"
+      ]
+    },
+    {
+      "id": "20251223-63",
+      "title": "2025-12-23.63",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.63.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.63.json",
+      "tags": [
+        "feels",
+        "fire",
+        "full",
+        "lean",
+        "orange",
+        "shore",
+        "silence",
+        "sings",
+        "tongues",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-34",
+      "title": "2025-12-23.34",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.34.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.34.json",
+      "tags": [
+        "begin",
+        "breath",
+        "children",
+        "day",
+        "dusk",
+        "ice",
+        "laugh",
+        "trades",
+        "world"
+      ]
+    },
+    {
+      "id": "20251223-18",
+      "title": "2025-12-23.18",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.18.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.18.json",
+      "tags": [
+        "claims",
+        "gate",
+        "house",
+        "laugh",
+        "night",
+        "oni",
+        "river",
+        "sun",
+        "warms"
+      ]
+    },
+    {
+      "id": "20251223-59",
+      "title": "2025-12-23.59",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.59.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.59.json",
+      "tags": [
+        "cedar",
+        "dawns",
+        "equinox",
+        "kami",
+        "rests",
+        "salt",
+        "shade",
+        "skin",
+        "spring",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-58",
+      "title": "2025-12-23.58",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.58.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.58.json",
+      "tags": [
+        "begins",
+        "day",
+        "fields",
+        "hangs",
+        "moon",
+        "noon",
+        "rests",
+        "roofs"
+      ]
+    },
+    {
+      "id": "20251223-19",
+      "title": "2025-12-23.19",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.19.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.19.json",
+      "tags": [
+        "birds",
+        "hangs",
+        "lean",
+        "light",
+        "moon",
+        "roofs",
+        "shore",
+        "wake",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-35",
+      "title": "2025-12-23.35",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.35.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.35.json",
+      "tags": [
+        "curls",
+        "drums",
+        "hearth",
+        "rain",
+        "roof",
+        "season",
+        "smoke",
+        "turns",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-62",
+      "title": "2025-12-23.62",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.62.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.62.json",
+      "tags": [
+        "binds",
+        "breathes",
+        "cloth",
+        "grow",
+        "night",
+        "sea",
+        "shadows",
+        "tall",
+        "thread",
+        "torn",
+        "whole"
+      ]
+    },
+    {
+      "id": "20251223-74",
+      "title": "2025-12-23.74",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.74.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.74.json",
+      "tags": [
+        "cedar",
+        "clouds",
+        "kami",
+        "pass",
+        "rain",
+        "roads",
+        "shade",
+        "shine",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-23",
+      "title": "2025-12-23.23",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.23.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.23.json",
+      "tags": [
+        "ghosts",
+        "grandparents",
+        "hallways",
+        "quiet",
+        "sip",
+        "steps",
+        "tea",
+        "wait",
+        "winter"
+      ]
+    },
+    {
+      "id": "20251223-54",
+      "title": "2025-12-23.54",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.54.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.54.json",
+      "tags": [
+        "drums",
+        "fog",
+        "grip",
+        "hands",
+        "hums",
+        "rail",
+        "rain",
+        "river",
+        "roof",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-03",
+      "title": "2025-12-23.03",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.03.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.03.json",
+      "tags": [
+        "clouds",
+        "cut",
+        "dawns",
+        "equinox",
+        "forest",
+        "halves",
+        "mountains",
+        "remembers",
+        "spring"
+      ]
+    },
+    {
+      "id": "20251223-15",
+      "title": "2025-12-23.15",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.15.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.15.json",
+      "tags": [
+        "choose",
+        "feet",
+        "ghosts",
+        "grandparents",
+        "hallways",
+        "quiet",
+        "sip",
+        "tea",
+        "wait",
+        "way"
+      ]
+    },
+    {
+      "id": "20251223-42",
+      "title": "2025-12-23.42",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.42.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.42.json",
+      "tags": [
+        "air",
+        "breathes",
+        "day",
+        "forest",
+        "glide",
+        "mist",
+        "mountain",
+        "tengu",
+        "turn",
+        "waits"
+      ]
+    },
+    {
+      "id": "20251223-39",
+      "title": "2025-12-23.39",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.39.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.39.json",
+      "tags": [
+        "drums",
+        "hums",
+        "lean",
+        "memory",
+        "rain",
+        "roof",
+        "shore",
+        "waves",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-81",
+      "title": "2025-12-23.81",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.81.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.81.json",
+      "tags": [
+        "counting",
+        "fade",
+        "footprints",
+        "haste",
+        "hours",
+        "meal"
+      ]
+    },
+    {
+      "id": "20251223-78",
+      "title": "2025-12-23.78",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.78.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.78.json",
+      "tags": [
+        "angels",
+        "boots",
+        "breathes",
+        "cross",
+        "forest",
+        "mist",
+        "pace",
+        "quiet",
+        "sky"
+      ]
+    },
+    {
+      "id": "20251223-97",
+      "title": "2025-12-23.97",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.97.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.97.json",
+      "tags": [
+        "autumn",
+        "flame",
+        "leans",
+        "lingers",
+        "night",
+        "old",
+        "rocks",
+        "shape",
+        "time"
+      ]
+    },
+    {
+      "id": "20251223-24",
+      "title": "2025-12-23.24",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.24.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.24.json",
+      "tags": [
+        "binds",
+        "care",
+        "cloth",
+        "ghosts",
+        "hallways",
+        "strong",
+        "thread",
+        "torn",
+        "wait",
+        "whole"
+      ]
+    },
+    {
+      "id": "20251223-73",
+      "title": "2025-12-23.73",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.73.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.73.json",
+      "tags": [
+        "agrees",
+        "buddha",
+        "cedar",
+        "kami",
+        "shade",
+        "sits",
+        "time",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-65",
+      "title": "2025-12-23.65",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.65.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.65.json",
+      "tags": [
+        "angels",
+        "comb",
+        "day",
+        "pass",
+        "retreat",
+        "shore",
+        "turn",
+        "unseen",
+        "waits",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-32",
+      "title": "2025-12-23.32",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.32.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.32.json",
+      "tags": [
+        "bowls",
+        "comb",
+        "faith",
+        "meal",
+        "midday",
+        "retreat",
+        "set",
+        "shore",
+        "walks",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-49",
+      "title": "2025-12-23.49",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.49.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.49.json",
+      "tags": [
+        "clouds",
+        "creak",
+        "doors",
+        "grandparents",
+        "pass",
+        "smile",
+        "trees",
+        "wind"
+      ]
+    },
+    {
+      "id": "20251223-08",
+      "title": "2025-12-23.08",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.08.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.08.json",
+      "tags": [
+        "breath",
+        "burns",
+        "fire",
+        "orange",
+        "sings",
+        "smoke",
+        "solstice",
+        "summer",
+        "tongues",
+        "turns"
+      ]
+    },
+    {
+      "id": "20251223-28",
+      "title": "2025-12-23.28",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.28.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.28.json",
+      "tags": [
+        "bare",
+        "binds",
+        "cloth",
+        "road",
+        "sleep",
+        "snow",
+        "stays",
+        "thread",
+        "torn",
+        "veils",
+        "whole"
+      ]
+    },
+    {
+      "id": "20251223-90",
+      "title": "2025-12-23.90",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.90.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.90.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "chase",
+        "children",
+        "day",
+        "lets",
+        "light",
+        "roads",
+        "wet"
+      ]
+    },
+    {
+      "id": "20251223-69",
+      "title": "2025-12-23.69",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.69.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.69.json",
+      "tags": [
+        "grandparents",
+        "quiet",
+        "sip",
+        "smile",
+        "steps",
+        "tea",
+        "winter"
+      ]
+    },
+    {
+      "id": "20251223-86",
+      "title": "2025-12-23.86",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.86.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.86.json",
+      "tags": [
+        "birds",
+        "boulders",
+        "keeps",
+        "noon",
+        "pace",
+        "rise",
+        "sun",
+        "sunrise",
+        "warm",
+        "water"
+      ]
+    },
+    {
+      "id": "20251223-45",
+      "title": "2025-12-23.45",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.45.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.45.json",
+      "tags": [
+        "breath",
+        "dusk",
+        "fields",
+        "lead",
+        "light",
+        "morning",
+        "past",
+        "returns",
+        "roads",
+        "smoke",
+        "turns"
+      ]
+    },
+    {
+      "id": "20251223-12",
+      "title": "2025-12-23.12",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.12.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.12.json",
+      "tags": [
+        "autumn",
+        "drift",
+        "incense",
+        "leaves",
+        "lie",
+        "lizards",
+        "prayer",
+        "rises"
+      ]
+    },
+    {
+      "id": "20251223-04",
+      "title": "2025-12-23.04",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.04.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.04.json",
+      "tags": [
+        "cloth",
+        "gate",
+        "laugh",
+        "oni",
+        "pulls",
+        "return",
+        "soft",
+        "stories",
+        "thread"
+      ]
+    },
+    {
+      "id": "20251223-53",
+      "title": "2025-12-23.53",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.53.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.53.json",
+      "tags": [
+        "clears",
+        "firelight",
+        "last",
+        "laugh",
+        "mind",
+        "paper",
+        "parents",
+        "share",
+        "small"
+      ]
+    },
+    {
+      "id": "20251223-52",
+      "title": "2025-12-23.52",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.52.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.52.json",
+      "tags": [
+        "autumn",
+        "drift",
+        "leaves",
+        "old",
+        "rain",
+        "rocks",
+        "shape",
+        "time"
+      ]
+    },
+    {
+      "id": "20251223-05",
+      "title": "2025-12-23.05",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.05.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.05.json",
+      "tags": [
+        "cedar",
+        "flame",
+        "kami",
+        "leans",
+        "night",
+        "season",
+        "shade",
+        "turns",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-13",
+      "title": "2025-12-23.13",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.13.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.13.json",
+      "tags": [
+        "air",
+        "breathes",
+        "forest",
+        "glide",
+        "mist",
+        "mountain",
+        "tengu",
+        "wakes",
+        "winter"
+      ]
+    },
+    {
+      "id": "20251223-44",
+      "title": "2025-12-23.44",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.44.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.44.json",
+      "tags": [
+        "angels",
+        "braid",
+        "enters",
+        "fast",
+        "light",
+        "pass",
+        "reeds",
+        "rivers",
+        "stones",
+        "unseen"
+      ]
+    },
+    {
+      "id": "20251223-68",
+      "title": "2025-12-23.68",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.68.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.68.json",
+      "tags": [
+        "boulders",
+        "listens",
+        "night",
+        "noon",
+        "rain",
+        "roads",
+        "shine",
+        "sun",
+        "warm"
+      ]
+    },
+    {
+      "id": "20251223-87",
+      "title": "2025-12-23.87",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.87.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.87.json",
+      "tags": [
+        "autumn",
+        "comb",
+        "drift",
+        "leaves",
+        "retreat",
+        "shore",
+        "sleep",
+        "stays",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-91",
+      "title": "2025-12-23.91",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.91.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.91.json",
+      "tags": [
+        "breathes",
+        "forest",
+        "heaven",
+        "home",
+        "joys",
+        "mist",
+        "opens",
+        "settles",
+        "small"
+      ]
+    },
+    {
+      "id": "20251223-29",
+      "title": "2025-12-23.29",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.29.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.29.json",
+      "tags": [
+        "care",
+        "comb",
+        "prayer",
+        "retreat",
+        "shore",
+        "silence",
+        "starts",
+        "strong",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-09",
+      "title": "2025-12-23.09",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.09.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.09.json",
+      "tags": [
+        "autumn",
+        "dark",
+        "drift",
+        "leaves",
+        "mind",
+        "settles",
+        "smoke",
+        "starry",
+        "trails"
+      ]
+    },
+    {
+      "id": "20251223-48",
+      "title": "2025-12-23.48",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.48.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.48.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "clears",
+        "ice",
+        "mind",
+        "world"
+      ]
+    },
+    {
+      "id": "20251223-33",
+      "title": "2025-12-23.33",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.33.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.33.json",
+      "tags": [
+        "air",
+        "autumn",
+        "drift",
+        "glide",
+        "leaves",
+        "mountain",
+        "tengu"
+      ]
+    },
+    {
+      "id": "20251223-64",
+      "title": "2025-12-23.64",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.64.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.64.json",
+      "tags": [
+        "birds",
+        "boulders",
+        "hums",
+        "memory",
+        "noon",
+        "rise",
+        "sun",
+        "sunrise",
+        "warm"
+      ]
+    },
+    {
+      "id": "20251223-72",
+      "title": "2025-12-23.72",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.72.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.72.json",
+      "tags": [
+        "breath",
+        "chase",
+        "children",
+        "fill",
+        "light",
+        "lungs",
+        "midnight",
+        "roads",
+        "wet"
+      ]
+    },
+    {
+      "id": "20251223-25",
+      "title": "2025-12-23.25",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.25.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.25.json",
+      "tags": [
+        "bowls",
+        "meal",
+        "midday",
+        "salt",
+        "sea",
+        "season",
+        "set",
+        "skin",
+        "stays",
+        "turns"
+      ]
+    },
+    {
+      "id": "20251223-30",
+      "title": "2025-12-23.30",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.30.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.30.json",
+      "tags": [
+        "day",
+        "fields",
+        "forms",
+        "gate",
+        "laugh",
+        "noon",
+        "oni",
+        "rests"
+      ]
+    },
+    {
+      "id": "20251223-88",
+      "title": "2025-12-23.88",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.88.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.88.json",
+      "tags": [
+        "breathes",
+        "feels",
+        "hangs",
+        "moon",
+        "night",
+        "roofs",
+        "sea",
+        "warm"
+      ]
+    },
+    {
+      "id": "20251223-67",
+      "title": "2025-12-23.67",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.67.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.67.json",
+      "tags": [
+        "bare",
+        "care",
+        "gate",
+        "laugh",
+        "oni",
+        "road",
+        "snow",
+        "strong",
+        "veils"
+      ]
+    },
+    {
+      "id": "20251223-71",
+      "title": "2025-12-23.71",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.71.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.71.json",
+      "tags": [
+        "braid",
+        "cold",
+        "home",
+        "reeds",
+        "rivers",
+        "rocks",
+        "shade",
+        "sleep",
+        "steps",
+        "stones",
+        "way"
+      ]
+    },
+    {
+      "id": "20251223-26",
+      "title": "2025-12-23.26",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.26.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.26.json",
+      "tags": [
+        "choose",
+        "feet",
+        "incense",
+        "prayer",
+        "rises",
+        "river",
+        "sun",
+        "warms",
+        "way"
+      ]
+    },
+    {
+      "id": "20251223-51",
+      "title": "2025-12-23.51",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.51.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.51.json",
+      "tags": [
+        "clouds",
+        "cut",
+        "ghosts",
+        "hallways",
+        "halves",
+        "home",
+        "mountains",
+        "voices",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-06",
+      "title": "2025-12-23.06",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.06.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.06.json",
+      "tags": [
+        "awake",
+        "feel",
+        "fields",
+        "ghosts",
+        "glass",
+        "noon",
+        "rests",
+        "tap",
+        "thoughts",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-10",
+      "title": "2025-12-23.10",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.10.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.10.json",
+      "tags": [
+        "gates",
+        "grin",
+        "hangs",
+        "leans",
+        "moon",
+        "oni",
+        "roofs",
+        "time"
+      ]
+    },
+    {
+      "id": "20251223-47",
+      "title": "2025-12-23.47",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.47.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.47.json",
+      "tags": [
+        "children",
+        "comb",
+        "dusk",
+        "fade",
+        "laugh",
+        "plans",
+        "retreat",
+        "shore",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-84",
+      "title": "2025-12-23.84",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.84.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.84.json",
+      "tags": [
+        "air",
+        "bright",
+        "cold",
+        "flame",
+        "moon",
+        "notes",
+        "pines",
+        "writes"
+      ]
+    },
+    {
+      "id": "20251223-92",
+      "title": "2025-12-23.92",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.92.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.92.json",
+      "tags": [
+        "birds",
+        "feels",
+        "fog",
+        "heaven",
+        "kept",
+        "nothing",
+        "songs",
+        "stitch",
+        "thin"
+      ]
+    },
+    {
+      "id": "20251223-93",
+      "title": "2025-12-23.93",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.93.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.93.json",
+      "tags": [
+        "clear",
+        "dusk",
+        "fields",
+        "fish",
+        "lead",
+        "past",
+        "roads",
+        "stop",
+        "stream",
+        "time",
+        "turn"
+      ]
+    },
+    {
+      "id": "20251223-85",
+      "title": "2025-12-23.85",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.85.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.85.json",
+      "tags": [
+        "creak",
+        "doors",
+        "fade",
+        "meal",
+        "plans",
+        "trees",
+        "wind"
+      ]
+    },
+    {
+      "id": "20251223-46",
+      "title": "2025-12-23.46",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.46.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.46.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "keeps",
+        "last",
+        "laugh",
+        "pace",
+        "parents",
+        "share",
+        "small",
+        "water"
+      ]
+    },
+    {
+      "id": "20251223-11",
+      "title": "2025-12-23.11",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.11.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.11.json",
+      "tags": [
+        "boulders",
+        "hums",
+        "incense",
+        "memory",
+        "old",
+        "prayer",
+        "rises",
+        "watch"
+      ]
+    },
+    {
+      "id": "20251223-07",
+      "title": "2025-12-23.07",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.07.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.07.json",
+      "tags": [
+        "bridge",
+        "care",
+        "old",
+        "river",
+        "strong",
+        "sun",
+        "turns",
+        "warms"
+      ]
+    },
+    {
+      "id": "20251223-50",
+      "title": "2025-12-23.50",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.50.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.50.json",
+      "tags": [
+        "autumn",
+        "awake",
+        "baby",
+        "drift",
+        "feel",
+        "fists",
+        "leaves",
+        "sleeps",
+        "thoughts",
+        "uncurled"
+      ]
+    },
+    {
+      "id": "20251223-27",
+      "title": "2025-12-23.27",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.27.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.27.json",
+      "tags": [
+        "cloth",
+        "old",
+        "pulls",
+        "rocks",
+        "shape",
+        "sleep",
+        "soft",
+        "stays",
+        "thread",
+        "time"
+      ]
+    },
+    {
+      "id": "20251223-70",
+      "title": "2025-12-23.70",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.70.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.70.json",
+      "tags": [
+        "air",
+        "angels",
+        "bright",
+        "closes",
+        "day",
+        "flame",
+        "notes",
+        "pass",
+        "tight",
+        "unseen",
+        "writes"
+      ]
+    },
+    {
+      "id": "20251223-89",
+      "title": "2025-12-23.89",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.89.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.89.json",
+      "tags": [
+        "boulders",
+        "breathes",
+        "night",
+        "noon",
+        "sea",
+        "stop",
+        "sun",
+        "time",
+        "warm"
+      ]
+    },
+    {
+      "id": "20251223-66",
+      "title": "2025-12-23.66",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.66.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.66.json",
+      "tags": [
+        "begin",
+        "boulders",
+        "bowls",
+        "day",
+        "meal",
+        "midday",
+        "noon",
+        "set",
+        "sun",
+        "trades",
+        "warm"
+      ]
+    },
+    {
+      "id": "20251223-31",
+      "title": "2025-12-23.31",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.31.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.31.json",
+      "tags": [
+        "counting",
+        "haste",
+        "hours",
+        "lifts",
+        "petals",
+        "return",
+        "spring",
+        "stories",
+        "wind"
+      ]
+    },
+    {
+      "id": "20251223-57",
+      "title": "2025-12-23.57",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.57.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.57.json",
+      "tags": [
+        "gate",
+        "grandparents",
+        "hold",
+        "laugh",
+        "loosens",
+        "oni",
+        "smile",
+        "work"
+      ]
+    },
+    {
+      "id": "20251223-16",
+      "title": "2025-12-23.16",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.16.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.16.json",
+      "tags": [
+        "air",
+        "bright",
+        "closes",
+        "day",
+        "flame",
+        "meal",
+        "notes",
+        "tight",
+        "writes"
+      ]
+    },
+    {
+      "id": "20251223-41",
+      "title": "2025-12-23.41",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.41.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.41.json",
+      "tags": [
+        "birds",
+        "breathes",
+        "fog",
+        "forest",
+        "mist",
+        "songs",
+        "stars",
+        "stitch",
+        "thin",
+        "wait"
+      ]
+    },
+    {
+      "id": "20251223-82",
+      "title": "2025-12-23.82",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.82.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.82.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "dark",
+        "leans",
+        "smoke",
+        "starry",
+        "time",
+        "trails"
+      ]
+    },
+    {
+      "id": "20251223-94",
+      "title": "2025-12-23.94",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.94.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.94.json",
+      "tags": [
+        "fields",
+        "last",
+        "laugh",
+        "noon",
+        "parents",
+        "rests",
+        "share",
+        "small"
+      ]
+    },
+    {
+      "id": "20251223-36",
+      "title": "2025-12-23.36",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.36.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.36.json",
+      "tags": [
+        "drums",
+        "lean",
+        "leans",
+        "rain",
+        "roof",
+        "shore",
+        "time",
+        "waves",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-61",
+      "title": "2025-12-23.61",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.61.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.61.json",
+      "tags": [
+        "air",
+        "feels",
+        "fields",
+        "full",
+        "glide",
+        "mountain",
+        "noon",
+        "rests",
+        "silence",
+        "tengu"
+      ]
+    },
+    {
+      "id": "20251223-98",
+      "title": "2025-12-23.98",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.98.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.98.json",
+      "tags": [
+        "autumn",
+        "breathes",
+        "forest",
+        "ghosts",
+        "glass",
+        "lingers",
+        "mist",
+        "tap",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-77",
+      "title": "2025-12-23.77",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.77.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.77.json",
+      "tags": [
+        "begin",
+        "burns",
+        "climbs",
+        "frost",
+        "mud",
+        "solstice",
+        "stars",
+        "summer",
+        "sun"
+      ]
+    },
+    {
+      "id": "20251223-20",
+      "title": "2025-12-23.20",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.20.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.20.json",
+      "tags": [
+        "gate",
+        "hold",
+        "hush",
+        "kept",
+        "laugh",
+        "mountains",
+        "nothing",
+        "oni"
+      ]
+    },
+    {
+      "id": "20251223-21",
+      "title": "2025-12-23.21",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.21.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.21.json",
+      "tags": [
+        "begin",
+        "fire",
+        "meal",
+        "orange",
+        "sings",
+        "stars",
+        "tongues"
+      ]
+    },
+    {
+      "id": "20251223-99",
+      "title": "2025-12-23.99",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.99.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.99.json",
+      "tags": [
+        "dark",
+        "day",
+        "lets",
+        "meal",
+        "smoke",
+        "starry",
+        "trails"
+      ]
+    },
+    {
+      "id": "20251223-76",
+      "title": "2025-12-23.76",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.76.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.76.json",
+      "tags": [
+        "autumn",
+        "cracks",
+        "ice",
+        "incense",
+        "lingers",
+        "pond",
+        "prayer",
+        "rises"
+      ]
+    },
+    {
+      "id": "20251223-60",
+      "title": "2025-12-23.60",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.60.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.60.json",
+      "tags": [
+        "boots",
+        "comb",
+        "dawns",
+        "equinox",
+        "pace",
+        "retreat",
+        "shore",
+        "spring",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251223-37",
+      "title": "2025-12-23.37",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.37.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.37.json",
+      "tags": [
+        "breathes",
+        "bridge",
+        "claims",
+        "forest",
+        "house",
+        "mist",
+        "night",
+        "old",
+        "river",
+        "turns"
+      ]
+    },
+    {
+      "id": "20251223-95",
+      "title": "2025-12-23.95",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.95.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.95.json",
+      "tags": [
+        "breath",
+        "drums",
+        "midnight",
+        "rain",
+        "roof",
+        "window"
+      ]
+    },
+    {
+      "id": "20251223-83",
+      "title": "2025-12-23.83",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.83.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.83.json",
+      "tags": [
+        "clouds",
+        "incense",
+        "pass",
+        "prayer",
+        "rises",
+        "silence",
+        "starts"
+      ]
+    },
+    {
+      "id": "20251223-40",
+      "title": "2025-12-23.40",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.40.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.40.json",
+      "tags": [
+        "burns",
+        "feels",
+        "last",
+        "laugh",
+        "parents",
+        "share",
+        "small",
+        "solstice",
+        "summer",
+        "warm"
+      ]
+    },
+    {
+      "id": "20251223-17",
+      "title": "2025-12-23.17",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.17.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.17.json",
+      "tags": [
+        "fields",
+        "hangs",
+        "moon",
+        "noon",
+        "rests",
+        "roofs",
+        "simple",
+        "tastes",
+        "time"
+      ]
+    },
+    {
+      "id": "20251223-01",
+      "title": "2025-12-23.01",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.01.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.01.json",
+      "tags": [
+        "air",
+        "autumn",
+        "glide",
+        "lingers",
+        "mountain",
+        "solstice",
+        "tengu",
+        "winter"
+      ]
+    },
+    {
+      "id": "20251223-56",
+      "title": "2025-12-23.56",
+      "path_html": "data/2025/12/23/haiku.2025-12-23.56.html",
+      "path_json": "data/2025/12/23/haiku.2025-12-23.56.json",
+      "tags": [
+        "equinox",
+        "fades",
+        "fall",
+        "fire",
+        "orange",
+        "sings",
+        "stars",
+        "tongues",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171203-03",
+      "title": "2017-12-03.03",
+      "path_html": "data/2017/12/03/haiku.2017-12-03.03.html",
+      "path_json": "data/2017/12/03/haiku.2017-12-03.03.json",
+      "tags": [
+        "autumn",
+        "dark",
+        "drift",
+        "leaves",
+        "mind",
+        "settles",
+        "smoke",
+        "starry",
+        "trails"
+      ]
+    },
+    {
+      "id": "20171203-02",
+      "title": "2017-12-03.02",
+      "path_html": "data/2017/12/03/haiku.2017-12-03.02.html",
+      "path_json": "data/2017/12/03/haiku.2017-12-03.02.json",
+      "tags": [
+        "breath",
+        "burns",
+        "fire",
+        "orange",
+        "sings",
+        "smoke",
+        "solstice",
+        "summer",
+        "tongues",
+        "turns"
+      ]
+    },
+    {
+      "id": "20171203-01",
+      "title": "2017-12-03.01",
+      "path_html": "data/2017/12/03/haiku.2017-12-03.01.html",
+      "path_json": "data/2017/12/03/haiku.2017-12-03.01.json",
+      "tags": [
+        "bridge",
+        "care",
+        "old",
+        "river",
+        "strong",
+        "sun",
+        "turns",
+        "warms"
+      ]
+    },
+    {
+      "id": "20171204-01",
+      "title": "2017-12-04.01",
+      "path_html": "data/2017/12/04/haiku.2017-12-04.01.html",
+      "path_json": "data/2017/12/04/haiku.2017-12-04.01.json",
+      "tags": [
+        "gates",
+        "grin",
+        "hangs",
+        "leans",
+        "moon",
+        "oni",
+        "roofs",
+        "time"
+      ]
+    },
+    {
+      "id": "20171204-03",
+      "title": "2017-12-04.03",
+      "path_html": "data/2017/12/04/haiku.2017-12-04.03.html",
+      "path_json": "data/2017/12/04/haiku.2017-12-04.03.json",
+      "tags": [
+        "autumn",
+        "drift",
+        "incense",
+        "leaves",
+        "lie",
+        "lizards",
+        "prayer",
+        "rises"
+      ]
+    },
+    {
+      "id": "20171204-02",
+      "title": "2017-12-04.02",
+      "path_html": "data/2017/12/04/haiku.2017-12-04.02.html",
+      "path_json": "data/2017/12/04/haiku.2017-12-04.02.json",
+      "tags": [
+        "boulders",
+        "hums",
+        "incense",
+        "memory",
+        "old",
+        "prayer",
+        "rises",
+        "watch"
+      ]
+    },
+    {
+      "id": "20171205-01",
+      "title": "2017-12-05.01",
+      "path_html": "data/2017/12/05/haiku.2017-12-05.01.html",
+      "path_json": "data/2017/12/05/haiku.2017-12-05.01.json",
+      "tags": [
+        "air",
+        "breathes",
+        "forest",
+        "glide",
+        "mist",
+        "mountain",
+        "tengu",
+        "wakes",
+        "winter"
+      ]
+    },
+    {
+      "id": "20171205-02",
+      "title": "2017-12-05.02",
+      "path_html": "data/2017/12/05/haiku.2017-12-05.02.html",
+      "path_json": "data/2017/12/05/haiku.2017-12-05.02.json",
+      "tags": [
+        "care",
+        "heaven",
+        "joys",
+        "opens",
+        "rain",
+        "roads",
+        "shine",
+        "small",
+        "strong"
+      ]
+    },
+    {
+      "id": "20171205-03",
+      "title": "2017-12-05.03",
+      "path_html": "data/2017/12/05/haiku.2017-12-05.03.html",
+      "path_json": "data/2017/12/05/haiku.2017-12-05.03.json",
+      "tags": [
+        "choose",
+        "feet",
+        "ghosts",
+        "grandparents",
+        "hallways",
+        "quiet",
+        "sip",
+        "tea",
+        "wait",
+        "way"
+      ]
+    },
+    {
+      "id": "20171202-02",
+      "title": "2017-12-02.02",
+      "path_html": "data/2017/12/02/haiku.2017-12-02.02.html",
+      "path_json": "data/2017/12/02/haiku.2017-12-02.02.json",
+      "tags": [
+        "cedar",
+        "flame",
+        "kami",
+        "leans",
+        "night",
+        "season",
+        "shade",
+        "turns",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171202-03",
+      "title": "2017-12-02.03",
+      "path_html": "data/2017/12/02/haiku.2017-12-02.03.html",
+      "path_json": "data/2017/12/02/haiku.2017-12-02.03.json",
+      "tags": [
+        "awake",
+        "feel",
+        "fields",
+        "ghosts",
+        "glass",
+        "noon",
+        "rests",
+        "tap",
+        "thoughts",
+        "window"
+      ]
+    },
+    {
+      "id": "20171202-01",
+      "title": "2017-12-02.01",
+      "path_html": "data/2017/12/02/haiku.2017-12-02.01.html",
+      "path_json": "data/2017/12/02/haiku.2017-12-02.01.json",
+      "tags": [
+        "cloth",
+        "gate",
+        "laugh",
+        "oni",
+        "pulls",
+        "return",
+        "soft",
+        "stories",
+        "thread"
+      ]
+    },
+    {
+      "id": "20171220-01",
+      "title": "2017-12-20.01",
+      "path_html": "data/2017/12/20/haiku.2017-12-20.01.html",
+      "path_json": "data/2017/12/20/haiku.2017-12-20.01.json",
+      "tags": [
+        "begins",
+        "day",
+        "fields",
+        "hangs",
+        "moon",
+        "noon",
+        "rests",
+        "roofs"
+      ]
+    },
+    {
+      "id": "20171220-02",
+      "title": "2017-12-20.02",
+      "path_html": "data/2017/12/20/haiku.2017-12-20.02.html",
+      "path_json": "data/2017/12/20/haiku.2017-12-20.02.json",
+      "tags": [
+        "cedar",
+        "dawns",
+        "equinox",
+        "kami",
+        "rests",
+        "salt",
+        "shade",
+        "skin",
+        "spring",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171220-03",
+      "title": "2017-12-20.03",
+      "path_html": "data/2017/12/20/haiku.2017-12-20.03.html",
+      "path_json": "data/2017/12/20/haiku.2017-12-20.03.json",
+      "tags": [
+        "boots",
+        "comb",
+        "dawns",
+        "equinox",
+        "pace",
+        "retreat",
+        "shore",
+        "spring",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171218-02",
+      "title": "2017-12-18.02",
+      "path_html": "data/2017/12/18/haiku.2017-12-18.02.html",
+      "path_json": "data/2017/12/18/haiku.2017-12-18.02.json",
+      "tags": [
+        "clears",
+        "firelight",
+        "last",
+        "laugh",
+        "mind",
+        "paper",
+        "parents",
+        "share",
+        "small"
+      ]
+    },
+    {
+      "id": "20171218-03",
+      "title": "2017-12-18.03",
+      "path_html": "data/2017/12/18/haiku.2017-12-18.03.html",
+      "path_json": "data/2017/12/18/haiku.2017-12-18.03.json",
+      "tags": [
+        "drums",
+        "fog",
+        "grip",
+        "hands",
+        "hums",
+        "rail",
+        "rain",
+        "river",
+        "roof",
+        "window"
+      ]
+    },
+    {
+      "id": "20171218-01",
+      "title": "2017-12-18.01",
+      "path_html": "data/2017/12/18/haiku.2017-12-18.01.html",
+      "path_json": "data/2017/12/18/haiku.2017-12-18.01.json",
+      "tags": [
+        "autumn",
+        "drift",
+        "leaves",
+        "old",
+        "rain",
+        "rocks",
+        "shape",
+        "time"
+      ]
+    },
+    {
+      "id": "20171227-02",
+      "title": "2017-12-27.02",
+      "path_html": "data/2017/12/27/haiku.2017-12-27.02.html",
+      "path_json": "data/2017/12/27/haiku.2017-12-27.02.json",
+      "tags": [
+        "fade",
+        "feels",
+        "footprints",
+        "gate",
+        "heaven",
+        "laugh",
+        "oni"
+      ]
+    },
+    {
+      "id": "20171227-03",
+      "title": "2017-12-27.03",
+      "path_html": "data/2017/12/27/haiku.2017-12-27.03.html",
+      "path_json": "data/2017/12/27/haiku.2017-12-27.03.json",
+      "tags": [
+        "counting",
+        "fade",
+        "footprints",
+        "haste",
+        "hours",
+        "meal"
+      ]
+    },
+    {
+      "id": "20171227-01",
+      "title": "2017-12-27.01",
+      "path_html": "data/2017/12/27/haiku.2017-12-27.01.html",
+      "path_json": "data/2017/12/27/haiku.2017-12-27.01.json",
+      "tags": [
+        "fill",
+        "ghosts",
+        "hallways",
+        "light",
+        "lungs",
+        "salt",
+        "sea",
+        "skin",
+        "stays",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171211-02",
+      "title": "2017-12-11.02",
+      "path_html": "data/2017/12/11/haiku.2017-12-11.02.html",
+      "path_json": "data/2017/12/11/haiku.2017-12-11.02.json",
+      "tags": [
+        "bowls",
+        "comb",
+        "faith",
+        "meal",
+        "midday",
+        "retreat",
+        "set",
+        "shore",
+        "walks",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171211-03",
+      "title": "2017-12-11.03",
+      "path_html": "data/2017/12/11/haiku.2017-12-11.03.html",
+      "path_json": "data/2017/12/11/haiku.2017-12-11.03.json",
+      "tags": [
+        "air",
+        "autumn",
+        "drift",
+        "glide",
+        "leaves",
+        "mountain",
+        "tengu"
+      ]
+    },
+    {
+      "id": "20171211-01",
+      "title": "2017-12-11.01",
+      "path_html": "data/2017/12/11/haiku.2017-12-11.01.html",
+      "path_json": "data/2017/12/11/haiku.2017-12-11.01.json",
+      "tags": [
+        "counting",
+        "haste",
+        "hours",
+        "lifts",
+        "petals",
+        "return",
+        "spring",
+        "stories",
+        "wind"
+      ]
+    },
+    {
+      "id": "20171229-01",
+      "title": "2017-12-29.01",
+      "path_html": "data/2017/12/29/haiku.2017-12-29.01.html",
+      "path_json": "data/2017/12/29/haiku.2017-12-29.01.json",
+      "tags": [
+        "creak",
+        "doors",
+        "fade",
+        "meal",
+        "plans",
+        "trees",
+        "wind"
+      ]
+    },
+    {
+      "id": "20171229-02",
+      "title": "2017-12-29.02",
+      "path_html": "data/2017/12/29/haiku.2017-12-29.02.html",
+      "path_json": "data/2017/12/29/haiku.2017-12-29.02.json",
+      "tags": [
+        "birds",
+        "boulders",
+        "keeps",
+        "noon",
+        "pace",
+        "rise",
+        "sun",
+        "sunrise",
+        "warm",
+        "water"
+      ]
+    },
+    {
+      "id": "20171229-03",
+      "title": "2017-12-29.03",
+      "path_html": "data/2017/12/29/haiku.2017-12-29.03.html",
+      "path_json": "data/2017/12/29/haiku.2017-12-29.03.json",
+      "tags": [
+        "autumn",
+        "comb",
+        "drift",
+        "leaves",
+        "retreat",
+        "shore",
+        "sleep",
+        "stays",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171216-01",
+      "title": "2017-12-16.01",
+      "path_html": "data/2017/12/16/haiku.2017-12-16.01.html",
+      "path_json": "data/2017/12/16/haiku.2017-12-16.01.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "keeps",
+        "last",
+        "laugh",
+        "pace",
+        "parents",
+        "share",
+        "small",
+        "water"
+      ]
+    },
+    {
+      "id": "20171216-02",
+      "title": "2017-12-16.02",
+      "path_html": "data/2017/12/16/haiku.2017-12-16.02.html",
+      "path_json": "data/2017/12/16/haiku.2017-12-16.02.json",
+      "tags": [
+        "children",
+        "comb",
+        "dusk",
+        "fade",
+        "laugh",
+        "plans",
+        "retreat",
+        "shore",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171216-03",
+      "title": "2017-12-16.03",
+      "path_html": "data/2017/12/16/haiku.2017-12-16.03.html",
+      "path_json": "data/2017/12/16/haiku.2017-12-16.03.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "clears",
+        "ice",
+        "mind",
+        "world"
+      ]
+    },
+    {
+      "id": "20171228-01",
+      "title": "2017-12-28.01",
+      "path_html": "data/2017/12/28/haiku.2017-12-28.01.html",
+      "path_json": "data/2017/12/28/haiku.2017-12-28.01.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "dark",
+        "leans",
+        "smoke",
+        "starry",
+        "time",
+        "trails"
+      ]
+    },
+    {
+      "id": "20171228-03",
+      "title": "2017-12-28.03",
+      "path_html": "data/2017/12/28/haiku.2017-12-28.03.html",
+      "path_json": "data/2017/12/28/haiku.2017-12-28.03.json",
+      "tags": [
+        "air",
+        "bright",
+        "cold",
+        "flame",
+        "moon",
+        "notes",
+        "pines",
+        "writes"
+      ]
+    },
+    {
+      "id": "20171228-02",
+      "title": "2017-12-28.02",
+      "path_html": "data/2017/12/28/haiku.2017-12-28.02.html",
+      "path_json": "data/2017/12/28/haiku.2017-12-28.02.json",
+      "tags": [
+        "clouds",
+        "incense",
+        "pass",
+        "prayer",
+        "rises",
+        "silence",
+        "starts"
+      ]
+    },
+    {
+      "id": "20171217-01",
+      "title": "2017-12-17.01",
+      "path_html": "data/2017/12/17/haiku.2017-12-17.01.html",
+      "path_json": "data/2017/12/17/haiku.2017-12-17.01.json",
+      "tags": [
+        "clouds",
+        "creak",
+        "doors",
+        "grandparents",
+        "pass",
+        "smile",
+        "trees",
+        "wind"
+      ]
+    },
+    {
+      "id": "20171217-03",
+      "title": "2017-12-17.03",
+      "path_html": "data/2017/12/17/haiku.2017-12-17.03.html",
+      "path_json": "data/2017/12/17/haiku.2017-12-17.03.json",
+      "tags": [
+        "clouds",
+        "cut",
+        "ghosts",
+        "hallways",
+        "halves",
+        "home",
+        "mountains",
+        "voices",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171217-02",
+      "title": "2017-12-17.02",
+      "path_html": "data/2017/12/17/haiku.2017-12-17.02.html",
+      "path_json": "data/2017/12/17/haiku.2017-12-17.02.json",
+      "tags": [
+        "autumn",
+        "awake",
+        "baby",
+        "drift",
+        "feel",
+        "fists",
+        "leaves",
+        "sleeps",
+        "thoughts",
+        "uncurled"
+      ]
+    },
+    {
+      "id": "20171210-03",
+      "title": "2017-12-10.03",
+      "path_html": "data/2017/12/10/haiku.2017-12-10.03.html",
+      "path_json": "data/2017/12/10/haiku.2017-12-10.03.json",
+      "tags": [
+        "day",
+        "fields",
+        "forms",
+        "gate",
+        "laugh",
+        "noon",
+        "oni",
+        "rests"
+      ]
+    },
+    {
+      "id": "20171210-02",
+      "title": "2017-12-10.02",
+      "path_html": "data/2017/12/10/haiku.2017-12-10.02.html",
+      "path_json": "data/2017/12/10/haiku.2017-12-10.02.json",
+      "tags": [
+        "care",
+        "comb",
+        "prayer",
+        "retreat",
+        "shore",
+        "silence",
+        "starts",
+        "strong",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171210-01",
+      "title": "2017-12-10.01",
+      "path_html": "data/2017/12/10/haiku.2017-12-10.01.html",
+      "path_json": "data/2017/12/10/haiku.2017-12-10.01.json",
+      "tags": [
+        "bare",
+        "binds",
+        "cloth",
+        "road",
+        "sleep",
+        "snow",
+        "stays",
+        "thread",
+        "torn",
+        "veils",
+        "whole"
+      ]
+    },
+    {
+      "id": "20171219-03",
+      "title": "2017-12-19.03",
+      "path_html": "data/2017/12/19/haiku.2017-12-19.03.html",
+      "path_json": "data/2017/12/19/haiku.2017-12-19.03.json",
+      "tags": [
+        "gate",
+        "grandparents",
+        "hold",
+        "laugh",
+        "loosens",
+        "oni",
+        "smile",
+        "work"
+      ]
+    },
+    {
+      "id": "20171219-02",
+      "title": "2017-12-19.02",
+      "path_html": "data/2017/12/19/haiku.2017-12-19.02.html",
+      "path_json": "data/2017/12/19/haiku.2017-12-19.02.json",
+      "tags": [
+        "equinox",
+        "fades",
+        "fall",
+        "fire",
+        "orange",
+        "sings",
+        "stars",
+        "tongues",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171219-01",
+      "title": "2017-12-19.01",
+      "path_html": "data/2017/12/19/haiku.2017-12-19.01.html",
+      "path_json": "data/2017/12/19/haiku.2017-12-19.01.json",
+      "tags": [
+        "birds",
+        "creak",
+        "doors",
+        "ghosts",
+        "hallways",
+        "light",
+        "trees",
+        "wait",
+        "wake",
+        "wind"
+      ]
+    },
+    {
+      "id": "20171226-03",
+      "title": "2017-12-26.03",
+      "path_html": "data/2017/12/26/haiku.2017-12-26.03.html",
+      "path_json": "data/2017/12/26/haiku.2017-12-26.03.json",
+      "tags": [
+        "angels",
+        "boots",
+        "breathes",
+        "cross",
+        "forest",
+        "mist",
+        "pace",
+        "quiet",
+        "sky"
+      ]
+    },
+    {
+      "id": "20171226-02",
+      "title": "2017-12-26.02",
+      "path_html": "data/2017/12/26/haiku.2017-12-26.02.html",
+      "path_json": "data/2017/12/26/haiku.2017-12-26.02.json",
+      "tags": [
+        "begin",
+        "burns",
+        "climbs",
+        "frost",
+        "mud",
+        "solstice",
+        "stars",
+        "summer",
+        "sun"
+      ]
+    },
+    {
+      "id": "20171226-01",
+      "title": "2017-12-26.01",
+      "path_html": "data/2017/12/26/haiku.2017-12-26.01.html",
+      "path_json": "data/2017/12/26/haiku.2017-12-26.01.json",
+      "tags": [
+        "autumn",
+        "cracks",
+        "ice",
+        "incense",
+        "lingers",
+        "pond",
+        "prayer",
+        "rises"
+      ]
+    },
+    {
+      "id": "20171221-01",
+      "title": "2017-12-21.01",
+      "path_html": "data/2017/12/21/haiku.2017-12-21.01.html",
+      "path_json": "data/2017/12/21/haiku.2017-12-21.01.json",
+      "tags": [
+        "air",
+        "feels",
+        "fields",
+        "full",
+        "glide",
+        "mountain",
+        "noon",
+        "rests",
+        "silence",
+        "tengu"
+      ]
+    },
+    {
+      "id": "20171221-03",
+      "title": "2017-12-21.03",
+      "path_html": "data/2017/12/21/haiku.2017-12-21.03.html",
+      "path_json": "data/2017/12/21/haiku.2017-12-21.03.json",
+      "tags": [
+        "feels",
+        "fire",
+        "full",
+        "lean",
+        "orange",
+        "shore",
+        "silence",
+        "sings",
+        "tongues",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171221-02",
+      "title": "2017-12-21.02",
+      "path_html": "data/2017/12/21/haiku.2017-12-21.02.html",
+      "path_json": "data/2017/12/21/haiku.2017-12-21.02.json",
+      "tags": [
+        "binds",
+        "breathes",
+        "cloth",
+        "grow",
+        "night",
+        "sea",
+        "shadows",
+        "tall",
+        "thread",
+        "torn",
+        "whole"
+      ]
+    },
+    {
+      "id": "20171207-01",
+      "title": "2017-12-07.01",
+      "path_html": "data/2017/12/07/haiku.2017-12-07.01.html",
+      "path_json": "data/2017/12/07/haiku.2017-12-07.01.json",
+      "tags": [
+        "birds",
+        "hangs",
+        "lean",
+        "light",
+        "moon",
+        "roofs",
+        "shore",
+        "wake",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171207-03",
+      "title": "2017-12-07.03",
+      "path_html": "data/2017/12/07/haiku.2017-12-07.03.html",
+      "path_json": "data/2017/12/07/haiku.2017-12-07.03.json",
+      "tags": [
+        "begin",
+        "fire",
+        "meal",
+        "orange",
+        "sings",
+        "stars",
+        "tongues"
+      ]
+    },
+    {
+      "id": "20171207-02",
+      "title": "2017-12-07.02",
+      "path_html": "data/2017/12/07/haiku.2017-12-07.02.html",
+      "path_json": "data/2017/12/07/haiku.2017-12-07.02.json",
+      "tags": [
+        "gate",
+        "hold",
+        "hush",
+        "kept",
+        "laugh",
+        "mountains",
+        "nothing",
+        "oni"
+      ]
+    },
+    {
+      "id": "20171209-03",
+      "title": "2017-12-09.03",
+      "path_html": "data/2017/12/09/haiku.2017-12-09.03.html",
+      "path_json": "data/2017/12/09/haiku.2017-12-09.03.json",
+      "tags": [
+        "cloth",
+        "old",
+        "pulls",
+        "rocks",
+        "shape",
+        "sleep",
+        "soft",
+        "stays",
+        "thread",
+        "time"
+      ]
+    },
+    {
+      "id": "20171209-02",
+      "title": "2017-12-09.02",
+      "path_html": "data/2017/12/09/haiku.2017-12-09.02.html",
+      "path_json": "data/2017/12/09/haiku.2017-12-09.02.json",
+      "tags": [
+        "choose",
+        "feet",
+        "incense",
+        "prayer",
+        "rises",
+        "river",
+        "sun",
+        "warms",
+        "way"
+      ]
+    },
+    {
+      "id": "20171209-01",
+      "title": "2017-12-09.01",
+      "path_html": "data/2017/12/09/haiku.2017-12-09.01.html",
+      "path_json": "data/2017/12/09/haiku.2017-12-09.01.json",
+      "tags": [
+        "bowls",
+        "meal",
+        "midday",
+        "salt",
+        "sea",
+        "season",
+        "set",
+        "skin",
+        "stays",
+        "turns"
+      ]
+    },
+    {
+      "id": "20171231-01",
+      "title": "2017-12-31.01",
+      "path_html": "data/2017/12/31/haiku.2017-12-31.01.html",
+      "path_json": "data/2017/12/31/haiku.2017-12-31.01.json",
+      "tags": [
+        "breathes",
+        "forest",
+        "heaven",
+        "home",
+        "joys",
+        "mist",
+        "opens",
+        "settles",
+        "small"
+      ]
+    },
+    {
+      "id": "20171231-03",
+      "title": "2017-12-31.03",
+      "path_html": "data/2017/12/31/haiku.2017-12-31.03.html",
+      "path_json": "data/2017/12/31/haiku.2017-12-31.03.json",
+      "tags": [
+        "clear",
+        "dusk",
+        "fields",
+        "fish",
+        "lead",
+        "past",
+        "roads",
+        "stop",
+        "stream",
+        "time",
+        "turn"
+      ]
+    },
+    {
+      "id": "20171231-02",
+      "title": "2017-12-31.02",
+      "path_html": "data/2017/12/31/haiku.2017-12-31.02.html",
+      "path_json": "data/2017/12/31/haiku.2017-12-31.02.json",
+      "tags": [
+        "birds",
+        "feels",
+        "fog",
+        "heaven",
+        "kept",
+        "nothing",
+        "songs",
+        "stitch",
+        "thin"
+      ]
+    },
+    {
+      "id": "20171230-01",
+      "title": "2017-12-30.01",
+      "path_html": "data/2017/12/30/haiku.2017-12-30.01.html",
+      "path_json": "data/2017/12/30/haiku.2017-12-30.01.json",
+      "tags": [
+        "breathes",
+        "feels",
+        "hangs",
+        "moon",
+        "night",
+        "roofs",
+        "sea",
+        "warm"
+      ]
+    },
+    {
+      "id": "20171230-02",
+      "title": "2017-12-30.02",
+      "path_html": "data/2017/12/30/haiku.2017-12-30.02.html",
+      "path_json": "data/2017/12/30/haiku.2017-12-30.02.json",
+      "tags": [
+        "boulders",
+        "breathes",
+        "night",
+        "noon",
+        "sea",
+        "stop",
+        "sun",
+        "time",
+        "warm"
+      ]
+    },
+    {
+      "id": "20171230-03",
+      "title": "2017-12-30.03",
+      "path_html": "data/2017/12/30/haiku.2017-12-30.03.html",
+      "path_json": "data/2017/12/30/haiku.2017-12-30.03.json",
+      "tags": [
+        "baby",
+        "breath",
+        "calm",
+        "chase",
+        "children",
+        "day",
+        "lets",
+        "light",
+        "roads",
+        "wet"
+      ]
+    },
+    {
+      "id": "20171208-02",
+      "title": "2017-12-08.02",
+      "path_html": "data/2017/12/08/haiku.2017-12-08.02.html",
+      "path_json": "data/2017/12/08/haiku.2017-12-08.02.json",
+      "tags": [
+        "ghosts",
+        "grandparents",
+        "hallways",
+        "quiet",
+        "sip",
+        "steps",
+        "tea",
+        "wait",
+        "winter"
+      ]
+    },
+    {
+      "id": "20171208-03",
+      "title": "2017-12-08.03",
+      "path_html": "data/2017/12/08/haiku.2017-12-08.03.html",
+      "path_json": "data/2017/12/08/haiku.2017-12-08.03.json",
+      "tags": [
+        "binds",
+        "care",
+        "cloth",
+        "ghosts",
+        "hallways",
+        "strong",
+        "thread",
+        "torn",
+        "wait",
+        "whole"
+      ]
+    },
+    {
+      "id": "20171208-01",
+      "title": "2017-12-08.01",
+      "path_html": "data/2017/12/08/haiku.2017-12-08.01.html",
+      "path_json": "data/2017/12/08/haiku.2017-12-08.01.json",
+      "tags": [
+        "care",
+        "fields",
+        "hangs",
+        "moon",
+        "noon",
+        "rests",
+        "roofs",
+        "strong"
+      ]
+    },
+    {
+      "id": "20171201-02",
+      "title": "2017-12-01.02",
+      "path_html": "data/2017/12/01/haiku.2017-12-01.02.html",
+      "path_json": "data/2017/12/01/haiku.2017-12-01.02.json",
+      "tags": [
+        "air",
+        "flame",
+        "glide",
+        "heat",
+        "leans",
+        "mountain",
+        "night",
+        "returns",
+        "tengu"
+      ]
+    },
+    {
+      "id": "20171201-03",
+      "title": "2017-12-01.03",
+      "path_html": "data/2017/12/01/haiku.2017-12-01.03.html",
+      "path_json": "data/2017/12/01/haiku.2017-12-01.03.json",
+      "tags": [
+        "clouds",
+        "cut",
+        "dawns",
+        "equinox",
+        "forest",
+        "halves",
+        "mountains",
+        "remembers",
+        "spring"
+      ]
+    },
+    {
+      "id": "20171201-01",
+      "title": "2017-12-01.01",
+      "path_html": "data/2017/12/01/haiku.2017-12-01.01.html",
+      "path_json": "data/2017/12/01/haiku.2017-12-01.01.json",
+      "tags": [
+        "air",
+        "autumn",
+        "glide",
+        "lingers",
+        "mountain",
+        "solstice",
+        "tengu",
+        "winter"
+      ]
+    },
+    {
+      "id": "20171206-01",
+      "title": "2017-12-06.01",
+      "path_html": "data/2017/12/06/haiku.2017-12-06.01.html",
+      "path_json": "data/2017/12/06/haiku.2017-12-06.01.json",
+      "tags": [
+        "air",
+        "bright",
+        "closes",
+        "day",
+        "flame",
+        "meal",
+        "notes",
+        "tight",
+        "writes"
+      ]
+    },
+    {
+      "id": "20171206-02",
+      "title": "2017-12-06.02",
+      "path_html": "data/2017/12/06/haiku.2017-12-06.02.html",
+      "path_json": "data/2017/12/06/haiku.2017-12-06.02.json",
+      "tags": [
+        "fields",
+        "hangs",
+        "moon",
+        "noon",
+        "rests",
+        "roofs",
+        "simple",
+        "tastes",
+        "time"
+      ]
+    },
+    {
+      "id": "20171206-03",
+      "title": "2017-12-06.03",
+      "path_html": "data/2017/12/06/haiku.2017-12-06.03.html",
+      "path_json": "data/2017/12/06/haiku.2017-12-06.03.json",
+      "tags": [
+        "claims",
+        "gate",
+        "house",
+        "laugh",
+        "night",
+        "oni",
+        "river",
+        "sun",
+        "warms"
+      ]
+    },
+    {
+      "id": "20171224-02",
+      "title": "2017-12-24.02",
+      "path_html": "data/2017/12/24/haiku.2017-12-24.02.html",
+      "path_json": "data/2017/12/24/haiku.2017-12-24.02.json",
+      "tags": [
+        "braid",
+        "cold",
+        "home",
+        "reeds",
+        "rivers",
+        "rocks",
+        "shade",
+        "sleep",
+        "steps",
+        "stones",
+        "way"
+      ]
+    },
+    {
+      "id": "20171224-03",
+      "title": "2017-12-24.03",
+      "path_html": "data/2017/12/24/haiku.2017-12-24.03.html",
+      "path_json": "data/2017/12/24/haiku.2017-12-24.03.json",
+      "tags": [
+        "breath",
+        "chase",
+        "children",
+        "fill",
+        "light",
+        "lungs",
+        "midnight",
+        "roads",
+        "wet"
+      ]
+    },
+    {
+      "id": "20171224-01",
+      "title": "2017-12-24.01",
+      "path_html": "data/2017/12/24/haiku.2017-12-24.01.html",
+      "path_json": "data/2017/12/24/haiku.2017-12-24.01.json",
+      "tags": [
+        "air",
+        "angels",
+        "bright",
+        "closes",
+        "day",
+        "flame",
+        "notes",
+        "pass",
+        "tight",
+        "unseen",
+        "writes"
+      ]
+    },
+    {
+      "id": "20171223-01",
+      "title": "2017-12-23.01",
+      "path_html": "data/2017/12/23/haiku.2017-12-23.01.html",
+      "path_json": "data/2017/12/23/haiku.2017-12-23.01.json",
+      "tags": [
+        "bare",
+        "care",
+        "gate",
+        "laugh",
+        "oni",
+        "road",
+        "snow",
+        "strong",
+        "veils"
+      ]
+    },
+    {
+      "id": "20171223-02",
+      "title": "2017-12-23.02",
+      "path_html": "data/2017/12/23/haiku.2017-12-23.02.html",
+      "path_json": "data/2017/12/23/haiku.2017-12-23.02.json",
+      "tags": [
+        "boulders",
+        "listens",
+        "night",
+        "noon",
+        "rain",
+        "roads",
+        "shine",
+        "sun",
+        "warm"
+      ]
+    },
+    {
+      "id": "20171223-03",
+      "title": "2017-12-23.03",
+      "path_html": "data/2017/12/23/haiku.2017-12-23.03.html",
+      "path_json": "data/2017/12/23/haiku.2017-12-23.03.json",
+      "tags": [
+        "grandparents",
+        "quiet",
+        "sip",
+        "smile",
+        "steps",
+        "tea",
+        "winter"
+      ]
+    },
+    {
+      "id": "20171215-01",
+      "title": "2017-12-15.01",
+      "path_html": "data/2017/12/15/haiku.2017-12-15.01.html",
+      "path_json": "data/2017/12/15/haiku.2017-12-15.01.json",
+      "tags": [
+        "bowls",
+        "grip",
+        "hands",
+        "heaven",
+        "joys",
+        "meal",
+        "midday",
+        "opens",
+        "rail",
+        "set",
+        "small"
+      ]
+    },
+    {
+      "id": "20171215-02",
+      "title": "2017-12-15.02",
+      "path_html": "data/2017/12/15/haiku.2017-12-15.02.html",
+      "path_json": "data/2017/12/15/haiku.2017-12-15.02.json",
+      "tags": [
+        "angels",
+        "braid",
+        "enters",
+        "fast",
+        "light",
+        "pass",
+        "reeds",
+        "rivers",
+        "stones",
+        "unseen"
+      ]
+    },
+    {
+      "id": "20171215-03",
+      "title": "2017-12-15.03",
+      "path_html": "data/2017/12/15/haiku.2017-12-15.03.html",
+      "path_json": "data/2017/12/15/haiku.2017-12-15.03.json",
+      "tags": [
+        "breath",
+        "dusk",
+        "fields",
+        "lead",
+        "light",
+        "morning",
+        "past",
+        "returns",
+        "roads",
+        "smoke",
+        "turns"
+      ]
+    },
+    {
+      "id": "20171212-02",
+      "title": "2017-12-12.02",
+      "path_html": "data/2017/12/12/haiku.2017-12-12.02.html",
+      "path_json": "data/2017/12/12/haiku.2017-12-12.02.json",
+      "tags": [
+        "curls",
+        "drums",
+        "hearth",
+        "rain",
+        "roof",
+        "season",
+        "smoke",
+        "turns",
+        "window"
+      ]
+    },
+    {
+      "id": "20171212-03",
+      "title": "2017-12-12.03",
+      "path_html": "data/2017/12/12/haiku.2017-12-12.03.html",
+      "path_json": "data/2017/12/12/haiku.2017-12-12.03.json",
+      "tags": [
+        "drums",
+        "lean",
+        "leans",
+        "rain",
+        "roof",
+        "shore",
+        "time",
+        "waves",
+        "window"
+      ]
+    },
+    {
+      "id": "20171212-01",
+      "title": "2017-12-12.01",
+      "path_html": "data/2017/12/12/haiku.2017-12-12.01.html",
+      "path_json": "data/2017/12/12/haiku.2017-12-12.01.json",
+      "tags": [
+        "begin",
+        "breath",
+        "children",
+        "day",
+        "dusk",
+        "ice",
+        "laugh",
+        "trades",
+        "world"
+      ]
+    },
+    {
+      "id": "20171213-03",
+      "title": "2017-12-13.03",
+      "path_html": "data/2017/12/13/haiku.2017-12-13.03.html",
+      "path_json": "data/2017/12/13/haiku.2017-12-13.03.json",
+      "tags": [
+        "drums",
+        "hums",
+        "lean",
+        "memory",
+        "rain",
+        "roof",
+        "shore",
+        "waves",
+        "window"
+      ]
+    },
+    {
+      "id": "20171213-02",
+      "title": "2017-12-13.02",
+      "path_html": "data/2017/12/13/haiku.2017-12-13.02.html",
+      "path_json": "data/2017/12/13/haiku.2017-12-13.02.json",
+      "tags": [
+        "clouds",
+        "cut",
+        "eyes",
+        "halves",
+        "last",
+        "mountains",
+        "rest",
+        "river",
+        "sun",
+        "warms"
+      ]
+    },
+    {
+      "id": "20171213-01",
+      "title": "2017-12-13.01",
+      "path_html": "data/2017/12/13/haiku.2017-12-13.01.html",
+      "path_json": "data/2017/12/13/haiku.2017-12-13.01.json",
+      "tags": [
+        "breathes",
+        "bridge",
+        "claims",
+        "forest",
+        "house",
+        "mist",
+        "night",
+        "old",
+        "river",
+        "turns"
+      ]
+    },
+    {
+      "id": "20171214-01",
+      "title": "2017-12-14.01",
+      "path_html": "data/2017/12/14/haiku.2017-12-14.01.html",
+      "path_json": "data/2017/12/14/haiku.2017-12-14.01.json",
+      "tags": [
+        "burns",
+        "feels",
+        "last",
+        "laugh",
+        "parents",
+        "share",
+        "small",
+        "solstice",
+        "summer",
+        "warm"
+      ]
+    },
+    {
+      "id": "20171214-03",
+      "title": "2017-12-14.03",
+      "path_html": "data/2017/12/14/haiku.2017-12-14.03.html",
+      "path_json": "data/2017/12/14/haiku.2017-12-14.03.json",
+      "tags": [
+        "air",
+        "breathes",
+        "day",
+        "forest",
+        "glide",
+        "mist",
+        "mountain",
+        "tengu",
+        "turn",
+        "waits"
+      ]
+    },
+    {
+      "id": "20171214-02",
+      "title": "2017-12-14.02",
+      "path_html": "data/2017/12/14/haiku.2017-12-14.02.html",
+      "path_json": "data/2017/12/14/haiku.2017-12-14.02.json",
+      "tags": [
+        "birds",
+        "breathes",
+        "fog",
+        "forest",
+        "mist",
+        "songs",
+        "stars",
+        "stitch",
+        "thin",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171222-01",
+      "title": "2017-12-22.01",
+      "path_html": "data/2017/12/22/haiku.2017-12-22.01.html",
+      "path_json": "data/2017/12/22/haiku.2017-12-22.01.json",
+      "tags": [
+        "birds",
+        "boulders",
+        "hums",
+        "memory",
+        "noon",
+        "rise",
+        "sun",
+        "sunrise",
+        "warm"
+      ]
+    },
+    {
+      "id": "20171222-03",
+      "title": "2017-12-22.03",
+      "path_html": "data/2017/12/22/haiku.2017-12-22.03.html",
+      "path_json": "data/2017/12/22/haiku.2017-12-22.03.json",
+      "tags": [
+        "begin",
+        "boulders",
+        "bowls",
+        "day",
+        "meal",
+        "midday",
+        "noon",
+        "set",
+        "sun",
+        "trades",
+        "warm"
+      ]
+    },
+    {
+      "id": "20171222-02",
+      "title": "2017-12-22.02",
+      "path_html": "data/2017/12/22/haiku.2017-12-22.02.html",
+      "path_json": "data/2017/12/22/haiku.2017-12-22.02.json",
+      "tags": [
+        "angels",
+        "comb",
+        "day",
+        "pass",
+        "retreat",
+        "shore",
+        "turn",
+        "unseen",
+        "waits",
+        "waves"
+      ]
+    },
+    {
+      "id": "20171225-03",
+      "title": "2017-12-25.03",
+      "path_html": "data/2017/12/25/haiku.2017-12-25.03.html",
+      "path_json": "data/2017/12/25/haiku.2017-12-25.03.json",
+      "tags": [
+        "breath",
+        "dawns",
+        "equinox",
+        "fill",
+        "ice",
+        "light",
+        "lungs",
+        "spring",
+        "world"
+      ]
+    },
+    {
+      "id": "20171225-02",
+      "title": "2017-12-25.02",
+      "path_html": "data/2017/12/25/haiku.2017-12-25.02.html",
+      "path_json": "data/2017/12/25/haiku.2017-12-25.02.json",
+      "tags": [
+        "cedar",
+        "clouds",
+        "kami",
+        "pass",
+        "rain",
+        "roads",
+        "shade",
+        "shine",
+        "wait"
+      ]
+    },
+    {
+      "id": "20171225-01",
+      "title": "2017-12-25.01",
+      "path_html": "data/2017/12/25/haiku.2017-12-25.01.html",
+      "path_json": "data/2017/12/25/haiku.2017-12-25.01.json",
+      "tags": [
+        "agrees",
+        "buddha",
+        "cedar",
+        "kami",
+        "shade",
+        "sits",
+        "time",
+        "wait"
       ]
     },
     {
@@ -43857,6 +47131,102 @@
         "storm",
         "turn",
         "waits"
+      ]
+    },
+    {
+      "id": "20180102-01",
+      "title": "2018-01-02.01",
+      "path_html": "data/2018/01/02/haiku.2018-01-02.01.html",
+      "path_json": "data/2018/01/02/haiku.2018-01-02.01.json",
+      "tags": [
+        "autumn",
+        "flame",
+        "leans",
+        "lingers",
+        "night",
+        "old",
+        "rocks",
+        "shape",
+        "time"
+      ]
+    },
+    {
+      "id": "20180102-02",
+      "title": "2018-01-02.02",
+      "path_html": "data/2018/01/02/haiku.2018-01-02.02.html",
+      "path_json": "data/2018/01/02/haiku.2018-01-02.02.json",
+      "tags": [
+        "autumn",
+        "breathes",
+        "forest",
+        "ghosts",
+        "glass",
+        "lingers",
+        "mist",
+        "tap",
+        "window"
+      ]
+    },
+    {
+      "id": "20180102-03",
+      "title": "2018-01-02.03",
+      "path_html": "data/2018/01/02/haiku.2018-01-02.03.html",
+      "path_json": "data/2018/01/02/haiku.2018-01-02.03.json",
+      "tags": [
+        "dark",
+        "day",
+        "lets",
+        "meal",
+        "smoke",
+        "starry",
+        "trails"
+      ]
+    },
+    {
+      "id": "20180101-01",
+      "title": "2018-01-01.01",
+      "path_html": "data/2018/01/01/haiku.2018-01-01.01.html",
+      "path_json": "data/2018/01/01/haiku.2018-01-01.01.json",
+      "tags": [
+        "fields",
+        "last",
+        "laugh",
+        "noon",
+        "parents",
+        "rests",
+        "share",
+        "small"
+      ]
+    },
+    {
+      "id": "20180101-02",
+      "title": "2018-01-01.02",
+      "path_html": "data/2018/01/01/haiku.2018-01-01.02.html",
+      "path_json": "data/2018/01/01/haiku.2018-01-01.02.json",
+      "tags": [
+        "breath",
+        "drums",
+        "midnight",
+        "rain",
+        "roof",
+        "window"
+      ]
+    },
+    {
+      "id": "20180101-03",
+      "title": "2018-01-01.03",
+      "path_html": "data/2018/01/01/haiku.2018-01-01.03.html",
+      "path_json": "data/2018/01/01/haiku.2018-01-01.03.json",
+      "tags": [
+        "drums",
+        "light",
+        "morning",
+        "rain",
+        "return",
+        "returns",
+        "roof",
+        "stories",
+        "window"
       ]
     }
   ]

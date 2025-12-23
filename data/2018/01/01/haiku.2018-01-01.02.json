@@ -1,0 +1,22 @@
+{
+  "id": "20180101-02",
+  "date": "2018-01-01",
+  "seq": 2,
+  "title": "2018-01-01.02",
+  "lines": [
+    "Midnight holds its breath",
+    "Rain drums on roof and window",
+    "Evening holds still now"
+  ],
+  "tags": [
+    "breath",
+    "drums",
+    "midnight",
+    "rain",
+    "roof",
+    "window"
+  ],
+  "path_html": "data/2018/01/01/haiku.2018-01-01.02.html",
+  "path_json": "data/2018/01/01/haiku.2018-01-01.02.json",
+  "created": "2025-12-23T11:34:38.891888+00:00"
+}

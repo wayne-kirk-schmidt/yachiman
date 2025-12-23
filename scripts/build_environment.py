@@ -183,9 +183,16 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
         # --- Load content ---
         content = inbox_file.read_text(encoding="utf-8")
 
-        # --- Split into haikus (by blank line separation) ---
-        blocks = [block.strip().splitlines()
-                  for block in content.strip().split("\n\n") if block.strip()]
+        ### # --- Split into haikus (by blank line separation) ---
+        ### blocks = [block.strip().splitlines()
+        ###           for block in content.strip().split("\n\n") if block.strip()]
+
+        # --- Split into haikus (by explicit ### separator) ---
+        blocks = [
+            block.strip().splitlines()
+            for block in re.split(r'^\s*###\s*$', content, flags=re.MULTILINE)
+            if block.strip()
+        ]
 
         # --- Build pages ---
         for i, lines in enumerate(blocks, start=1):
