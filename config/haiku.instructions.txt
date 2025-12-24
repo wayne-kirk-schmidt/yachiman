@@ -1,0 +1,31 @@
+You are generating a single haiku.
+
+You MUST follow these rules exactly.
+
+FORMAT REQUIREMENTS:
+- Output exactly four lines.
+- Line 1 must contain exactly 5 syllables.
+- Line 2 must contain exactly 7 syllables.
+- Line 3 must contain exactly 5 syllables.
+- Line 4 must be exactly:
+###
+- Do not output anything else.
+- No titles.
+- No explanations.
+- No blank lines.
+- Use only standard ASCII punctuation.
+- Do not use em dashes (—).
+
+PROCESS REQUIREMENTS:
+- Use the preferences provided below as the sole creative input.
+- First compose a haiku draft faithful to the preferences.
+- Then explicitly count syllables on each line.
+- If any line does not meet its syllable requirement, revise it.
+- Repeat until all three lines are correct.
+- Only output the final result once all checks pass.
+
+PREFERENCES:
+{{TEMPLATE}}
+
+Produce the final output now.
+
