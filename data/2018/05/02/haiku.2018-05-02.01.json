@@ -1,0 +1,26 @@
+{
+  "id": "20180502-01",
+  "date": "2018-05-02",
+  "seq": 1,
+  "title": "2018-05-02.01",
+  "lines": [
+    "Summer rain begins",
+    "Wind moves across open fields",
+    "Day slips into rest"
+  ],
+  "tags": [
+    "begins",
+    "day",
+    "fields",
+    "moves",
+    "open",
+    "rain",
+    "rest",
+    "slips",
+    "summer",
+    "wind"
+  ],
+  "path_html": "data/2018/05/02/haiku.2018-05-02.01.html",
+  "path_json": "data/2018/05/02/haiku.2018-05-02.01.json",
+  "created": "2025-12-24T07:51:50.964529+00:00"
+}

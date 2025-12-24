@@ -1,0 +1,26 @@
+{
+  "id": "20180302-01",
+  "date": "2018-03-02",
+  "seq": 1,
+  "title": "2018-03-02.01",
+  "lines": [
+    "Bright sun warms the stone",
+    "Rain moves across still water",
+    "Day slips into rest"
+  ],
+  "tags": [
+    "bright",
+    "day",
+    "moves",
+    "rain",
+    "rest",
+    "slips",
+    "stone",
+    "sun",
+    "warms",
+    "water"
+  ],
+  "path_html": "data/2018/03/02/haiku.2018-03-02.01.html",
+  "path_json": "data/2018/03/02/haiku.2018-03-02.01.json",
+  "created": "2025-12-24T07:51:50.914369+00:00"
+}

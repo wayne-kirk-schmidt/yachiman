@@ -1,0 +1,23 @@
+{
+  "id": "20180301-03",
+  "date": "2018-03-01",
+  "seq": 3,
+  "title": "2018-03-01.03",
+  "lines": [
+    "Summer rain begins",
+    "Fog drifts across the valley",
+    "The night comes in slow"
+  ],
+  "tags": [
+    "begins",
+    "drifts",
+    "fog",
+    "night",
+    "rain",
+    "summer",
+    "valley"
+  ],
+  "path_html": "data/2018/03/01/haiku.2018-03-01.03.html",
+  "path_json": "data/2018/03/01/haiku.2018-03-01.03.json",
+  "created": "2025-12-24T07:51:50.879096+00:00"
+}
