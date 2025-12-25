@@ -4,21 +4,33 @@
   "seq": 1,
   "title": "2018-03-11.01",
   "lines": [
-    "Green fields drink the rain",
-    "Mist drifts along quiet roads",
-    "Evening slowing down"
+    "night and birds",
+    "two currents cross in stillness",
+    "time listens, unmoved",
+    "",
+    "===== 6) Random pairs (choice without replacement) =====",
+    "",
+    "fog and storms",
+    "two currents cross in stillness",
+    "time listens, unmoved"
   ],
   "tags": [
-    "drifts",
-    "drink",
-    "fields",
-    "green",
-    "mist",
-    "quiet",
-    "rain",
-    "roads"
+    "birds",
+    "choice",
+    "cross",
+    "currents",
+    "fog",
+    "listens",
+    "night",
+    "pairs",
+    "random",
+    "replacement",
+    "stillness",
+    "storms",
+    "time",
+    "unmoved"
   ],
   "path_html": "data/2018/03/11/haiku.2018-03-11.01.html",
   "path_json": "data/2018/03/11/haiku.2018-03-11.01.json",
-  "created": "2025-12-24T07:51:51.158394+00:00"
+  "created": "2025-12-25T06:30:08.031637+00:00"
 }

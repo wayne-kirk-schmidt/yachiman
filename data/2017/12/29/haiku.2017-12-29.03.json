@@ -4,22 +4,21 @@
   "seq": 3,
   "title": "2017-12-29.03",
   "lines": [
-    "Autumn leaves drift down",
-    "Waves comb the shore, then retreat",
-    "Sleep stays nearby now"
+    "summer breathes softly",
+    "night shadows drift through windows",
+    "time pauses, listening"
   ],
   "tags": [
-    "autumn",
-    "comb",
+    "breathes",
     "drift",
-    "leaves",
-    "retreat",
-    "shore",
-    "sleep",
-    "stays",
-    "waves"
+    "night",
+    "pauses",
+    "shadows",
+    "summer",
+    "time",
+    "windows"
   ],
   "path_html": "data/2017/12/29/haiku.2017-12-29.03.html",
   "path_json": "data/2017/12/29/haiku.2017-12-29.03.json",
-  "created": "2025-12-23T11:34:38.973151+00:00"
+  "created": "2025-12-25T06:30:07.966127+00:00"
 }

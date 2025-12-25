@@ -4,23 +4,21 @@
   "seq": 3,
   "title": "2017-12-14.03",
   "lines": [
-    "Forest breathes in mist",
-    "Tengu glide on mountain air",
-    "Day waits its turn now"
+    "summer breathes softly",
+    "noon shadows drift through night",
+    "time pauses, listening"
   ],
   "tags": [
-    "air",
     "breathes",
-    "day",
-    "forest",
-    "glide",
-    "mist",
-    "mountain",
-    "tengu",
-    "turn",
-    "waits"
+    "drift",
+    "night",
+    "noon",
+    "pauses",
+    "shadows",
+    "summer",
+    "time"
   ],
   "path_html": "data/2017/12/14/haiku.2017-12-14.03.html",
   "path_json": "data/2017/12/14/haiku.2017-12-14.03.json",
-  "created": "2025-12-23T11:34:38.860942+00:00"
+  "created": "2025-12-25T06:30:06.661074+00:00"
 }

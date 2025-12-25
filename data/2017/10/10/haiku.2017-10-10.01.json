@@ -1,0 +1,24 @@
+{
+  "id": "20171010-01",
+  "date": "2017-10-10",
+  "seq": 1,
+  "title": "2017-10-10.01",
+  "lines": [
+    "summer breathes softly",
+    "trees shadows drift through moon",
+    "time pauses, listening"
+  ],
+  "tags": [
+    "breathes",
+    "drift",
+    "moon",
+    "pauses",
+    "shadows",
+    "summer",
+    "time",
+    "trees"
+  ],
+  "path_html": "data/2017/10/10/haiku.2017-10-10.01.html",
+  "path_json": "data/2017/10/10/haiku.2017-10-10.01.json",
+  "created": "2025-12-25T06:30:06.930149+00:00"
+}

@@ -4,22 +4,21 @@
   "seq": 2,
   "title": "2018-01-02.02",
   "lines": [
-    "Forest breathes in mist",
-    "Ghosts tap once on window glass",
-    "Autumn lingers here"
+    "summer breathes softly",
+    "night shadows drift through rabbits",
+    "time pauses, listening"
   ],
   "tags": [
-    "autumn",
     "breathes",
-    "forest",
-    "ghosts",
-    "glass",
-    "lingers",
-    "mist",
-    "tap",
-    "window"
+    "drift",
+    "night",
+    "pauses",
+    "rabbits",
+    "shadows",
+    "summer",
+    "time"
   ],
   "path_html": "data/2018/01/02/haiku.2018-01-02.02.html",
   "path_json": "data/2018/01/02/haiku.2018-01-02.02.json",
-  "created": "2025-12-23T11:34:38.875457+00:00"
+  "created": "2025-12-25T06:30:06.846508+00:00"
 }

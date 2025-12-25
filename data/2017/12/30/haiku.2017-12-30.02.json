@@ -4,22 +4,21 @@
   "seq": 2,
   "title": "2017-12-30.02",
   "lines": [
-    "Night sea breathes slowly",
-    "Boulders warm under noon sun",
-    "Time does not stop now"
+    "summer breathes softly",
+    "night shadows drift through fireplace",
+    "time pauses, listening"
   ],
   "tags": [
-    "boulders",
     "breathes",
+    "drift",
+    "fireplace",
     "night",
-    "noon",
-    "sea",
-    "stop",
-    "sun",
-    "time",
-    "warm"
+    "pauses",
+    "shadows",
+    "summer",
+    "time"
   ],
   "path_html": "data/2017/12/30/haiku.2017-12-30.02.html",
   "path_json": "data/2017/12/30/haiku.2017-12-30.02.json",
-  "created": "2025-12-23T11:34:38.980623+00:00"
+  "created": "2025-12-25T06:30:08.039040+00:00"
 }
