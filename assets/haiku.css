@@ -126,22 +126,7 @@ body {
 }
 
 /* ---------------------------------------------------------
-   Legacy about styles (unchanged)
-   --------------------------------------------------------- */
-
-.about .about-card {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about .about-card p {
-  font-size: 15pt;
-  line-height: 1.75;
-}
-
-/* ---------------------------------------------------------
-   Footer base
+   Footer base layout
    --------------------------------------------------------- */
 
 .footer-wide {
@@ -152,68 +137,9 @@ body {
   padding: 0 1rem;
 }
 
-.footer-wide a {
-  font-size: 1.05em;
-}
-
 /* =========================================================
-   About Page Scaling and Typography
-   Scoped to main.about to avoid index/explore bleed
-   ========================================================= */
-
-main.about .row {
-  justify-content: center;
-}
-
-main.about .about-card {
-  width: 75%;
-  max-width: 980px;
-}
-
-main.about .about-card p {
-  font-size: 1.05rem; /* ~17–18pt effective size */
-  line-height: 1.7;
-}
-
-main.about .about-card p + p {
-  margin-top: 1.1rem;
-}
-
-main.about h1 {
-  font-size: 1.6rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
-  opacity: 0.85;
-}
-
-main.about .subtle-heading {
-  margin-top: 2.2rem;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-}
-
-main.about .about-card .divider {
-  margin: 1.8rem 0;
-}
-
-/* ---------------------------------------------------------
-   Absolute about-page layout override
-   --------------------------------------------------------- */
-
-main.about .row {
-  max-width: none;
-  width: 100%;
-}
-
-main.about .about-card {
-  width: 75%;
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* =========================================================
-   About page: neutralize index grid and scale content
+   About Page
+   Single-column, page-scale, calm reference layout
    ========================================================= */
 
 main.about .row {
@@ -229,9 +155,33 @@ main.about .about-card {
   margin-right: auto;
 }
 
-/* =========================================================
-   About page: reference links as calm 1×2 grid
-   ========================================================= */
+/* Body text */
+
+main.about .about-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+main.about .about-card p + p {
+  margin-top: 1.1rem;
+}
+
+/* Title restraint */
+
+main.about h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+/* Dividers */
+
+main.about .about-card .divider {
+  margin: 1.8rem 0;
+}
+
+/* Reference links inside card (1×2 grid) */
 
 main.about .links {
   display: grid;
@@ -244,30 +194,8 @@ main.about .links a {
   text-align: center;
 }
 
-/* =========================================================
-   Footer links: quiet reference style (match hall language)
-   ========================================================= */
+/* Inline reference links (author attribution) */
 
-footer.footer-wide a {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--ink);
-  background: var(--card);
-  border: 1px solid var(--accent-border);
-  border-radius: 0.6rem;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.95em;
-}
-
-footer.footer-wide a:hover {
-  background: var(--accent);
-}
-
-/* =========================================================
-   Link semantics: quiet references, unified weight
-   ========================================================= */
-
-/* Inline reference links (author attribution, in-text) */
 main.about .about-card a {
   color: var(--ink);
   text-decoration: underline;
@@ -279,20 +207,28 @@ main.about .about-card a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* Footer links: same semantic weight as inline references */
+/* =========================================================
+   Footer links
+   Quiet references, equal weight, equal size
+   ========================================================= */
+
 footer.footer-wide a {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 14rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 1.02em;
+
   text-decoration: none;
   color: var(--ink);
-
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.18);
   border-radius: 0.6rem;
-
-  padding: 0.35rem 0.8rem;
-  font-size: 0.95em;
 }
 
 footer.footer-wide a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
+
