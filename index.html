@@ -3,202 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>10,000 ARROWS — Index</title>
+  <title>10,000 ARROWS</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap" rel="stylesheet">
 
-  <!-- Styles specific to Index + shared haiku styling -->
-  <link rel="stylesheet" href="assets/haiku-index.css">
+  <!-- Shared hall styling -->
   <link rel="stylesheet" href="assets/haiku.css">
+  <link rel="stylesheet" href="assets/haiku-index.css">
 
-  <!-- Scripts: only manifest + tags are needed here -->
+  <!-- Data -->
   <script src="assets/manifest.js"></script>
   <script src="assets/tags.js"></script>
 </head>
+
+<body>
+
 <main>
   <h1>10,000 ARROWS</h1>
-  <p class="contact-link"><a href="mailto:wayne.kirk.schmidt@gmail.com">ContactMe</a></p>
+
   <div class="row">
-    <section class="card">
-      <div class="title"><span>Current Entry</span></div>
+
+    <!-- LEFT: Haiku (always present) -->
+    <section class="card haiku-card">
+      <div class="title"><span>Haiku</span></div>
       <div class="divider"></div>
-      <iframe class="embed" id="currentFrame" src="" title="Current Entry"></iframe>
-      <div style="text-align:center; margin-top:10px;">
-        <a href="explorer.html" class="btn">Launch Explorer</a>
-      </div>
+
+      <iframe
+        class="embed"
+        id="currentFrame"
+        src=""
+        title="Current Entry">
+      </iframe>
     </section>
 
-    <section class="card">
-      <div class="title"><span>Haiku Listing</span></div>
+    <!-- RIGHT: Hall links only -->
+    <aside class="card control-card">
+      <div class="title"><span>The Hall</span></div>
       <div class="divider"></div>
-      <div id="haiku-count" class="muted" style="margin:.5rem 0; text-align:right;"></div>
-      <div class="links" id="list"></div>
-    </section>
 
-    <aside class="card">
-      <div class="title"><span>Search for Tags</span></div>
-      <div class="divider"></div>
-      <input
-        type="text"
-        id="search"
-        class="search-box"
-        placeholder="Type a tag">
-      <div class="divider"></div>
-      <div class="tags" id="tag-cloud"></div>
-      <div class="reset-wrap">
-        <button class="btn" id="reset">Reset Filters</button>
-      </div>
+      <nav class="hall-links">
+        <a href="/explore/">Explore the Hall</a>
+        <a href="/about/">About the Hall</a>
+      </nav>
     </aside>
+
   </div>
 </main>
 
+<footer class="footer">
+  <a href="/explore/">Explore the Hall</a>
+  <a href="/about/">About the Hall</a>
+</footer>
+
 <script>
-function fmt(e){ 
-  return e.title || e.id;  // use title if present, else id
-}
-function cmpDesc(a,b){ 
-  return b.id.localeCompare(a.id); // sort newest first
-}
+/* Minimal haiku loader: newest entry only */
 
-const listEl = document.getElementById('list');
-const cloud = document.getElementById('tag-cloud');
-const searchBox = document.getElementById('search');
-const activeTags = new Set();
-let searchQuery = "";
-let currentActive = null;
-
-function renderList(items){
-  items.sort(cmpDesc);
-  const uniq = new Map(); items.forEach(e=>uniq.set(e.id,e));
-  const arr = Array.from(uniq.values());
-  listEl.innerHTML='';
-  arr.forEach(e => {
-    const a = document.createElement('a');
-    a.href = "./" + e.path_html;
-    a.textContent = fmt(e);
-    a.target = '_blank';
-    a.onclick = (ev)=>{
-      ev.preventDefault();
-      const ifr = document.getElementById('currentFrame');
-      if (ifr){
-        ifr.src = "./" + e.path_html + "?embed=1";
-      } else {
-        window.open("./" + e.path_html, '_blank');
-      }
-      if (currentActive) currentActive.classList.remove('active');
-      a.classList.add('active');
-      currentActive = a;
-    };
-    listEl.appendChild(a);
-  });
-  if (arr.length===0){
-    listEl.innerHTML = '<div style="opacity:.7; text-align:center; padding:.75rem;">No matches found.</div>';
-  }
+function cmpDesc(a,b){
+  return b.id.localeCompare(a.id);
 }
 
-function updateTagCloudFilter() {
-  const q = searchQuery.trim().toLowerCase();
-
-  cloud.querySelectorAll('.tag').forEach(btn => {
-    const raw = btn.textContent.toLowerCase();
-    const match = q === "" || raw.includes(q);
-
-    btn.style.display = match ? "" : "none";
-    btn.classList.toggle('match', q !== "" && match);
-  });
-}
-
-function update(){
-  let filtered = (window.HAIKU_ALL || []).slice();
-
-  if (activeTags.size>0){
-    filtered = filtered.filter(e => e.tags && e.tags.some(t => activeTags.has(t)));
-  }
-
-  if (searchQuery.trim()!==""){
-    const q = searchQuery.toLowerCase();
-    filtered = filtered.filter(e => {
-      return (
-        e.id.toLowerCase().includes(q) ||
-        (e.title && e.title.toLowerCase().includes(q)) ||
-        (e.tags && e.tags.some(tag => tag.toLowerCase().includes(q)))
-      );
-    });
-  }
-
-  renderList(filtered);
-
-  // Show counter
-  const counter = document.getElementById('haiku-count');
-  if (counter) {
-    const total = (window.HAIKU_ALL || []).length;
-    counter.textContent = `Showing ${filtered.length} of ${total} haikus`;
-  }
-
-  updateTagCloudFilter();
-
-}
-
-function initUI(){
-  console.log("Manifest entries:", window.HAIKU_ALL);
-
-  document.getElementById('reset').onclick = () => {
-    activeTags.clear();
-    searchQuery="";
-    searchBox.value="";
-    (cloud.querySelectorAll('.tag.active')||[]).forEach(x=>x.classList.remove('active'));
-    update();
-  };
-
-  cloud.innerHTML = '';
-  (window.HAIKU_TAGS||[]).forEach(t => {
-    const b=document.createElement('button');
-    b.className='tag';
-    const count = (window.HAIKU_TAG_INDEX[t]||[]).length;
-    b.textContent=`${t} (${count})`;
-    b.onclick = ()=>{
-      if(activeTags.has(t)){
-        activeTags.delete(t); b.classList.remove('active');
-      } else {
-        activeTags.add(t); b.classList.add('active');
-      }
-      update();
-    };
-    cloud.appendChild(b);
-  });
-
-  searchBox.addEventListener('input', (e)=>{
-    searchQuery = e.target.value;
-    update();
-  });
-
-  const frame = document.getElementById('currentFrame');
+function initHall(){
   const items = (window.HAIKU_ALL || []);
-  if (items.length > 0) {
-    const newest = items.slice().sort(cmpDesc)[0];
-    console.log("Loading newest:", newest);
-    frame.src = "./" + newest.path_html + "?embed=1";
-    setTimeout(() => {
-      const links = listEl.querySelectorAll('a');
-      links.forEach(a => {
-        if (a.href.endsWith(newest.path_html)) {
-          a.classList.add('active');
-          currentActive = a;
-          a.scrollIntoView({block:"nearest"});
-        }
-      });
-    }, 200);
-  } else {
-    console.warn("No entries found at init.");
-    frame.outerHTML = '<div style="opacity:.7; text-align:center; padding:.75rem;">No entries.</div>';
-  }
+  const frame = document.getElementById('currentFrame');
 
-  update();
+  if (!frame) return;
+
+  if (items.length > 0){
+    const newest = items.slice().sort(cmpDesc)[0];
+    frame.src = "./" + newest.path_html + "?embed=1";
+  } else {
+    frame.outerHTML =
+      '<div style="opacity:.7; text-align:center; padding:.75rem;">No entries.</div>';
+  }
 }
 
-document.addEventListener("manifestLoaded", initUI);
-document.addEventListener("tagsLoaded", initUI);
+document.addEventListener("manifestLoaded", initHall);
 </script>
+
 </body>
 </html>
