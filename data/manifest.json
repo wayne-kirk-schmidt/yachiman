@@ -1,5 +1,5 @@
 {
-  "generated": "2025-12-26T04:27:05.981165+00:00",
+  "generated": "2025-12-26T05:30:18.049390+00:00",
   "items": [
     {
       "id": "20220303-01",
@@ -28120,6 +28120,57 @@
       ]
     },
     {
+      "id": "20250512-02",
+      "title": "2025-05-12.02",
+      "path_html": "data/2025/05/12/haiku.2025-05-12.02.html",
+      "path_json": "data/2025/05/12/haiku.2025-05-12.02.json",
+      "tags": [
+        "clear",
+        "flows",
+        "hope",
+        "past",
+        "rides",
+        "river",
+        "rocks",
+        "splash",
+        "warm",
+        "wave"
+      ]
+    },
+    {
+      "id": "20250512-03",
+      "title": "2025-05-12.03",
+      "path_html": "data/2025/05/12/haiku.2025-05-12.03.html",
+      "path_json": "data/2025/05/12/haiku.2025-05-12.03.json",
+      "tags": [
+        "bright",
+        "calm",
+        "flows",
+        "river",
+        "rock",
+        "splash",
+        "summer",
+        "waves"
+      ]
+    },
+    {
+      "id": "20250512-01",
+      "title": "2025-05-12.01",
+      "path_html": "data/2025/05/12/haiku.2025-05-12.01.html",
+      "path_json": "data/2025/05/12/haiku.2025-05-12.01.json",
+      "tags": [
+        "breathes",
+        "peace",
+        "river",
+        "rocks",
+        "sings",
+        "splash",
+        "summer",
+        "warm",
+        "waves"
+      ]
+    },
+    {
       "id": "20250203-02",
       "title": "2025-02-03.02",
       "path_html": "data/2025/02/03/haiku.2025-02-03.02.html",
@@ -30815,6 +30866,57 @@
         "slithers",
         "stretch",
         "trees"
+      ]
+    },
+    {
+      "id": "20251226-01",
+      "title": "2025-12-26.01",
+      "path_html": "data/2025/12/26/haiku.2025-12-26.01.html",
+      "path_json": "data/2025/12/26/haiku.2025-12-26.01.json",
+      "tags": [
+        "breathes",
+        "peace",
+        "river",
+        "rocks",
+        "sings",
+        "splash",
+        "summer",
+        "warm",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251226-03",
+      "title": "2025-12-26.03",
+      "path_html": "data/2025/12/26/haiku.2025-12-26.03.html",
+      "path_json": "data/2025/12/26/haiku.2025-12-26.03.json",
+      "tags": [
+        "bright",
+        "calm",
+        "flows",
+        "river",
+        "rock",
+        "splash",
+        "summer",
+        "waves"
+      ]
+    },
+    {
+      "id": "20251226-02",
+      "title": "2025-12-26.02",
+      "path_html": "data/2025/12/26/haiku.2025-12-26.02.html",
+      "path_json": "data/2025/12/26/haiku.2025-12-26.02.json",
+      "tags": [
+        "clear",
+        "flows",
+        "hope",
+        "past",
+        "rides",
+        "river",
+        "rocks",
+        "splash",
+        "warm",
+        "wave"
       ]
     },
     {
