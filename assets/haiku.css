@@ -137,3 +137,23 @@ main.about .links a {
   text-align: center;
 }
 
+/* =========================================================
+   Footer links: quiet reference style (match hall language)
+   ========================================================= */
+
+footer.footer-wide a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink);
+
+  background: var(--card);
+  border: 1px solid var(--accent-border);
+  border-radius: 0.6rem;
+
+  padding: 0.45rem 0.9rem;
+  font-size: 0.95em;
+}
+
+footer.footer-wide a:hover {
+  background: var(--accent);
+}
