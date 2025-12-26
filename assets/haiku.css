@@ -122,3 +122,18 @@ main.about .about-card {
   margin-right: auto;
 }
 
+/* =========================================================
+   About page: reference links as calm 1×2 grid
+   ========================================================= */
+
+main.about .links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin: 1.6rem 0;
+}
+
+main.about .links a {
+  text-align: center;
+}
+
