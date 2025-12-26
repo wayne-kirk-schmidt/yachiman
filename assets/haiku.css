@@ -198,7 +198,7 @@ main.about .about-card a:hover {
    Equal weight, neutral presence
    ========================================================= */
 
-footer.footer-wide a {
+.footer.footer-wide a {
   flex: 1;
   max-width: 18rem;
 
@@ -216,7 +216,7 @@ footer.footer-wide a {
   border-radius: 0.6rem;
 }
 
-footer.footer-wide a:hover {
+.footer.footer-wide a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
