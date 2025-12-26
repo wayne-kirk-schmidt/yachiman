@@ -1,0 +1,25 @@
+{
+  "id": "20190101-02",
+  "date": "2019-01-01",
+  "seq": 2,
+  "title": "2019-01-01.02",
+  "lines": [
+    "Empty wooden bench,",
+    "trains pass without a rider,",
+    "leaves dance on the floor."
+  ],
+  "tags": [
+    "bench",
+    "dance",
+    "empty",
+    "floor",
+    "leaves",
+    "pass",
+    "rider",
+    "trains",
+    "wooden"
+  ],
+  "path_html": "data/2019/01/01/haiku.2019-01-01.02.html",
+  "path_json": "data/2019/01/01/haiku.2019-01-01.02.json",
+  "created": "2025-12-26T03:26:41.273171+00:00"
+}
