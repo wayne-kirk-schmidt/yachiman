@@ -103,3 +103,22 @@ main.about .about-card {
   margin-right: auto;
 }
 
+/* =========================================================
+   About page: neutralize index grid and scale content
+   ========================================================= */
+
+/* About page does NOT use grid */
+main.about .row {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+
+/* Page-scale content, centered */
+main.about .about-card {
+  width: 75%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
