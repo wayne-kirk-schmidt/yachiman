@@ -89,3 +89,17 @@ main.about .about-card .divider {
   margin: 1.8rem 0;
 }
 
+
+/* Absolute about-page layout override */
+main.about .row {
+  max-width: none;
+  width: 100%;
+}
+
+main.about .about-card {
+  width: 75%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
