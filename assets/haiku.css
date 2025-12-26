@@ -42,3 +42,50 @@ body{ margin:0; color:var(--ink); font-family:"EB Garamond", Georgia, serif; lin
   font-size: 1.05em;
 }
 
+/* =========================================================
+   About Page Scaling and Typography
+   Scoped to main.about to avoid index/explore bleed
+   ========================================================= */
+
+/* Center the about content row */
+main.about .row {
+  justify-content: center;
+}
+
+/* Scale the about card to behave like a page, not a widget */
+main.about .about-card {
+  width: 75%;
+  max-width: 980px;
+}
+
+/* Calm, readable body text for explanatory content */
+main.about .about-card p {
+  font-size: 1.05rem;      /* ~17–18pt effective size */
+  line-height: 1.7;
+}
+
+/* Improve paragraph rhythm */
+main.about .about-card p + p {
+  margin-top: 1.1rem;
+}
+
+/* Reduce dominance of the page title */
+main.about h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+/* Subsection heading spacing */
+main.about .subtle-heading {
+  margin-top: 2.2rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+/* Divider breathing room */
+main.about .about-card .divider {
+  margin: 1.8rem 0;
+}
+
