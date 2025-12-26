@@ -220,3 +220,28 @@ main.about .about-card a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
+/* =========================================================
+   About page paired links
+   Equal weight, no wrap, neutral presence
+   ========================================================= */
+
+.about-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-links a {
+  flex: 1 1 12rem;
+  max-width: 14rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.8rem 1rem;
+  text-align: center;
+
+  white-space: nowrap;
+}
+
