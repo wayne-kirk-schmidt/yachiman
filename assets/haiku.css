@@ -263,3 +263,36 @@ footer.footer-wide a:hover {
   background: var(--accent);
 }
 
+/* =========================================================
+   Link semantics: quiet references, unified weight
+   ========================================================= */
+
+/* Inline reference links (author attribution, in-text) */
+main.about .about-card a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+main.about .about-card a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Footer links: same semantic weight as inline references */
+footer.footer-wide a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink);
+
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 0.6rem;
+
+  padding: 0.35rem 0.8rem;
+  font-size: 0.95em;
+}
+
+footer.footer-wide a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
