@@ -3,202 +3,126 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>10,000 ARROWS — Index</title>
+  <title>About the Hall — 10,000 Arrows</title>
 
-  <!-- Fonts -->
+  <!-- Fonts (same as home) -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap" rel="stylesheet">
 
-  <!-- Styles specific to Index + shared haiku styling -->
-  <link rel="stylesheet" href="assets/haiku-index.css">
-  <link rel="stylesheet" href="assets/haiku.css">
+  <!-- Hall styling only -->
+  <link rel="stylesheet" href="/assets/haiku.css">
 
-  <!-- Scripts: only manifest + tags are needed here -->
-  <script src="assets/manifest.js"></script>
-  <script src="assets/tags.js"></script>
+  <!-- Haiku rendering -->
+  <script defer src="/assets/manifest.js"></script>
+  <script defer src="/assets/haiku-page.js"></script>
 </head>
+
+<body>
+
 <main>
   <h1>10,000 ARROWS</h1>
-  <p class="contact-link"><a href="mailto:wayne.kirk.schmidt@gmail.com">ContactMe</a></p>
+
   <div class="row">
-    <section class="card">
-      <div class="title"><span>Current Entry</span></div>
+
+    <!-- LEFT: Haiku (always present) -->
+    <section class="card haiku-card">
+      <div class="title"><span>Haiku</span></div>
       <div class="divider"></div>
-      <iframe class="embed" id="currentFrame" src="" title="Current Entry"></iframe>
-      <div style="text-align:center; margin-top:10px;">
-        <a href="explorer.html" class="btn">Launch Explorer</a>
-      </div>
+
+      <iframe
+        class="embed"
+        id="currentFrame"
+        src=""
+        title="Current Entry">
+      </iframe>
     </section>
 
-    <section class="card">
-      <div class="title"><span>Haiku Listing</span></div>
-      <div class="divider"></div>
-      <div id="haiku-count" class="muted" style="margin:.5rem 0; text-align:right;"></div>
-      <div class="links" id="list"></div>
-    </section>
+    <!-- RIGHT: About -->
+    <aside class="card about-card">
 
-    <aside class="card">
-      <div class="title"><span>Search for Tags</span></div>
+      <!-- About the Hall -->
+      <div class="title"><span>About the Hall</span></div>
       <div class="divider"></div>
-      <input
-        type="text"
-        id="search"
-        class="search-box"
-        placeholder="Type a tag">
-      <div class="divider"></div>
-      <div class="tags" id="tag-cloud"></div>
-      <div class="reset-wrap">
-        <button class="btn" id="reset">Reset Filters</button>
+
+      <p>
+        10,000 Arrows is a quiet hall for haiku.
+      </p>
+
+      <p>
+        Each poem is encountered on its own terms —
+        without search, without urgency, without instruction.
+      </p>
+
+      <p>
+        The hall draws from traditions of attention and intention,
+        including haiku practice and Kyūdō.
+      </p>
+
+      <div class="links">
+        <a href="https://en.wikipedia.org/wiki/Ky%C5%ABd%C5%8D" target="_blank" rel="noopener">
+          Kyūdō
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Sanj%C5%ABsangen-d%C5%8D" target="_blank" rel="noopener">
+          Sanjūsangen-dō
+        </a>
       </div>
+
+      <!-- Secondary: About the Author -->
+      <div class="divider"></div>
+
+      <h3 class="subtle-heading">About the Author</h3>
+
+      <p>
+        This hall is curated by Wayne Kirk Schmidt.
+      </p>
+
+      <p>
+        The work here is part of a longer practice in language, systems, and attention. 
+        The result is building places where we can explore quietly and without demand.
+      </p>
+
+      <div class="links">
+        <a href="https://www.waynekirkschmidt.me/" target="_blank" rel="noopener">
+          Personal Site
+        </a>
+        <a href="https://backofthenapkin.tech/" target="_blank" rel="noopener">
+          Blog & Research Notes
+        </a>
+      </div>
+
     </aside>
+
   </div>
 </main>
 
+<footer class="footer">
+  <a href="/">Return to the Hall</a>
+  <a href="/explore/">Explore the Hall</a>
+</footer>
+
 <script>
-function fmt(e){ 
-  return e.title || e.id;  // use title if present, else id
-}
-function cmpDesc(a,b){ 
-  return b.id.localeCompare(a.id); // sort newest first
-}
+/* Load newest haiku only */
 
-const listEl = document.getElementById('list');
-const cloud = document.getElementById('tag-cloud');
-const searchBox = document.getElementById('search');
-const activeTags = new Set();
-let searchQuery = "";
-let currentActive = null;
-
-function renderList(items){
-  items.sort(cmpDesc);
-  const uniq = new Map(); items.forEach(e=>uniq.set(e.id,e));
-  const arr = Array.from(uniq.values());
-  listEl.innerHTML='';
-  arr.forEach(e => {
-    const a = document.createElement('a');
-    a.href = "./" + e.path_html;
-    a.textContent = fmt(e);
-    a.target = '_blank';
-    a.onclick = (ev)=>{
-      ev.preventDefault();
-      const ifr = document.getElementById('currentFrame');
-      if (ifr){
-        ifr.src = "./" + e.path_html + "?embed=1";
-      } else {
-        window.open("./" + e.path_html, '_blank');
-      }
-      if (currentActive) currentActive.classList.remove('active');
-      a.classList.add('active');
-      currentActive = a;
-    };
-    listEl.appendChild(a);
-  });
-  if (arr.length===0){
-    listEl.innerHTML = '<div style="opacity:.7; text-align:center; padding:.75rem;">No matches found.</div>';
-  }
+function cmpDesc(a, b) {
+  return b.id.localeCompare(a.id);
 }
 
-function updateTagCloudFilter() {
-  const q = searchQuery.trim().toLowerCase();
-
-  cloud.querySelectorAll('.tag').forEach(btn => {
-    const raw = btn.textContent.toLowerCase();
-    const match = q === "" || raw.includes(q);
-
-    btn.style.display = match ? "" : "none";
-    btn.classList.toggle('match', q !== "" && match);
-  });
-}
-
-function update(){
-  let filtered = (window.HAIKU_ALL || []).slice();
-
-  if (activeTags.size>0){
-    filtered = filtered.filter(e => e.tags && e.tags.some(t => activeTags.has(t)));
-  }
-
-  if (searchQuery.trim()!==""){
-    const q = searchQuery.toLowerCase();
-    filtered = filtered.filter(e => {
-      return (
-        e.id.toLowerCase().includes(q) ||
-        (e.title && e.title.toLowerCase().includes(q)) ||
-        (e.tags && e.tags.some(tag => tag.toLowerCase().includes(q)))
-      );
-    });
-  }
-
-  renderList(filtered);
-
-  // Show counter
-  const counter = document.getElementById('haiku-count');
-  if (counter) {
-    const total = (window.HAIKU_ALL || []).length;
-    counter.textContent = `Showing ${filtered.length} of ${total} haikus`;
-  }
-
-  updateTagCloudFilter();
-
-}
-
-function initUI(){
-  console.log("Manifest entries:", window.HAIKU_ALL);
-
-  document.getElementById('reset').onclick = () => {
-    activeTags.clear();
-    searchQuery="";
-    searchBox.value="";
-    (cloud.querySelectorAll('.tag.active')||[]).forEach(x=>x.classList.remove('active'));
-    update();
-  };
-
-  cloud.innerHTML = '';
-  (window.HAIKU_TAGS||[]).forEach(t => {
-    const b=document.createElement('button');
-    b.className='tag';
-    const count = (window.HAIKU_TAG_INDEX[t]||[]).length;
-    b.textContent=`${t} (${count})`;
-    b.onclick = ()=>{
-      if(activeTags.has(t)){
-        activeTags.delete(t); b.classList.remove('active');
-      } else {
-        activeTags.add(t); b.classList.add('active');
-      }
-      update();
-    };
-    cloud.appendChild(b);
-  });
-
-  searchBox.addEventListener('input', (e)=>{
-    searchQuery = e.target.value;
-    update();
-  });
-
-  const frame = document.getElementById('currentFrame');
+function initHall() {
   const items = (window.HAIKU_ALL || []);
+  const frame = document.getElementById('currentFrame');
+
+  if (!frame) return;
+
   if (items.length > 0) {
     const newest = items.slice().sort(cmpDesc)[0];
-    console.log("Loading newest:", newest);
-    frame.src = "./" + newest.path_html + "?embed=1";
-    setTimeout(() => {
-      const links = listEl.querySelectorAll('a');
-      links.forEach(a => {
-        if (a.href.endsWith(newest.path_html)) {
-          a.classList.add('active');
-          currentActive = a;
-          a.scrollIntoView({block:"nearest"});
-        }
-      });
-    }, 200);
+    frame.src = "/" + newest.path_html + "?embed=1";
   } else {
-    console.warn("No entries found at init.");
-    frame.outerHTML = '<div style="opacity:.7; text-align:center; padding:.75rem;">No entries.</div>';
+    frame.outerHTML =
+      '<div style="opacity:.7; text-align:center; padding:.75rem;">No entries.</div>';
   }
-
-  update();
 }
 
-document.addEventListener("manifestLoaded", initUI);
-document.addEventListener("tagsLoaded", initUI);
+document.addEventListener("manifestLoaded", initHall);
 </script>
+
 </body>
 </html>
