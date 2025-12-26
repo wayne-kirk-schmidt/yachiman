@@ -1,0 +1,24 @@
+{
+  "id": "20230201-01",
+  "date": "2023-02-01",
+  "seq": 1,
+  "title": "2023-02-01.01",
+  "lines": [
+    "summer breathes softly",
+    "fog shadows drift through spiders",
+    "time pauses, listening"
+  ],
+  "tags": [
+    "breathes",
+    "drift",
+    "fog",
+    "pauses",
+    "shadows",
+    "spiders",
+    "summer",
+    "time"
+  ],
+  "path_html": "data/2023/02/01/haiku.2023-02-01.01.html",
+  "path_json": "data/2023/02/01/haiku.2023-02-01.01.json",
+  "created": "2025-12-26T03:57:44.016275+00:00"
+}

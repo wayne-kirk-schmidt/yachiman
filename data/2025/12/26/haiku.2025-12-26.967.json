@@ -4,21 +4,23 @@
   "seq": 967,
   "title": "2025-12-26.967",
   "lines": [
-    "leans lantern breaks warm",
-    "signal leaf fades leans still",
-    "lantern slow empty"
+    "opens closes bare",
+    "breaks water wanders path waits",
+    "rises holds empty"
   ],
   "tags": [
+    "bare",
     "breaks",
+    "closes",
     "empty",
-    "fades",
-    "lantern",
-    "leaf",
-    "leans",
-    "signal",
-    "warm"
+    "opens",
+    "path",
+    "rises",
+    "waits",
+    "wanders",
+    "water"
   ],
   "path_html": "data/2025/12/26/haiku.2025-12-26.967.html",
   "path_json": "data/2025/12/26/haiku.2025-12-26.967.json",
-  "created": "2025-12-26T03:26:41.806159+00:00"
+  "created": "2025-12-26T03:57:44.821305+00:00"
 }

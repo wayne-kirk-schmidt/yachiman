@@ -1,0 +1,25 @@
+{
+  "id": "20230201-05",
+  "date": "2023-02-01",
+  "seq": 5,
+  "title": "2023-02-01.05",
+  "lines": [
+    "Summer rain begins",
+    "Light shifts over the water",
+    "Warm air comes to rest"
+  ],
+  "tags": [
+    "air",
+    "begins",
+    "light",
+    "rain",
+    "rest",
+    "shifts",
+    "summer",
+    "warm",
+    "water"
+  ],
+  "path_html": "data/2023/02/01/haiku.2023-02-01.05.html",
+  "path_json": "data/2023/02/01/haiku.2023-02-01.05.json",
+  "created": "2025-12-26T03:57:44.018493+00:00"
+}

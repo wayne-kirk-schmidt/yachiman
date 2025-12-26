@@ -1,0 +1,26 @@
+{
+  "id": "20230512-01",
+  "date": "2023-05-12",
+  "seq": 1,
+  "title": "2023-05-12.01",
+  "lines": [
+    "Warm wind bends the grass",
+    "Fog drifts across the valley",
+    "Light grows soft again"
+  ],
+  "tags": [
+    "bends",
+    "drifts",
+    "fog",
+    "grass",
+    "grows",
+    "light",
+    "soft",
+    "valley",
+    "warm",
+    "wind"
+  ],
+  "path_html": "data/2023/05/12/haiku.2023-05-12.01.html",
+  "path_json": "data/2023/05/12/haiku.2023-05-12.01.json",
+  "created": "2025-12-26T03:57:46.262560+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "20230601-01",
+  "date": "2023-06-01",
+  "seq": 1,
+  "title": "2023-06-01.01",
+  "lines": [
+    "Summer rain begins",
+    "Wind bending tall summer grass",
+    "Warm air comes to rest"
+  ],
+  "tags": [
+    "air",
+    "begins",
+    "bending",
+    "grass",
+    "rain",
+    "rest",
+    "summer",
+    "tall",
+    "warm",
+    "wind"
+  ],
+  "path_html": "data/2023/06/01/haiku.2023-06-01.01.html",
+  "path_json": "data/2023/06/01/haiku.2023-06-01.01.json",
+  "created": "2025-12-26T03:57:46.396691+00:00"
+}

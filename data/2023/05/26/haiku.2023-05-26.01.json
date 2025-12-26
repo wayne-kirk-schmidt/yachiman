@@ -1,0 +1,26 @@
+{
+  "id": "20230526-01",
+  "date": "2023-05-26",
+  "seq": 1,
+  "title": "2023-05-26.01",
+  "lines": [
+    "Warm wind bends the grass",
+    "Cloud shadows pass across fields",
+    "The long day slows down"
+  ],
+  "tags": [
+    "bends",
+    "cloud",
+    "day",
+    "fields",
+    "grass",
+    "pass",
+    "shadows",
+    "slows",
+    "warm",
+    "wind"
+  ],
+  "path_html": "data/2023/05/26/haiku.2023-05-26.01.html",
+  "path_json": "data/2023/05/26/haiku.2023-05-26.01.json",
+  "created": "2025-12-26T03:57:46.745671+00:00"
+}

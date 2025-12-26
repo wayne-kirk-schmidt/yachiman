@@ -1,0 +1,23 @@
+{
+  "id": "20230302-01",
+  "date": "2023-03-02",
+  "seq": 1,
+  "title": "2023-03-02.01",
+  "lines": [
+    "from the black kettle",
+    "smoking blue and grey hissing",
+    "porridge is cooking"
+  ],
+  "tags": [
+    "black",
+    "blue",
+    "cooking",
+    "grey",
+    "kettle",
+    "porridge",
+    "smoking"
+  ],
+  "path_html": "data/2023/03/02/haiku.2023-03-02.01.html",
+  "path_json": "data/2023/03/02/haiku.2023-03-02.01.json",
+  "created": "2025-12-26T03:57:44.145437+00:00"
+}
