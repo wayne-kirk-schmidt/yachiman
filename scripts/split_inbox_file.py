@@ -49,12 +49,12 @@ Style:
 ### ================================================================
 
 import sys
-sys.dont_write_bytecode = True
 import argparse
 import logging
 import datetime
 from pathlib import Path
 from typing import List
+sys.dont_write_bytecode = True
 
 
 SEPARATOR = "###"

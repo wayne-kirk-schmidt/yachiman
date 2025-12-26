@@ -1,23 +1,57 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 umask 022
 
-date=$( date +%y%m%d )
-time=$( date +%H%M%S )
+# --------------------------------------------------
+# Resolve paths relative to this script
+# --------------------------------------------------
 
-files=( ./config/themes/* )
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-count=${#files[@]}
-(( count == 0 )) && exit 1
+CONFIG_DIR="$PROJECT_ROOT/config"
+SCRIPTS_DIR="$PROJECT_ROOT/scripts"
+INBOX_DIR="$PROJECT_ROOT/inbox"
 
-randomfile="${files[RANDOM % count]}"
+# --------------------------------------------------
+# Timestamp
+# --------------------------------------------------
 
-guide="./config/haiku.instructions.txt"
+date="$(date +%y%m%d)"
+time="$(date +%H%M%S)"
 
-theme="${randomfile}"
+# --------------------------------------------------
+# Select random theme
+# --------------------------------------------------
 
-output="./inbox/inbox.${date}.${time}.txt"
+themes=( "$CONFIG_DIR/themes/"* )
 
-script="./scripts/generate_haiku_seed.py"
+count=${#themes[@]}
+(( count == 0 )) && {
+  echo "ERROR: no themes found in $CONFIG_DIR/themes" >&2
+  exit 1
+}
 
-${script} --instructions "${guide}" --template "${theme}" --agenturl openai --dst "${output}" --number 3 --verbose
+theme="${themes[RANDOM % count]}"
+
+# --------------------------------------------------
+# Files
+# --------------------------------------------------
+
+guide="$CONFIG_DIR/haiku.instructions.txt"
+script="$SCRIPTS_DIR/generate_haiku_seed.py"
+output="$INBOX_DIR/inbox.${date}.${time}.txt"
+
+# --------------------------------------------------
+# Execute
+# --------------------------------------------------
+
+$script \
+  --instructions "${guide}" \
+  --template "${theme}" \
+  --agenturl openai \
+  --dst "${output}" \
+  --number 1 \
+  --verbose
+

@@ -32,7 +32,7 @@ def compose_prompt(instructions_text: str, template_text: str) -> str:
 # =================================================
 
 def validate_seed(text: str) -> None:
-    lines = [l.rstrip() for l in text.strip().splitlines() if l.strip()]
+    lines = [myline.rstrip() for myline in text.strip().splitlines() if myline.strip()]
     if len(lines) != 4:
         raise ValueError("Invalid output: expected exactly 3 haiku lines + ###")
     if lines[-1] != "###":
