@@ -1,0 +1,5 @@
+theme=december
+keywords=night,cold,light,ending
+anchor_word=night
+kireji_word=still,but,so
+sentiment=closed, calm

@@ -1,0 +1,5 @@
+theme=august
+keywords=light,field,wind,afternoon
+anchor_word=light
+kireji_word=still,even,only
+sentiment=full, suspended

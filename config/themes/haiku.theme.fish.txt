@@ -1,0 +1,5 @@
+theme=fish
+keywords=water,flash,depth,silence
+anchor_word=water
+kireji_word=still,even,again
+sentiment=fluid, hidden

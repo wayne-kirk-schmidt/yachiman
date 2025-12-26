@@ -1,0 +1,5 @@
+theme=birds
+keywords=wing,air,call,branch
+anchor_word=wing
+kireji_word=even,then,still
+sentiment=light, alert

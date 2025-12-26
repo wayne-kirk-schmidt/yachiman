@@ -1,0 +1,5 @@
+theme=april
+keywords=rain,bloom,soft light
+anchor_word=bloom
+kireji_word=even,still,then
+sentiment=gentle rise

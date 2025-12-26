@@ -1,0 +1,5 @@
+theme=river
+keywords=flow,stone,current,light,bend
+anchor_word=river
+kireji_word=still,then,again
+sentiment=continuous, patient

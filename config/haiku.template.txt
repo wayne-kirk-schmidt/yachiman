@@ -1,5 +1,0 @@
-keywords=wave, rock, river, splash
-theme=summer
-anchor_word=river
-kireji_word=surging
-sentiment=hopeful, calm

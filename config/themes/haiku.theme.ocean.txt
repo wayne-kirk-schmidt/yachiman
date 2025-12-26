@@ -1,0 +1,5 @@
+theme=ocean
+keywords=wave,salt,light,horizon,depth
+anchor_word=wave
+kireji_word=even,still,again
+sentiment=wide, rhythmic

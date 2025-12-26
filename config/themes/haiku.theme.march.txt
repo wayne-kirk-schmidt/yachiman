@@ -1,0 +1,5 @@
+theme=march
+keywords=rain,wind,ground,change
+anchor_word=rain
+kireji_word=then,but,even
+sentiment=shifting

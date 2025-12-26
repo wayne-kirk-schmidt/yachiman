@@ -1,0 +1,5 @@
+theme=valley
+keywords=field,mist,river,shadow,grass
+anchor_word=field
+kireji_word=though,yet,still
+sentiment=gentle, held

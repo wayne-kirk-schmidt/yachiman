@@ -1,0 +1,5 @@
+theme=october
+keywords=leaf,dusk,smoke,cool air
+anchor_word=dusk
+kireji_word=again,though,only
+sentiment=reflective

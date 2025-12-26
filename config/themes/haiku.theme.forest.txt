@@ -1,0 +1,5 @@
+theme=forest
+keywords=shade,leaf,soil,root,quiet
+anchor_word=leaf
+kireji_word=yet,still,only
+sentiment=contained, living

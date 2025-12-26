@@ -1,0 +1,5 @@
+theme=february
+keywords=cold,light,edge,waiting
+anchor_word=light
+kireji_word=yet,though,still
+sentiment=anticipatory

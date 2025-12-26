@@ -1,0 +1,5 @@
+theme=fall
+keywords=leaves,dusk,wind,field,ember,echo
+anchor_word=dusk
+kireji_word=though,yet,again,only
+sentiment=reflective, grounded

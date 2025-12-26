@@ -1,0 +1,5 @@
+theme=plains
+keywords=grass,wind,sky,distance,light
+anchor_word=wind
+kireji_word=only,even,still
+sentiment=open, spare

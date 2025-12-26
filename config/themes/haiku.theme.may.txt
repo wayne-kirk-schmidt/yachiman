@@ -1,0 +1,5 @@
+theme=may
+keywords=green,field,bird,air
+anchor_word=green
+kireji_word=still,even,so
+sentiment=open, calm

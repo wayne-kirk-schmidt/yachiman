@@ -1,0 +1,5 @@
+theme=january
+keywords=cold,night,breath,stillness
+anchor_word=night
+kireji_word=but,still,only
+sentiment=austere, quiet

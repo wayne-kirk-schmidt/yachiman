@@ -1,0 +1,5 @@
+theme=new years
+keywords=clock,light,breath,threshold
+anchor_word=clock
+kireji_word=then,but,so
+sentiment=poised, expectant

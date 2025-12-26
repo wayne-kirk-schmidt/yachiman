@@ -1,0 +1,5 @@
+theme=november
+keywords=bare,wind,field,quiet
+anchor_word=field
+kireji_word=only,still,but
+sentiment=thin, inward

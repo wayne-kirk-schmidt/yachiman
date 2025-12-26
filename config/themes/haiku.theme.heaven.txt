@@ -1,0 +1,5 @@
+theme=heaven
+keywords=sky,light,depth,cloud,space
+anchor_word=sky
+kireji_word=even,still,so
+sentiment=expansive, calm

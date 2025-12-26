@@ -1,0 +1,5 @@
+theme=noon
+keywords=heat,shadow,stillness,stone,sky
+anchor_word=shadow
+kireji_word=only,even,but
+sentiment=stark, suspended

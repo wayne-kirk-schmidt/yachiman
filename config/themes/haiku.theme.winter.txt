@@ -1,0 +1,5 @@
+theme=winter
+keywords=snow,night,breath,frost,shadow,silence
+anchor_word=night
+kireji_word=but,yet,though,still
+sentiment=quiet, restrained

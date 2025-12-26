@@ -1,0 +1,5 @@
+theme=july
+keywords=heat,stone,sky,cicada
+anchor_word=heat
+kireji_word=even,but,still
+sentiment=intense, steady

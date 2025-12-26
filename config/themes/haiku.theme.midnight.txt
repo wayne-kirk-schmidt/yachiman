@@ -1,0 +1,5 @@
+theme=midnight
+keywords=dark,clock,breath,window,moon
+anchor_word=dark
+kireji_word=still,but,only
+sentiment=quiet, inward

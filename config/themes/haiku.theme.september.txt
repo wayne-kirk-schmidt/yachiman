@@ -1,0 +1,5 @@
+theme=september
+keywords=wind,field,change,light
+anchor_word=wind
+kireji_word=though,yet,again
+sentiment=turning

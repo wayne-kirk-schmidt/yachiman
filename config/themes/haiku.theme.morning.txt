@@ -1,0 +1,5 @@
+theme=morning
+keywords=light,steps,window,air,birdcall
+anchor_word=light
+kireji_word=still,then,even
+sentiment=clear, beginning

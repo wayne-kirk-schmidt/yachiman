@@ -1,0 +1,5 @@
+theme=mountain
+keywords=stone,wind,peak,shadow,snow
+anchor_word=stone
+kireji_word=but,though,still
+sentiment=steady, austere

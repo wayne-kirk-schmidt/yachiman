@@ -1,0 +1,5 @@
+theme=summer
+keywords=heat,river,wind,light,cicada,wave
+anchor_word=river
+kireji_word=still,even,then,so
+sentiment=open, steady energy

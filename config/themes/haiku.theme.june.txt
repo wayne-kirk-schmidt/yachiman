@@ -1,0 +1,5 @@
+theme=june
+keywords=light,river,shade,warmth
+anchor_word=river
+kireji_word=still,then,again
+sentiment=flowing

@@ -1,0 +1,5 @@
+theme=evening
+keywords=glow,road,wind,smoke,return
+anchor_word=glow
+kireji_word=though,yet,again
+sentiment=settling, reflective

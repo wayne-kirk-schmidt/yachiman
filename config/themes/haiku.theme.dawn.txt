@@ -1,0 +1,5 @@
+theme=dawn
+keywords=light,mist,bird,edge,sky,breath
+anchor_word=dawn
+kireji_word=then,still,but
+sentiment=emergent, attentive

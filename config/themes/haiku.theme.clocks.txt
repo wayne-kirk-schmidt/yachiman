@@ -1,0 +1,5 @@
+theme=clocks
+keywords=tick,shadow,room,night
+anchor_word=tick
+kireji_word=still,but,again
+sentiment=measured, quiet
