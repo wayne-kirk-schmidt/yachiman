@@ -221,14 +221,15 @@ main.about .about-card a:hover {
 }
 
 /* =========================================================
-   About page paired links
-   Equal weight, no wrap, neutral presence
+   About page links
+   Quiet, bounded, equal-weight presence
    ========================================================= */
 
 .about-links {
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
+  margin: 1.8rem 0;
 }
 
 .about-links a {
@@ -239,9 +240,19 @@ main.about .about-card a:hover {
   align-items: center;
   justify-content: center;
 
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 1rem;
   text-align: center;
 
   white-space: nowrap;
+
+  text-decoration: none;
+  color: var(--ink);
+
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 0.6rem;
 }
 
+.about-links a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
