@@ -295,7 +295,7 @@ html.embed .poem .strip {
 
 /* Make the haiku dominant (≈ 3× presence) */
 html.embed .poem {
-  transform: scale(3);
+  transform: scale(1.5);
   transform-origin: center center;
 }
 

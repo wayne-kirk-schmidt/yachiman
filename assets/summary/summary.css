@@ -27,7 +27,7 @@
   border-radius: 8px;
   flex: 1 1 auto;
   min-height: 420px;
-  background: #fff;
+  background: transparent;
 }
 
 /* Right panel: navigation + count */
