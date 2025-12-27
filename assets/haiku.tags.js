@@ -1,7 +1,7 @@
 (function () {
   async function loadTags() {
     try {
-      const res = await fetch("./data/tags.json");
+      const res = await fetch("/data/tags.json");
       const data = await res.json();
 
       // Keep original for debugging
