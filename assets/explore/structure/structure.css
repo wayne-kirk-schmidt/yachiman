@@ -1,0 +1,144 @@
+/* =========================
+   Root + Base
+   ========================= */
+
+:root {
+  --paper: #fbfaf7;
+  --ink: #2f2f2f;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  color: var(--ink);
+  background:
+    url("/assets/Japanese-Paper.png") center / cover no-repeat fixed;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+main.explore {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.row {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.summary-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* =========================
+   Cards
+   ========================= */
+
+.card {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.summary-main {
+  padding: 2rem 2.5rem;
+}
+
+.summary-side {
+  padding: 1.5rem;
+}
+
+/* =========================
+   Haiku iframe
+   ========================= */
+
+iframe#currentFrame {
+  width: 100%;
+  min-height: 18rem;
+  border: 0;
+}
+
+/* =========================
+   Summary Navigation
+   ========================= */
+
+.summary-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-nav a {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+.summary-nav a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   Summary Count
+   ========================= */
+
+.summary-count {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #666;
+  opacity: 0.85;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer.footer-wide {
+  max-width: 960px;
+  margin: 3rem auto 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0 1rem;
+}
+
+.footer.footer-wide a {
+  flex: 1;
+  max-width: 18rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.05em;
+  text-decoration: none;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 0.6rem;
+  font-weight: 500;
+}
+
+.footer.footer-wide a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+

@@ -3,40 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explore the Hall – Summary</title>
+  <title>Explore the Hall – Structure</title>
   <!-- Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap"
     rel="stylesheet">
   <!-- Summary-specific layout -->
-  <link rel="stylesheet" href="/assets/explore/summary/summary.css">
-  <!-- Summary behavior -->
-  <script src="/assets/explore/summary/summary.js" defer></script>
+  <link rel="stylesheet" href="/assets/explore/structure/structure.css">
 </head>
 <body>
 <main class="explore">
   <div class="row">
-    <div class="summary-layout">
-      <!-- Latest haiku only -->
-      <section class="card haiku-card">
-        <div class="divider"></div>
-        <iframe
-          class="embed"
-          id="currentFrame"
-          src=""
-          title="Current Entry"
-          loading="lazy"
-          style="width:100%; min-height:18rem; border:0;">
-        </iframe>
+    <div class="structure-layout">
+      <section class="card structure-main">
       </section>
       <!-- Right: Navigation + count -->
-      <aside class="card summary-side">
-        <nav class="summary-nav">
+      <aside class="card structure-side">
+        <nav class="structure-nav">
           <a href="/explore/summary/">Summary</a>
           <a href="/explore/semantic/">Semantic</a>
           <a href="/explore/structure/">Structure</a>
         </nav>
-        <div id="summary-count" class="summary-count"></div>
+        <div id="structure-count" class="structure-count"></div>
       </aside>
     </div>
   </div>
