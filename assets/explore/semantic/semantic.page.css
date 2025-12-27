@@ -2,6 +2,79 @@
    Semantic Page Overrides
    ========================= */
 
-/* Intentionally minimal.
-   Add page-specific overrides here only when needed. */
+/* =========================
+   Semantic Layout Skeleton
+   ========================= */
+
+.semantic-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px 240px;
+  gap: 2rem;
+}
+
+/* -------------------------
+   Primary area (left)
+   ------------------------- */
+
+.semantic-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.semantic-display {
+  /* visual canvas for current item */
+}
+
+.semantic-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control-status {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* -------------------------
+   Results column (middle)
+   ------------------------- */
+
+.semantic-results {
+  display: flex;
+  flex-direction: column;
+}
+
+.results-list {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+/* -------------------------
+   Filters column (right)
+   ------------------------- */
+
+.semantic-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.filter-input {
+  /* search input placeholder */
+}
+
+.filter-tags {
+  overflow-y: auto;
+}
+
+.filter-results {
+  overflow-y: auto;
+}
+
+.filter-controls {
+  margin-top: auto;
+}
 
