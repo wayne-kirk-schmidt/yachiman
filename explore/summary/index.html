@@ -10,11 +10,9 @@
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap"
     rel="stylesheet">
 
-  <!-- Global visual language -->
-  <link rel="stylesheet" href="/assets/haiku.css">
-
   <!-- Summary-specific layout -->
-  <link rel="stylesheet" href="/assets/summary/summary.css">
+  <link rel="stylesheet" href="/assets/explore/summary/summary.css">
+
 
   <!-- Summary behavior -->
   <script src="/assets/summary/summary.js" defer></script>
@@ -24,45 +22,32 @@
 
 <main class="explore">
   <div class="row">
-
     <div class="summary-layout">
-
-      <!-- Left: Latest haiku -->
       <section class="card summary-main">
-        <div class="title">
-          <span>Latest Haiku</span>
-        </div>
-        <div class="divider"></div>
-
         <iframe
           id="summary-latest-frame"
           title="Latest haiku"
           loading="eager">
         </iframe>
       </section>
-
       <!-- Right: Navigation + count -->
       <aside class="card summary-side">
-
         <nav class="summary-nav">
           <a href="/explore/summary/">Summary</a>
           <a href="/explore/semantic/">Semantic</a>
-          <a href="/explore/structural/">Structural</a>
+          <a href="/explore/structural/">Structure</a>
         </nav>
-
         <div id="summary-count" class="summary-count"></div>
-
       </aside>
-
     </div>
-
   </div>
 </main>
 
+<!-- Global Hall footer -->
 <footer class="footer footer-wide">
-  <a href="/">Return to the Hall</a>
-  <a href="/explore/">Explore the Hall</a>
-  <a href="/about/">About the Hall</a>
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/explore/">Explore</a>
 </footer>
 
 </body>
