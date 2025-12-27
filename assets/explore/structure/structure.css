@@ -36,7 +36,7 @@ main.explore {
   max-width: 1100px;
 }
 
-.summary-layout {
+.structure-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 260px;
   gap: 2rem;
@@ -53,11 +53,11 @@ main.explore {
   box-shadow: var(--shadow);
 }
 
-.summary-main {
+.structure-main {
   padding: 2rem 2.5rem;
 }
 
-.summary-side {
+.structure-side {
   padding: 1.5rem;
 }
 
@@ -93,7 +93,7 @@ iframe#currentFrame {
   background: transparent;
 }
 
-.summary-nav a:hover {
+.structure-nav a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
@@ -101,7 +101,7 @@ iframe#currentFrame {
    Summary Count
    ========================= */
 
-.summary-count {
+.structure-count {
   margin-top: 2.5rem;
   font-size: 0.9rem;
   text-align: center;
