@@ -1,0 +1,124 @@
+:root {
+  --paper: url("../assets/Japanese-Paper.png");
+  --ink: #1f2937;
+  --accent: #f5d3b8;
+  --accent-border: #e6b08a;
+  --card: rgba(255, 255, 255, 0.55);
+  --shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  --max: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "EB Garamond", Georgia, serif;
+  line-height: 1.6;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.40),
+      rgba(255, 255, 255, 0.40)
+    ),
+    var(--paper);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ---------------------------------------------------------
+   Hall-level shared elements
+   --------------------------------------------------------- */
+
+.label {
+  display: inline-block;
+  background: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 0.6rem;
+  padding: 0.35rem 0.9rem;
+}
+
+.hdr {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.meta {
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.35rem;
+}
+
+.rule {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.14);
+  margin: 0.6rem auto 1rem;
+  max-width: 12rem;
+  border: 0;
+}
+
+/* ---------------------------------------------------------
+   Hall cards / layout
+   --------------------------------------------------------- */
+
+.card {
+  background: var(--card);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.footer-wide {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* ---------------------------------------------------------
+   Footer links
+   Equal weight, neutral presence
+   --------------------------------------------------------- */
+
+.footer.footer-wide a {
+  flex: 1;
+  max-width: 18rem;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.6rem 1.2rem;
+  font-size: 1.05em;
+
+  text-decoration: none;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 0.6rem;
+}
+
+.footer.footer-wide a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+main > h1 {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin: 2.5rem 0 2rem;
+  opacity: 0.85;
+}
+
+.haiku-card {
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
