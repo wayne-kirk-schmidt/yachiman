@@ -258,34 +258,39 @@ main.about .about-card a:hover {
 }
 
 /* =========================
-   Haiku embed mode
+   Haiku embed mode (display test)
    ========================= */
 
-/* Neutralize background when embedded */
 html.embed,
 html.embed body {
   background: transparent !important;
 }
 
-/* Tighten overall layout inside iframe */
+/* Remove all card-like constraints */
 html.embed main.haiku {
   max-width: none;
-  padding: 0.75rem 1rem;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-/* Hide title in embed mode */
-html.embed .haiku-title {
+/* Hide non-poem elements */
+html.embed .haiku-title,
+html.embed .haiku-tags {
   display: none !important;
 }
 
-/* Enlarge haiku text by ~33% */
+/* Make the poem the dominant object */
+html.embed .haiku {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+/* Triple-scale presentation */
 html.embed .haiku-lines {
-  font-size: 133%;
-  line-height: 1.45;
+  font-size: 300%;
+  line-height: 1.35;
+  text-align: center;
 }
-
-/* Optional: hide tags for focus */
-html.embed .haiku-tags {
-  display: none;
-}
-
