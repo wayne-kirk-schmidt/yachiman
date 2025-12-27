@@ -256,3 +256,36 @@ main.about .about-card a:hover {
 .about-links a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
+
+/* =========================
+   Haiku embed mode
+   ========================= */
+
+/* Neutralize background when embedded */
+html.embed,
+html.embed body {
+  background: transparent !important;
+}
+
+/* Tighten overall layout inside iframe */
+html.embed main.haiku {
+  max-width: none;
+  padding: 0.75rem 1rem;
+}
+
+/* Hide title in embed mode */
+html.embed .haiku-title {
+  display: none !important;
+}
+
+/* Enlarge haiku text by ~33% */
+html.embed .haiku-lines {
+  font-size: 133%;
+  line-height: 1.45;
+}
+
+/* Optional: hide tags for focus */
+html.embed .haiku-tags {
+  display: none;
+}
+
