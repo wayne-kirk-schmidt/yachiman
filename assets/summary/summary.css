@@ -64,3 +64,12 @@
   opacity: 0.75;
 }
 
+/* Summary: let hall background show through (no white slab) */
+.summary-main {
+  background: transparent !important;
+}
+
+.summary-main iframe {
+  background: transparent !important;
+}
+
