@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explore the Hall – Semantic</title>
+  <title>Explore the Hall – Summary</title>
 
   <!-- Fonts -->
   <link
@@ -13,8 +13,11 @@
   <!-- Global visual language -->
   <link rel="stylesheet" href="/assets/haiku.css">
 
-  <!-- Semantic exploration styling (existing, unchanged) -->
-  <link rel="stylesheet" href="/assets/haiku-index.css">
+  <!-- Summary-specific layout -->
+  <link rel="stylesheet" href="/assets/summary/summary.css">
+
+  <!-- Summary behavior -->
+  <script src="/assets/summary/summary.js" defer></script>
 </head>
 
 <body>
@@ -22,18 +25,36 @@
 <main class="explore">
   <div class="row">
 
-    <!-- Semantic exploration card -->
-    <section class="card">
-      <div class="title">
-        <span>Semantic Exploration</span>
-      </div>
-      <div class="divider"></div>
+    <div class="summary-layout">
 
-      <p class="muted" style="text-align:center;">
-        Semantic tools (tags, search, filtering) will appear here.
-      </p>
+      <!-- Left: Latest haiku -->
+      <section class="card summary-main">
+        <div class="title">
+          <span>Latest Haiku</span>
+        </div>
+        <div class="divider"></div>
 
-    </section>
+        <iframe
+          id="summary-latest-frame"
+          title="Latest haiku"
+          loading="eager">
+        </iframe>
+      </section>
+
+      <!-- Right: Navigation + count -->
+      <aside class="card summary-side">
+
+        <nav class="summary-nav">
+          <a href="/explore/summary/">Summary</a>
+          <a href="/explore/semantic/">Semantic</a>
+          <a href="/explore/structural/">Structural</a>
+        </nav>
+
+        <div id="summary-count" class="summary-count"></div>
+
+      </aside>
+
+    </div>
 
   </div>
 </main>
@@ -46,4 +67,3 @@
 
 </body>
 </html>
-
