@@ -3,7 +3,7 @@
   --ink: #1f2937;
   --accent: #f5d3b8;
   --accent-border: #e6b08a;
-  --card: #fffdfa;
+  --card: rgba(255, 255, 255, 0.55);
   --shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
   --max: 1100px;
 }
@@ -108,5 +108,17 @@ body {
 
 .footer.footer-wide a:hover {
   background: rgba(0, 0, 0, 0.04);
+}
+
+main > h1 {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin: 2.5rem 0 2rem;
+  opacity: 0.85;
+}
+
+.haiku-card {
+  padding: 1.2rem 1.4rem 1.4rem;
 }
 
