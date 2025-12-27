@@ -256,9 +256,8 @@ main.about .about-card a:hover {
 .about-links a:hover {
   background: rgba(0, 0, 0, 0.04);
 }
-
 /* =========================
-   Haiku embed mode (display test)
+   Haiku embed mode
    ========================= */
 
 html.embed,
@@ -266,7 +265,7 @@ html.embed body {
   background: transparent !important;
 }
 
-/* Remove all card-like constraints */
+/* Remove page/card constraints */
 html.embed main.haiku {
   max-width: none;
   margin: 0;
@@ -280,7 +279,7 @@ html.embed .haiku-tags {
   display: none !important;
 }
 
-/* Make the poem the dominant object */
+/* Center the poem in the iframe */
 html.embed .haiku {
   display: flex;
   align-items: center;
@@ -288,9 +287,15 @@ html.embed .haiku {
   min-height: 100%;
 }
 
-/* Triple-scale presentation */
-html.embed .haiku-lines {
-  font-size: 300%;
-  line-height: 1.35;
-  text-align: center;
+/* Remove the strip/card background */
+html.embed .poem .strip {
+  background: transparent;
+  padding: 0;
 }
+
+/* Make the haiku dominant (≈ 3× presence) */
+html.embed .poem {
+  transform: scale(3);
+  transform-origin: center center;
+}
+
