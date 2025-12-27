@@ -3,82 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>10,000 ARROWS</title>
+  <title>A gallery of Haiku - 10,000 ARROWS</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- Shared hall styling -->
-  <link rel="stylesheet" href="assets/haiku.css">
-  <link rel="stylesheet" href="assets/haiku-index.css">
-
-  <!-- Data -->
-  <script src="assets/manifest.js"></script>
-  <script src="assets/tags.js"></script>
+  <!-- Hall styling (index only) -->
+  <link rel="stylesheet" href="assets/haiku.main.css">
 </head>
 
 <body>
 
 <main>
-  <h1>10,000 ARROWS</h1>
+  <h1>A gallery of Haiku - 10,000 ARROWS</h1>
 
-  <div class="row">
+  <!-- Latest haiku only -->
+  <section class="card haiku-card">
+    <div class="title"><span>Haiku</span></div>
+    <div class="divider"></div>
 
-    <!-- LEFT: Haiku (always present) -->
-    <section class="card haiku-card">
-      <div class="title"><span>Haiku</span></div>
-      <div class="divider"></div>
-
-      <iframe
-        class="embed"
-        id="currentFrame"
-        src=""
-        title="Current Entry">
-      </iframe>
-    </section>
-
-    <!-- RIGHT: Hall links only -->
-    <aside class="card control-card">
-      <div class="title"><span>The Hall</span></div>
-      <div class="divider"></div>
-
-      <nav class="hall-links">
-        <a href="/explore/">Explore the Hall</a>
-        <a href="/about/">About the Hall</a>
-      </nav>
-    </aside>
-
-  </div>
+    <iframe
+      class="embed"
+      id="currentFrame"
+      src=""
+      title="Current Entry"
+      loading="lazy">
+    </iframe>
+  </section>
 </main>
 
-<footer class="footer">
-  <a href="/explore/">Explore the Hall</a>
-  <a href="/about/">About the Hall</a>
+<!-- Global Hall footer -->
+<footer class="footer footer-wide">
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/explore/">Explore</a>
 </footer>
 
 <script>
-/* Minimal haiku loader: newest entry only */
+/*
+  Index Hall loader
+  - Uses pipeline-built /assets/current_status.json
+  - Does NOT sort manifests
+  - Does NOT guess recency
+*/
 
-function cmpDesc(a,b){
-  return b.id.localeCompare(a.id);
-}
-
-function initHall(){
-  const items = (window.HAIKU_ALL || []);
+async function initHall() {
   const frame = document.getElementById('currentFrame');
-
   if (!frame) return;
 
-  if (items.length > 0){
-    const newest = items.slice().sort(cmpDesc)[0];
-    frame.src = "./" + newest.path_html + "?embed=1";
-  } else {
+  try {
+    const res = await fetch('/assets/current_status.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('failed to load current_status.json');
+
+    const status = await res.json();
+    const path = status?.current_haiku?.path_html;
+    if (!path) throw new Error('no current haiku path');
+
+    const url = new URL(path, window.location.href);
+    url.searchParams.set('embed', '1');
+
+    frame.src = url.toString();
+
+  } catch (err) {
     frame.outerHTML =
       '<div style="opacity:.7; text-align:center; padding:.75rem;">No entries.</div>';
   }
 }
 
-document.addEventListener("manifestLoaded", initHall);
+document.addEventListener('DOMContentLoaded', initHall);
 </script>
 
 </body>
