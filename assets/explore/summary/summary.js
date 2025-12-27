@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(data => {
-      const frame = document.getElementById("summary-latest-frame");
+      const frame = document.getElementById("currentFrame");
       const countEl = document.getElementById("summary-count");
 
       if (frame && data.current_haiku && data.current_haiku.path_html) {
-        frame.src = "/" + data.current_haiku.path_html + "?embed=1";
+        frame.src = data.current_haiku.path_html + "?embed=1";
       }
 
       if (countEl && typeof data.current_count === "number") {
