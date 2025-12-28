@@ -159,6 +159,14 @@
   overflow-y: auto;
 }
 
+.results-pairs {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .filter-list {
   flex: 1;
   min-height: 0;
@@ -239,5 +247,30 @@ main.explore,
 /* Hide tag footer inside haiku display (semantic explore only) */
 .semantic-display .haiku-tags {
   display: none;
+}
+
+/* =========================
+   Semantic Controls – Buttons
+   ========================= */
+
+.semantic-controls button,
+.filter-controls button {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0.35rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.semantic-controls button:hover,
+.filter-controls button:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.semantic-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
