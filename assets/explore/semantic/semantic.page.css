@@ -78,3 +78,41 @@
   margin-top: auto;
 }
 
+/* =========================================================
+   Semantic Haiku Display
+   ========================================================= */
+
+.semantic-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 2.5rem;
+  min-height: 200px;
+
+  text-align: center;
+
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: #2f2f2f;
+}
+
+/* Constrain line length without touching haiku HTML */
+.semantic-display > * {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+/* Gentle normalization for common haiku markup */
+.semantic-display p {
+  margin: 0.45em 0;
+}
+
+.semantic-display em {
+  font-style: italic;
+}
+
+.semantic-display strong {
+  font-weight: 500;
+}
+
