@@ -75,6 +75,7 @@
     const list = dom.fileList();
     if (!list) return;
 
+    list.style.flex = "1";
     list.innerHTML = "";
 
     state.filteredFiles.forEach((item, i) => {
