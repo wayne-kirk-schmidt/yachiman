@@ -81,23 +81,6 @@
 
   text-align: center;
 
-  font-size: 1.2rem;
-  line-height: 1.75;
-  color: #2f2f2f;
-  font-family: "Cormorant Garamond", serif;
-}
-
-/* Gentle normalization for common haiku markup */
-.semantic-display p {
-  margin: 0.45em 0;
-}
-
-.semantic-display em {
-  font-style: italic;
-}
-
-.semantic-display strong {
-  font-weight: 500;
 }
 
 /* =========================================================
@@ -206,5 +189,10 @@ main.explore,
 .semantic-layout .results-list::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+}
+
+/* Hide tag footer inside haiku display (semantic explore only) */
+.semantic-display .haiku-tags {
+  display: none;
 }
 
