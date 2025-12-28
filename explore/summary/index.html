@@ -4,10 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explore the Hall – Summary</title>
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap"
-    rel="stylesheet">
   <!-- Summary-specific layout -->
   <link rel="stylesheet" href="/assets/explore/summary/summary.css">
   <!-- Summary behavior -->
@@ -20,24 +16,28 @@
       <!-- Latest haiku only -->
       <section class="card haiku-card">
         <div class="divider"></div>
-        <iframe
-          class="embed"
-          id="currentFrame"
-          src=""
-          title="Current Entry"
-          loading="lazy"
-          style="width:100%; min-height:18rem; border:0;">
-        </iframe>
+          <div class="summary-display">
+            <!-- JS injects haiku HTML here -->
+          </div>
       </section>
+      <!-- Right: Navigation + count -->
+      <aside class="card summary-side">
+        <nav class="summary-nav">
+          <a href="/explore/summary/">Summary</a>
+          <a href="/explore/semantic/">Semantic</a>
+          <a href="/explore/structure/">Structure</a>
+        </nav>
+        <div id="summary-count" class="summary-count"></div>
+      </aside>
     </div>
   </div>
 </main>
 
-<!-- Summary Hall footer -->
+<!-- Global Hall footer -->
 <footer class="footer footer-wide">
-  <a href="/explore/">Home</a>
-  <a href="/explore/structure/">Structure</a>
-  <a href="/explore/semantic/">Semantic</a>
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/explore/">Explore</a>
 </footer>
 
 </body>
