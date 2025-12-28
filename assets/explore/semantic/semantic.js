@@ -162,4 +162,45 @@
     });
   }
 
+  /* =========================
+     Single-tag filtering
+     ========================= */
+
+  function applyTagFilter(tag) {
+    const paths = state.tagIndex[tag] || [];
+
+    // rebuild file list from manifest using exact match
+    state.files = state.manifest.filter(item =>
+      paths.includes(item.path_html)
+    );
+
+    // reset index
+    state.currentIndex = 0;
+
+    // re-render file list
+    renderFileList(state.files);
+
+    // load first haiku in filtered list
+    if (state.files.length > 0) {
+      loadHaikuByIndex(0);
+    } else {
+      const display = document.querySelector(".semantic-display");
+      if (display) {
+        display.innerHTML = "<p>No haiku found for this tag.</p>";
+      }
+
+      const status = document.querySelector(".control-status");
+      if (status) status.textContent = "0 of 0";
+    }
+  }
+
+  /* click handling for tags */
+  document.querySelector(".filter-tags")?.addEventListener("click", (e) => {
+    const tagEl = e.target.closest(".tag-item");
+    if (!tagEl) return;
+
+    const tag = tagEl.dataset.tag;
+    applyTagFilter(tag);
+  });
+
 })();
