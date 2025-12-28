@@ -223,13 +223,28 @@
     renderTagList();
   }
 
+  function waitForData() {
+    const ready =
+      Array.isArray(window.HAIKU_ALL) && window.HAIKU_ALL.length > 0 &&
+      Array.isArray(window.HAIKU_TAGS) && window.HAIKU_TAGS.length > 0 &&
+      window.HAIKU_TAG_INDEX && Object.keys(window.HAIKU_TAG_INDEX).length > 0;
+
+    if (ready) {
+      log("data ready");
+      init();
+    } else {
+      log("waiting for data...");
+      setTimeout(waitForData, 50);
+    }
+  }
+
   /* =========================
      boot
      ========================= */
-
   window.addEventListener("DOMContentLoaded", () => {
-    log("DOMContentLoaded");
-    init();
+    log("DOMContentLoading...");
+    waitForData();
+    log("DOMContentLoaded.");
   });
-})();
 
+})();
