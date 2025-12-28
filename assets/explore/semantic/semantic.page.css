@@ -16,8 +16,16 @@
   gap: 2rem;
 }
 
-.semantic-display {
-  /* visual canvas for current item */
+.semantic-display .haiku-lines p {
+  font-family: 'Dancing Script', 'Satisfy', cursive;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: #2f2f2f;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .semantic-controls {
