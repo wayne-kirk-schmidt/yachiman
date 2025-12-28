@@ -227,8 +227,8 @@
      boot
      ========================= */
 
-  document.addEventListener("manifestLoaded", () => {
-    log("manifestLoaded event");
+  window.addEventListener("DOMContentLoaded", () => {
+    log("DOMContentLoaded");
     init();
   });
 })();
