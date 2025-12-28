@@ -1,6 +1,4 @@
-/* =========================
-   Root + Base
-   ========================= */
+/* ========================= Root + Base ========================= */
 
 :root {
   --paper: #fbfaf7;
@@ -20,9 +18,7 @@ body {
     url("/assets/Japanese-Paper.png") center / cover no-repeat fixed;
 }
 
-/* =========================
-   Layout
-   ========================= */
+/* ========================= Layout ========================= */
 
 main.explore {
   display: flex;
@@ -42,9 +38,7 @@ main.explore {
   align-items: start;
 }
 
-/* =========================
-   Cards
-   ========================= */
+/* ========================= Cards ========================= */
 
 .card {
   background: var(--card-bg);
@@ -60,9 +54,7 @@ main.explore {
   padding: 1.5rem;
 }
 
-/* =========================
-   Summary Navigation
-   ========================= */
+/* ========================= Summary Navigation ========================= */
 
 .summary-nav {
   display: flex;
@@ -86,9 +78,18 @@ main.explore {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* =========================
-   Summary Count
-   ========================= */
+/* ========================= Summary Haiku Typography ========================= */
+
+.summary-display .haiku-lines p {
+  font-family: 'Dancing Script', 'Satisfy', cursive;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+
+/* ========================= Summary Count ========================= */
 
 .summary-count {
   margin-top: 2.5rem;
@@ -98,9 +99,7 @@ main.explore {
   opacity: 0.85;
 }
 
-/* =========================
-   Footer
-   ========================= */
+/* ========================= Footer ========================= */
 
 .footer.footer-wide {
   max-width: 960px;
@@ -131,10 +130,7 @@ main.explore {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* =========================
-   Summary Haiku Display
-   (Semantic-aligned)
-   ========================= */
+/* ========================= Summary Haiku Display ========================= */
 
 .summary-display {
   display: flex;
