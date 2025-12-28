@@ -11,16 +11,15 @@
     tagIndex: {},
 
     files: [],
-    currentIndex: -1,
+    currentIndex: 0,
+
     currentPath: null,
     currentHtml: null
   };
 
-  function checkReady() {
-    return state.ready.manifest &&
-           state.ready.tags &&
-           state.ready.current;
-  }
+  /* =========================
+     Utilities
+     ========================= */
 
   function sortFilesChronologically(files) {
     return files.slice().sort((a, b) =>
@@ -28,124 +27,35 @@
     );
   }
 
+  function checkReady() {
+    return (
+      state.ready.manifest &&
+      state.ready.tags &&
+      state.ready.current
+    );
+  }
+
+  /* =========================
+     Rendering
+     ========================= */
+
   function renderFileList(files) {
-    const list = document.querySelector(".results-list");
-    if (!list) return;
+    const container = document.querySelector(".results-list");
+    if (!container) return;
 
-    list.innerHTML = "";
+    container.innerHTML = "";
 
-    files.forEach((item, idx) => {
+    files.forEach((item, index) => {
       const el = document.createElement("div");
       el.className = "result-item";
       el.textContent = item.path_html.split("/").pop();
-      el.dataset.index = idx;
-      el.dataset.path = item.path_html;
-      list.appendChild(el);
+      el.dataset.index = index;
+      container.appendChild(el);
     });
+
+    bindFileClicks();
+    updateFileCount();
   }
-
-  function loadHaikuByIndex(index) {
-    const item = state.files[index];
-    if (!item) return;
-
-    fetch(`/${item.path_html}`)
-      .then(res => res.text())
-      .then(html => {
-        state.currentIndex = index;
-        state.currentPath = item.path_html;
-        state.currentHtml = html;
-
-        const display = document.querySelector(".semantic-display");
-        if (display) display.innerHTML = html;
-
-        const status = document.querySelector(".control-status");
-        if (status) {
-          status.textContent = `${index + 1} of ${state.files.length}`;
-        }
-      });
-  }
-
-  function initializeSemantic() {
-    if (!checkReady()) return;
-
-    state.manifest = window.HAIKU_ALL || [];
-    state.tags = window.HAIKU_TAGS || [];
-    state.tagIndex = window.HAIKU_TAG_INDEX || {};
-
-    /* call once during initialization */
-    renderTags(state.tags);
-
-    state.currentPath = window.HAIKU_CURRENT_PATH;
-    state.currentHtml = window.HAIKU_CURRENT_HTML;
-
-    state.files = sortFilesChronologically(state.manifest);
-    state.currentIndex = state.files.findIndex(
-      f => f.path_html === state.currentPath
-    );
-
-    renderFileList(state.files);
-
-    const display = document.querySelector(".semantic-display");
-    if (display && state.currentHtml) {
-      display.innerHTML = state.currentHtml;
-    }
-
-    const status = document.querySelector(".control-status");
-    if (status && state.currentIndex >= 0) {
-      status.textContent = `${state.currentIndex + 1} of ${state.files.length}`;
-    }
-
-    console.log("[semantic.js] Semantic ready");
-  }
-
-  document.addEventListener("haikuManifestLoaded", () => {
-    state.ready.manifest = true;
-    initializeSemantic();
-  });
-
-  document.addEventListener("haikuTagsLoaded", () => {
-    state.ready.tags = true;
-    initializeSemantic();
-  });
-
-  document.addEventListener("haikuCurrentLoaded", () => {
-    state.ready.current = true;
-    initializeSemantic();
-  });
-
-  document.querySelector(".results-list")?.addEventListener("click", (e) => {
-    const item = e.target.closest(".result-item");
-    if (!item) return;
-
-    const index = Number(item.dataset.index);
-    loadHaikuByIndex(index);
-  });
-
-  /* =========================
-     Prev / Next navigation
-     ========================= */
-
-  function loadPrev() {
-    if (state.currentIndex <= 0) return;
-    loadHaikuByIndex(state.currentIndex - 1);
-  }
-
-  function loadNext() {
-    if (state.currentIndex >= state.files.length - 1) return;
-    loadHaikuByIndex(state.currentIndex + 1);
-  }
-
-  document.querySelector(".control-prev")?.addEventListener("click", () => {
-    loadPrev();
-  });
-
-  document.querySelector(".control-next")?.addEventListener("click", () => {
-    loadNext();
-  });
-
-  /* =========================
-     Tag rendering (display only)
-     ========================= */
 
   function renderTags(tags) {
     const container = document.querySelector(".filter-tags");
@@ -162,25 +72,110 @@
     });
   }
 
+  function updateStatus() {
+    const el = document.querySelector(".control-status");
+    if (!el) return;
+
+    el.textContent = `${state.currentIndex + 1} of ${state.files.length}`;
+  }
+
+  function updateFileCount() {
+    let el = document.querySelector(".results-count");
+    if (!el) {
+      el = document.createElement("div");
+      el.className = "results-count";
+      document.querySelector(".semantic-results")?.appendChild(el);
+    }
+
+    el.textContent = `${state.files.length} files`;
+  }
+
   /* =========================
-     Single-tag filtering
+     Haiku loading
+     ========================= */
+
+  async function loadHaikuByIndex(index) {
+    const item = state.files[index];
+    if (!item) return;
+
+    state.currentIndex = index;
+
+    try {
+      const res = await fetch("/" + item.path_html);
+      const html = await res.text();
+
+      const display = document.querySelector(".semantic-display");
+      if (display) {
+        display.innerHTML = html;
+
+        // Remove unresolved {{tags}} placeholder for now
+        const tagBlock = display.querySelector(".haiku-tags");
+        if (tagBlock && tagBlock.textContent.includes("{{")) {
+          tagBlock.remove();
+        }
+      }
+
+      updateStatus();
+    } catch (err) {
+      console.error("[semantic.js] Failed to load haiku", err);
+    }
+  }
+
+  /* =========================
+     Event binding
+     ========================= */
+
+  function bindFileClicks() {
+    const list = document.querySelector(".results-list");
+    if (!list) return;
+
+    list.onclick = (e) => {
+      const item = e.target.closest(".result-item");
+      if (!item) return;
+
+      loadHaikuByIndex(Number(item.dataset.index));
+    };
+  }
+
+  function bindPrevNext() {
+    document.querySelector(".control-prev")?.addEventListener("click", () => {
+      if (state.currentIndex > 0) {
+        loadHaikuByIndex(state.currentIndex - 1);
+      }
+    });
+
+    document.querySelector(".control-next")?.addEventListener("click", () => {
+      if (state.currentIndex < state.files.length - 1) {
+        loadHaikuByIndex(state.currentIndex + 1);
+      }
+    });
+  }
+
+  function bindTagClicks() {
+    document.querySelector(".filter-tags")?.addEventListener("click", (e) => {
+      const tagEl = e.target.closest(".tag-item");
+      if (!tagEl) return;
+
+      applyTagFilter(tagEl.dataset.tag);
+    });
+  }
+
+  /* =========================
+     Filtering
      ========================= */
 
   function applyTagFilter(tag) {
     const paths = state.tagIndex[tag] || [];
 
-    // rebuild file list from manifest using exact match
-    state.files = state.manifest.filter(item =>
-      paths.includes(item.path_html)
+    state.files = sortFilesChronologically(
+      state.manifest.filter(item =>
+        paths.includes(item.path_html)
+      )
     );
 
-    // reset index
     state.currentIndex = 0;
-
-    // re-render file list
     renderFileList(state.files);
 
-    // load first haiku in filtered list
     if (state.files.length > 0) {
       loadHaikuByIndex(0);
     } else {
@@ -188,19 +183,57 @@
       if (display) {
         display.innerHTML = "<p>No haiku found for this tag.</p>";
       }
-
-      const status = document.querySelector(".control-status");
-      if (status) status.textContent = "0 of 0";
+      updateStatus();
     }
   }
 
-  /* click handling for tags */
-  document.querySelector(".filter-tags")?.addEventListener("click", (e) => {
-    const tagEl = e.target.closest(".tag-item");
-    if (!tagEl) return;
+  /* =========================
+     Initialization
+     ========================= */
 
-    const tag = tagEl.dataset.tag;
-    applyTagFilter(tag);
+  function initializeSemantic() {
+    if (!checkReady()) return;
+
+    state.manifest = window.HAIKU_ALL || [];
+    state.tags = window.HAIKU_TAGS || [];
+    state.tagIndex = window.HAIKU_TAG_INDEX || {};
+
+    state.files = sortFilesChronologically(state.manifest);
+
+    renderTags(state.tags);
+    renderFileList(state.files);
+
+    bindPrevNext();
+    bindTagClicks();
+
+    // Load first-resort haiku if present
+    if (window.HAIKU_CURRENT_PATH) {
+      const idx = state.files.findIndex(
+        f => f.path_html === window.HAIKU_CURRENT_PATH
+      );
+      loadHaikuByIndex(idx >= 0 ? idx : 0);
+    } else {
+      loadHaikuByIndex(0);
+    }
+  }
+
+  /* =========================
+     Loader events
+     ========================= */
+
+  document.addEventListener("haikuManifestLoaded", () => {
+    state.ready.manifest = true;
+    initializeSemantic();
   });
 
+  document.addEventListener("haikuTagsLoaded", () => {
+    state.ready.tags = true;
+    initializeSemantic();
+  });
+
+  document.addEventListener("haikuCurrentLoaded", () => {
+    state.ready.current = true;
+    initializeSemantic();
+  });
 })();
+
