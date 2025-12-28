@@ -6,43 +6,95 @@
       current: false
     },
 
-    // Data copies (Semantic-owned)
-    manifest: null,
-    tags: null,
-    tagIndex: null,
+    manifest: [],
+    tags: [],
+    tagIndex: {},
 
-    currentStatus: null,
+    files: [],
+    currentIndex: -1,
     currentPath: null,
     currentHtml: null
   };
 
   function checkReady() {
-    return (
-      state.ready.manifest &&
-      state.ready.tags &&
-      state.ready.current
+    return state.ready.manifest &&
+           state.ready.tags &&
+           state.ready.current;
+  }
+
+  function sortFilesChronologically(files) {
+    return files.slice().sort((a, b) =>
+      a.path_html.localeCompare(b.path_html)
     );
+  }
+
+  function renderFileList(files) {
+    const list = document.querySelector(".results-list");
+    if (!list) return;
+
+    list.innerHTML = "";
+
+    files.forEach((item, idx) => {
+      const el = document.createElement("div");
+      el.className = "result-item";
+      el.textContent = item.path_html.split("/").pop();
+      el.dataset.index = idx;
+      el.dataset.path = item.path_html;
+      list.appendChild(el);
+    });
+  }
+
+  function loadHaikuByIndex(index) {
+    const item = state.files[index];
+    if (!item) return;
+
+    fetch(`/${item.path_html}`)
+      .then(res => res.text())
+      .then(html => {
+        state.currentIndex = index;
+        state.currentPath = item.path_html;
+        state.currentHtml = html;
+
+        const display = document.querySelector(".semantic-display");
+        if (display) display.innerHTML = html;
+
+        const status = document.querySelector(".control-status");
+        if (status) {
+          status.textContent = `${index + 1} of ${state.files.length}`;
+        }
+      });
   }
 
   function initializeSemantic() {
     if (!checkReady()) return;
 
-    // Snapshot global loader outputs into local state
     state.manifest = window.HAIKU_ALL || [];
     state.tags = window.HAIKU_TAGS || [];
     state.tagIndex = window.HAIKU_TAG_INDEX || {};
 
-    state.currentStatus = window.HAIKU_CURRENT_STATUS;
     state.currentPath = window.HAIKU_CURRENT_PATH;
     state.currentHtml = window.HAIKU_CURRENT_HTML;
 
-    console.log("[semantic.js] Semantic ready");
-    console.log("[semantic.js] First-resort haiku:", state.currentPath);
+    state.files = sortFilesChronologically(state.manifest);
+    state.currentIndex = state.files.findIndex(
+      f => f.path_html === state.currentPath
+    );
 
-    // Phase 2 will render + wire interactions
+    renderFileList(state.files);
+
+    const display = document.querySelector(".semantic-display");
+    if (display && state.currentHtml) {
+      display.innerHTML = state.currentHtml;
+    }
+
+    const status = document.querySelector(".control-status");
+    if (status && state.currentIndex >= 0) {
+      status.textContent = `${state.currentIndex + 1} of ${state.files.length}`;
+    }
+
+    console.log("[semantic.js] Semantic ready");
   }
 
-  // Loader event listeners
   document.addEventListener("haikuManifestLoaded", () => {
     state.ready.manifest = true;
     initializeSemantic();
@@ -57,5 +109,35 @@
     state.ready.current = true;
     initializeSemantic();
   });
-})();
 
+  document.querySelector(".results-list")?.addEventListener("click", (e) => {
+    const item = e.target.closest(".result-item");
+    if (!item) return;
+
+    const index = Number(item.dataset.index);
+    loadHaikuByIndex(index);
+  });
+
+  /* =========================
+     Prev / Next navigation
+     ========================= */
+
+  function loadPrev() {
+    if (state.currentIndex <= 0) return;
+    loadHaikuByIndex(state.currentIndex - 1);
+  }
+
+  function loadNext() {
+    if (state.currentIndex >= state.files.length - 1) return;
+    loadHaikuByIndex(state.currentIndex + 1);
+  }
+
+  document.querySelector(".control-prev")?.addEventListener("click", () => {
+    loadPrev();
+  });
+
+  document.querySelector(".control-next")?.addEventListener("click", () => {
+    loadNext();
+  });
+
+})();
