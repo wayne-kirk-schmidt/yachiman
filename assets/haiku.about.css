@@ -152,3 +152,27 @@ main > h1 {
   border-bottom-color: rgba(47, 62, 70, 0.6);
 }
 
+/* =========================================================
+   About page readability tuning
+   ========================================================= */
+
+.about-card,
+.about-content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Ensure comfortable measure for reading */
+.about-card p,
+.about-content p {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Slightly stronger link presence without distraction */
+.about-card a,
+.about-content a {
+  font-weight: 500;
+}
+
