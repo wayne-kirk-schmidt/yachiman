@@ -116,3 +116,49 @@
   font-weight: 500;
 }
 
+/* =========================================================
+   Semantic panels, width, and scrolling
+   ========================================================= */
+
+/* Haiku reading width */
+.semantic-display > * {
+  max-width: 60rem;
+}
+
+/* Panel boundaries (hairline) */
+.semantic-results,
+.semantic-filters {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Files list: fixed height + scroll */
+.semantic-results .results-list {
+  max-height: 18rem;        /* ~12–18 rows */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Tags panel: fixed height + scroll */
+.semantic-filters .filter-tags {
+  max-height: 18rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Subtle separation between filter sections */
+.semantic-filters > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Make list items feel clickable without being loud */
+.results-list .result-item,
+.filter-tags .tag-item {
+  cursor: pointer;
+  padding: 0.15rem 0;
+}
+
+.results-list .result-item:hover,
+.filter-tags .tag-item:hover {
+  text-decoration: underline;
+}
+
