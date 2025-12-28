@@ -75,7 +75,12 @@
     list.innerHTML = "";
 
     state.filteredFiles.forEach((item, i) => {
+      const row = document.createElement("div");
+      row.className = "result-row";
+
       const a = document.createElement("a");
+      a.className = "about-link";
+
       a.href = "#";
       a.textContent = item.id;
 
@@ -85,7 +90,8 @@
         loadHaiku(item.path_html);
       };
 
-      list.appendChild(a);
+      row.appendChild(a);
+      list.appendChild(row);
     });
   }
 

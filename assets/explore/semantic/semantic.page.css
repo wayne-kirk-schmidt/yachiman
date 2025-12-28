@@ -188,3 +188,43 @@ main.explore,
   max-width: none;
   width: 100%;
 }
+
+/* =========================================================
+   Semantic Explore – understated About-style links + scrolling
+   ========================================================= */
+
+.semantic-layout .results-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.35rem;
+
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.semantic-layout .results-list a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(47, 62, 70, 0.25);
+  font-weight: 400;
+}
+
+.semantic-layout .results-list a:hover {
+  border-bottom-color: rgba(47, 62, 70, 0.45);
+}
+
+/* Visible but quiet scrollbar */
+.semantic-layout .results-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.semantic-layout .results-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.semantic-layout .results-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
