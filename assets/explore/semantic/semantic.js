@@ -72,6 +72,9 @@
     state.tags = window.HAIKU_TAGS || [];
     state.tagIndex = window.HAIKU_TAG_INDEX || {};
 
+    /* call once during initialization */
+    renderTags(state.tags);
+
     state.currentPath = window.HAIKU_CURRENT_PATH;
     state.currentHtml = window.HAIKU_CURRENT_HTML;
 
@@ -139,5 +142,24 @@
   document.querySelector(".control-next")?.addEventListener("click", () => {
     loadNext();
   });
+
+  /* =========================
+     Tag rendering (display only)
+     ========================= */
+
+  function renderTags(tags) {
+    const container = document.querySelector(".filter-tags");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    tags.forEach(tag => {
+      const el = document.createElement("div");
+      el.className = "tag-item";
+      el.textContent = tag;
+      el.dataset.tag = tag;
+      container.appendChild(el);
+    });
+  }
 
 })();
