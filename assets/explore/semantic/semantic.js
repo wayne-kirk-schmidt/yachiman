@@ -45,7 +45,10 @@
       .then(r => r.text())
       .then(html => {
         // defensive cleanup
-        target.innerHTML = html.replaceAll("{{tags}}", "");
+        const cleaned = html
+          .replaceAll("{{tags}}", "")
+          .replace(/^Tags:.*$/gmi, "");
+        target.innerHTML = cleaned;
       })
       .catch(err => console.error("[semantic] haiku load failed", err));
   }
