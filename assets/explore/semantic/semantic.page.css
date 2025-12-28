@@ -41,11 +41,6 @@
   flex-direction: column;
 }
 
-.results-list {
-  overflow-y: auto;
-  max-height: 100%;
-}
-
 /* -------------------------
    Filters column (right)
    ------------------------- */
@@ -120,20 +115,6 @@
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Files list: fixed height + scroll */
-.semantic-results .results-list {
-  max-height: 18rem;        /* ~12–18 rows */
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
-
-/* Tags panel: fixed height + scroll */
-.semantic-filters .filter-tags {
-  max-height: 18rem;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
-
 /* Subtle separation between filter sections */
 .semantic-filters > * + * {
   margin-top: 0.75rem;
@@ -192,16 +173,6 @@ main.explore,
 /* =========================================================
    Semantic Explore – understated About-style links + scrolling
    ========================================================= */
-
-.semantic-layout .results-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 0.35rem;
-
-  max-height: 60vh;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
 
 .semantic-layout .results-list a {
   color: var(--ink);
