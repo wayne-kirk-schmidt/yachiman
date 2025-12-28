@@ -2,15 +2,16 @@
   console.log("[semantic] semantic.js loaded");
 
   const state = {
-    allFiles: [],
-    tags: [],
-    tagIndex: {},
+    allFiles: [],          // full manifest entries
+    fileById: {},          // id -> file object
+    tags: [],              // list of tag strings
+    tagIndex: {},          // tag -> [file ids]
     filteredFiles: [],
     currentIndex: -1
   };
 
   /* =========================
-     DOM (contract)
+     DOM
      ========================= */
 
   const dom = {
@@ -22,8 +23,6 @@
     prevBtn: () => document.querySelector(".control-prev"),
     nextBtn: () => document.querySelector(".control-next")
   };
-
-  const filenameFromPath = p => p.split("/").pop();
 
   function log(msg, data) {
     if (data !== undefined) {
@@ -45,16 +44,24 @@
     fetch("/" + pathHtml)
       .then(r => r.text())
       .then(html => {
-        target.innerHTML = html;
+        // defensive cleanup
+        target.innerHTML = html.replaceAll("{{tags}}", "");
       })
       .catch(err => console.error("[semantic] haiku load failed", err));
   }
 
   function restoreInitialHaiku() {
-    if (window.HAIKU_CURRENT_PATH) {
-      log("loading default haiku", window.HAIKU_CURRENT_PATH);
-      loadHaiku(window.HAIKU_CURRENT_PATH);
+    if (!window.HAIKU_CURRENT_PATH) return;
+
+    const idx = state.filteredFiles.findIndex(
+      f => f.path_html === window.HAIKU_CURRENT_PATH
+    );
+
+    if (idx >= 0) {
+      state.currentIndex = idx;
     }
+
+    loadHaiku(window.HAIKU_CURRENT_PATH);
   }
 
   /* =========================
@@ -70,8 +77,7 @@
     state.filteredFiles.forEach((item, i) => {
       const a = document.createElement("a");
       a.href = "#";
-      a.dataset.index = i;
-      a.textContent = filenameFromPath(item.path_html);
+      a.textContent = item.id;
 
       a.onclick = e => {
         e.preventDefault();
@@ -85,7 +91,7 @@
 
   function renderAllFiles() {
     state.filteredFiles = [...state.allFiles];
-    state.currentIndex = state.filteredFiles.length > 0 ? 0 : -1;
+    state.currentIndex = state.filteredFiles.length - 1;
     renderFileList();
   }
 
@@ -102,9 +108,10 @@
     state.tags
       .filter(t => t.includes(filter))
       .forEach(tag => {
+        const ids = state.tagIndex[tag] || [];
         const el = document.createElement("div");
         el.className = "tag";
-        el.textContent = tag;
+        el.textContent = `${tag} (${ids.length})`;
 
         el.onclick = () => filterFilesByTag(tag);
 
@@ -113,18 +120,22 @@
   }
 
   function filterFilesByTag(tag) {
-    const filenames = new Set(state.tagIndex[tag] || []);
+    const ids = state.tagIndex[tag];
+    if (!ids || ids.length === 0) {
+      state.filteredFiles = [];
+      state.currentIndex = -1;
+      renderFileList();
+      return;
+    }
 
-    state.filteredFiles = state.allFiles.filter(item =>
-      filenames.has(filenameFromPath(item.path_html))
-    );
+    state.filteredFiles = ids
+      .map(id => state.fileById[id])
+      .filter(Boolean);
 
-    state.currentIndex = state.filteredFiles.length > 0 ? 0 : -1;
+    state.currentIndex = state.filteredFiles.length - 1;
     renderFileList();
 
-    if (state.currentIndex === 0) {
-      loadHaiku(state.filteredFiles[0].path_html);
-    }
+    loadHaiku(state.filteredFiles[state.currentIndex].path_html);
   }
 
   /* =========================
@@ -140,8 +151,7 @@
     input.placeholder = "filter tags…";
 
     input.oninput = e => {
-      const q = e.target.value.trim();
-      renderTags(q);
+      renderTags(e.target.value.trim());
     };
 
     host.appendChild(input);
@@ -182,11 +192,16 @@
      ========================= */
 
   function init() {
+    // manifest
     state.allFiles = window.HAIKU_ALL.map(item => ({
-      ...item,
-      filename: filenameFromPath(item.path_html)
+      ...item
     }));
 
+    state.allFiles.forEach(item => {
+      state.fileById[item.id] = item;
+    });
+
+    // tags
     state.tags = window.HAIKU_TAGS;
     state.tagIndex = window.HAIKU_TAG_INDEX;
 
