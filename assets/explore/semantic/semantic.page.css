@@ -155,6 +155,12 @@
   flex-direction: column;
 }
 
+/* Constrain scrollable panels to container */
+.semantic-results,
+.semantic-filters {
+  overflow: hidden;
+}
+
 /* Scroll only the content areas */
 .semantic-display {
   flex: 1;
@@ -163,6 +169,7 @@
 .results-list,
 .filter-tags {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
 }
 
