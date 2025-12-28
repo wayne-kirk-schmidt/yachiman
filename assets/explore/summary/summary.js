@@ -8,11 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(data => {
-      const frame = document.getElementById("currentFrame");
+      const display = document.querySelector(".summary-display");
       const countEl = document.getElementById("summary-count");
 
-      if (frame && data.current_haiku && data.current_haiku.path_html) {
-        frame.src = "/" + data.current_haiku.path_html + "?embed=1";
+      if (display && data.current_haiku && data.current_haiku.path_html) {
+        fetch("/" + data.current_haiku.path_html)
+          .then(r => r.text())
+          .then(html => {
+            const cleaned = html
+              .replaceAll("{{tags}}", "")
+              .replace(/^Tags:.*$/gmi, "");
+            display.innerHTML = cleaned;
+          })
+          .catch(err => console.error(err));
       }
 
       if (countEl && typeof data.current_count === "number") {

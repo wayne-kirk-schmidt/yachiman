@@ -15,7 +15,6 @@ html, body {
 }
 
 body {
-  font-family: "EB Garamond", serif;
   color: var(--ink);
   background:
     url("/assets/Japanese-Paper.png") center / cover no-repeat fixed;
@@ -59,16 +58,6 @@ main.explore {
 
 .summary-side {
   padding: 1.5rem;
-}
-
-/* =========================
-   Haiku iframe
-   ========================= */
-
-iframe#currentFrame {
-  width: 100%;
-  min-height: 18rem;
-  border: 0;
 }
 
 /* =========================
@@ -140,5 +129,32 @@ iframe#currentFrame {
 
 .footer.footer-wide a:hover {
   background: rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   Summary Haiku Display
+   (Semantic-aligned)
+   ========================= */
+
+.summary-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 2.5rem;
+  min-height: 200px;
+
+  text-align: center;
+}
+
+/* Reading width control */
+.summary-display > * {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* Hide tag footer if present */
+.summary-display .haiku-tags {
+  display: none;
 }
 
