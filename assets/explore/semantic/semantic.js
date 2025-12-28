@@ -103,7 +103,6 @@
       if (display) {
         display.innerHTML = html;
 
-        // Remove unresolved {{tags}} placeholder
         const tagBlock = display.querySelector(".haiku-tags");
         if (tagBlock && tagBlock.textContent.includes("{{")) {
           tagBlock.remove();
@@ -151,6 +150,10 @@
       const tagEl = e.target.closest(".tag-item");
       if (!tagEl) return;
 
+      // CHANGE #1: sync input + route through existing filter
+      const input = document.querySelector(".tag-search");
+      if (input) input.value = tagEl.dataset.tag;
+
       applyTagFilter(tagEl.dataset.tag);
     });
   }
@@ -166,12 +169,18 @@
 
     input.addEventListener("input", () => {
       const q = input.value.toLowerCase();
+
       renderTags(
         state.tags.filter(tag =>
           tag.toLowerCase().includes(q)
         )
       );
       bindTagClicks();
+
+      // CHANGE #2: typing also filters files
+      if (q) {
+        applyTagFilter(q);
+      }
     });
 
     container.appendChild(input);

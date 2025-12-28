@@ -159,7 +159,9 @@
   gap: 0;
 }
 
-.semantic-main { max-width: 90vw; }
+.semantic-main {
+  width: min(1600px, 92vw);
+}
 
 /* Ensure equal height panels */
 .semantic-primary,
