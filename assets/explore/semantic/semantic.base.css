@@ -51,6 +51,7 @@ main.explore {
   background: var(--card-bg);
   border-radius: 0.75rem;
   box-shadow: var(--shadow);
+  min-height: 0;
 }
 
 .semantic-main {
