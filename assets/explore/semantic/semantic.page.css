@@ -159,6 +159,8 @@
   gap: 0;
 }
 
+.semantic-main { max-width: 90vw; }
+
 /* Ensure equal height panels */
 .semantic-primary,
 .semantic-results,
@@ -179,3 +181,8 @@
   overflow-y: auto;
 }
 
+main.explore,
+.semantic-layout {
+  max-width: none;
+  width: 100%;
+}

@@ -11,27 +11,22 @@
     tagIndex: {},
 
     files: [],
-    currentIndex: 0,
-
-    currentPath: null,
-    currentHtml: null
+    currentIndex: 0
   };
 
   /* =========================
      Utilities
      ========================= */
 
+  function checkReady() {
+    return state.ready.manifest &&
+           state.ready.tags &&
+           state.ready.current;
+  }
+
   function sortFilesChronologically(files) {
     return files.slice().sort((a, b) =>
       a.path_html.localeCompare(b.path_html)
-    );
-  }
-
-  function checkReady() {
-    return (
-      state.ready.manifest &&
-      state.ready.tags &&
-      state.ready.current
     );
   }
 
@@ -108,7 +103,7 @@
       if (display) {
         display.innerHTML = html;
 
-        // Remove unresolved {{tags}} placeholder for now
+        // Remove unresolved {{tags}} placeholder
         const tagBlock = display.querySelector(".haiku-tags");
         if (tagBlock && tagBlock.textContent.includes("{{")) {
           tagBlock.remove();
@@ -160,6 +155,28 @@
     });
   }
 
+  function bindTagInput() {
+    const container = document.querySelector(".filter-input");
+    if (!container) return;
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "filter tags…";
+    input.className = "tag-search";
+
+    input.addEventListener("input", () => {
+      const q = input.value.toLowerCase();
+      renderTags(
+        state.tags.filter(tag =>
+          tag.toLowerCase().includes(q)
+        )
+      );
+      bindTagClicks();
+    });
+
+    container.appendChild(input);
+  }
+
   /* =========================
      Filtering
      ========================= */
@@ -169,7 +186,7 @@
 
     state.files = sortFilesChronologically(
       state.manifest.filter(item =>
-        paths.includes(item.path_html)
+        paths.some(p => item.path_html.endsWith(p))
       )
     );
 
@@ -180,9 +197,22 @@
       loadHaikuByIndex(0);
     } else {
       const display = document.querySelector(".semantic-display");
-      if (display) {
-        display.innerHTML = "<p>No haiku found for this tag.</p>";
-      }
+      if (display) display.innerHTML = "<p>No haiku found.</p>";
+      updateStatus();
+    }
+  }
+
+  function resetFilter() {
+    state.files = sortFilesChronologically(state.manifest);
+    state.currentIndex = 0;
+
+    renderTags(state.tags);
+    renderFileList(state.files);
+    bindTagClicks();
+
+    if (state.files.length > 0) {
+      loadHaikuByIndex(0);
+    } else {
       updateStatus();
     }
   }
@@ -203,10 +233,10 @@
     renderTags(state.tags);
     renderFileList(state.files);
 
-    bindPrevNext();
     bindTagClicks();
+    bindTagInput();
+    bindPrevNext();
 
-    // Load first-resort haiku if present
     if (window.HAIKU_CURRENT_PATH) {
       const idx = state.files.findIndex(
         f => f.path_html === window.HAIKU_CURRENT_PATH
@@ -215,6 +245,8 @@
     } else {
       loadHaikuByIndex(0);
     }
+
+    updateStatus();
   }
 
   /* =========================
@@ -234,6 +266,10 @@
   document.addEventListener("haikuCurrentLoaded", () => {
     state.ready.current = true;
     initializeSemantic();
+  });
+
+  document.querySelector(".filter-reset")?.addEventListener("click", () => {
+    resetFilter();
   });
 })();
 
