@@ -1,5 +1,5 @@
 (function () {
-  console.log("[semantic] semantic.js (descoped) loaded");
+  console.log("[semantic] semantic.js loaded");
 
   const state = {
     allFiles: [],
@@ -10,15 +10,18 @@
   };
 
   /* =========================
-     DOM (authoritative)
+     DOM (contract)
      ========================= */
 
   const dom = {
     tagPanel: () => document.querySelector(".filter-tags"),
     tagInputHost: () => document.querySelector(".filter-input"),
     fileList: () => document.querySelector(".results-list"),
-    haikuDisplay: () => document.querySelector(".semantic-display")
+    haikuDisplay: () => document.querySelector(".semantic-display"),
+    resetBtn: () => document.querySelector(".reset-filter")
   };
+
+  const filenameFromPath = p => p.split("/").pop();
 
   function log(msg, data) {
     if (data !== undefined) {
@@ -28,57 +31,38 @@
     }
   }
 
-  function filenameFromPath(path) {
-    return path.split("/").pop();
-  }
-
   /* =========================
-     core flow
+     HAIKU
      ========================= */
 
-  function applyFilter(source, tagName) {
-    log("applyFilter()", { source, tagName });
+  function loadHaiku(pathHtml) {
+    if (!pathHtml) return;
 
-    if (!tagName) return;
+    const target = dom.haikuDisplay();
+    if (!target) return;
 
-    const paths = state.tagIndex[tagName] || [];
-    const pathSet = new Set(paths);
-
-    state.filteredFiles = state.allFiles.filter(item =>
-      [...pathSet].some(p => item.path_html.endsWith(p))
-    );
-
-    state.currentIndex = -1;
-    log("filteredFiles.length", state.filteredFiles.length);
-
-    renderFileList();
-    clearHaiku();
+    fetch("/" + pathHtml)
+      .then(r => r.text())
+      .then(html => {
+        target.innerHTML = html;
+      })
+      .catch(err => console.error("[semantic] haiku load failed", err));
   }
 
-  function selectIndex(index, source) {
-    log("selectIndex()", { index, source });
-
-    if (!state.filteredFiles.length) return;
-    if (index < 0 || index >= state.filteredFiles.length) return;
-
-    state.currentIndex = index;
-    const item = state.filteredFiles[index];
-
-    log("selected file", item.path_html);
-    loadHaiku(item.path_html);
-    highlightActiveFile();
+  function restoreInitialHaiku() {
+    if (window.HAIKU_CURRENT_PATH) {
+      log("loading default haiku", window.HAIKU_CURRENT_PATH);
+      loadHaiku(window.HAIKU_CURRENT_PATH);
+    }
   }
 
   /* =========================
-     rendering
+     FILE LIST
      ========================= */
 
   function renderFileList() {
     const list = dom.fileList();
-    if (!list) {
-      log("ERROR: .results-list not found");
-      return;
-    }
+    if (!list) return;
 
     list.innerHTML = "";
 
@@ -88,153 +72,130 @@
       a.dataset.index = i;
       a.textContent = filenameFromPath(item.path_html);
 
-      a.addEventListener("click", e => {
+      a.onclick = e => {
         e.preventDefault();
-        log("file clicked", i);
-        selectIndex(i, "fileClick");
-      });
+        log("file selected", item.path_html);
+        state.currentIndex = i;
+        loadHaiku(item.path_html);
+      };
 
       list.appendChild(a);
     });
   }
 
-  function highlightActiveFile() {
-    const list = dom.fileList();
-    if (!list) return;
-
-    [...list.children].forEach(el => {
-      el.classList.toggle(
-        "active",
-        Number(el.dataset.index) === state.currentIndex
-      );
-    });
+  function renderAllFiles() {
+    state.filteredFiles = [...state.allFiles];
+    renderFileList();
   }
 
   /* =========================
-     haiku loading
+     TAGS
      ========================= */
 
-  function loadHaiku(pathHtml) {
-    log("loadHaiku()", pathHtml);
+  function renderTags(filter = "") {
+    const panel = dom.tagPanel();
+    if (!panel) return;
 
-    const container = dom.haikuDisplay();
-    if (!container) {
-      log("ERROR: .semantic-display not found");
-      return;
-    }
-
-    fetch("/" + pathHtml)
-      .then(r => r.text())
-      .then(html => {
-        container.innerHTML = html;
-      })
-      .catch(err => {
-        console.error("[semantic] haiku load failed", err);
-      });
-  }
-
-  function clearHaiku() {
-    const container = dom.haikuDisplay();
-    if (container) container.innerHTML = "";
-  }
-
-  /* =========================
-     tags
-     ========================= */
-
-  function renderTagList(query = "") {
-    const list = dom.tagPanel();
-    if (!list) {
-      log("ERROR: .filter-tags not found");
-      return;
-    }
-
-    list.innerHTML = "";
+    panel.innerHTML = "";
 
     state.tags
-      .filter(t => t.toLowerCase().includes(query))
+      .filter(t => t.includes(filter))
       .forEach(tag => {
         const el = document.createElement("div");
         el.className = "tag";
         el.textContent = tag;
 
-        el.addEventListener("click", () => {
+        el.onclick = () => {
           log("tag selected", tag);
-          input.value = tag;
-          applyFilter("tagClick", tag);
-        });
+          filterFilesByTag(tag);
+        };
 
-        list.appendChild(el);
+        panel.appendChild(el);
       });
   }
 
-  /* =========================
-     controls
-     ========================= */
+  function filterFilesByTag(tag) {
+    const filenames = new Set(state.tagIndex[tag] || []);
 
-  let input = null;
+    state.filteredFiles = state.allFiles.filter(item =>
+      filenames.has(filenameFromPath(item.path_html))
+    );
 
-  function bindControls() {
-    const host = dom.tagInputHost();
-    if (!host) {
-      log("ERROR: .filter-input not found");
-      return;
-    }
-
-    input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = "filter tags…";
-
-    input.addEventListener("input", e => {
-      const q = e.target.value.toLowerCase();
-      log("tag input", q);
-      renderTagList(q);
-    });
-
-    host.appendChild(input);
+    log("filteredFiles.length", state.filteredFiles.length);
+    renderFileList();
   }
 
   /* =========================
-     init
+     CONTROLS
+     ========================= */
+
+  function bindControls() {
+    const host = dom.tagInputHost();
+    if (!host) return;
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "filter tags…";
+
+    input.oninput = e => {
+      const q = e.target.value.trim();
+      log("tag input", q);
+      renderTags(q);
+    };
+
+    host.appendChild(input);
+
+    const reset = dom.resetBtn();
+    if (reset) {
+      reset.onclick = () => {
+        log("reset");
+        input.value = "";
+        renderTags();
+        renderAllFiles();
+        restoreInitialHaiku();
+      };
+    }
+  }
+
+  /* =========================
+     INIT
      ========================= */
 
   function init() {
     log("init()");
 
-    state.allFiles = window.HAIKU_ALL || [];
-    state.tags = window.HAIKU_TAGS || [];
-    state.tagIndex = window.HAIKU_TAG_INDEX || {};
+    state.allFiles = window.HAIKU_ALL.map(item => ({
+      ...item,
+      filename: filenameFromPath(item.path_html)
+    }));
+
+    state.tags = window.HAIKU_TAGS;
+    state.tagIndex = window.HAIKU_TAG_INDEX;
 
     log("manifest size", state.allFiles.length);
     log("tag count", state.tags.length);
 
     bindControls();
-    renderTagList();
+
+    // DEFAULT STATE (per contract)
+    renderTags();          // all tags
+    renderAllFiles();      // all files
+    restoreInitialHaiku(); // default haiku
   }
 
   function waitForData() {
     const ready =
-      Array.isArray(window.HAIKU_ALL) && window.HAIKU_ALL.length > 0 &&
-      Array.isArray(window.HAIKU_TAGS) && window.HAIKU_TAGS.length > 0 &&
-      window.HAIKU_TAG_INDEX &&
-      Object.keys(window.HAIKU_TAG_INDEX).length > 0;
+      Array.isArray(window.HAIKU_ALL) &&
+      Array.isArray(window.HAIKU_TAGS) &&
+      window.HAIKU_TAG_INDEX;
 
     if (ready) {
-      log("data ready");
       init();
     } else {
-      log("waiting for data...");
       setTimeout(waitForData, 50);
     }
   }
 
-  /* =========================
-     boot
-     ========================= */
-
-  window.addEventListener("DOMContentLoaded", () => {
-    log("DOMContentLoaded");
-    waitForData();
-  });
+  window.addEventListener("DOMContentLoaded", waitForData);
 })();
 
