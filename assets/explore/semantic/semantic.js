@@ -1,4 +1,5 @@
 (function () {
+
   const state = {
     ready: {
       manifest: false,
@@ -14,9 +15,7 @@
     currentIndex: 0
   };
 
-  /* =========================
-     Utilities
-     ========================= */
+  /* ========================= Utilities ========================= */
 
   function checkReady() {
     return state.ready.manifest &&
@@ -30,9 +29,7 @@
     );
   }
 
-  /* =========================
-     Rendering
-     ========================= */
+  /* ========================= Rendering ========================= */
 
   function renderFileList(files) {
     const container = document.querySelector(".results-list");
@@ -85,9 +82,7 @@
     el.textContent = `${state.files.length} files`;
   }
 
-  /* =========================
-     Haiku loading
-     ========================= */
+  /* ========================= Haiku loading ========================= */
 
   async function loadHaikuByIndex(index) {
     const item = state.files[index];
@@ -115,9 +110,7 @@
     }
   }
 
-  /* =========================
-     Event binding
-     ========================= */
+  /* ========================= Event binding ========================= */
 
   function bindFileClicks() {
     const list = document.querySelector(".results-list");
@@ -150,7 +143,6 @@
       const tagEl = e.target.closest(".tag-item");
       if (!tagEl) return;
 
-      // CHANGE #1: sync input + route through existing filter
       const input = document.querySelector(".tag-search");
       if (input) input.value = tagEl.dataset.tag;
 
@@ -177,7 +169,6 @@
       );
       bindTagClicks();
 
-      // CHANGE #2: typing also filters files
       if (q) {
         applyTagFilter(q);
       }
@@ -186,12 +177,16 @@
     container.appendChild(input);
   }
 
-  /* =========================
-     Filtering
-     ========================= */
+  /* ========================= Filtering ========================= */
 
   function applyTagFilter(tag) {
-    const paths = state.tagIndex[tag] || [];
+    const matchingTags = state.tags.filter(t =>
+      t.toLowerCase().includes(tag.toLowerCase())
+    );
+
+    const paths = matchingTags.flatMap(t =>
+      state.tagIndex[t] || []
+    );
 
     state.files = sortFilesChronologically(
       state.manifest.filter(item =>
@@ -212,23 +207,16 @@
   }
 
   function resetFilter() {
-    state.files = sortFilesChronologically(state.manifest);
+    const input = document.querySelector(".tag-search");
+    if (input) input.value = "";
+
+    state.files = [];
     state.currentIndex = 0;
 
-    renderTags(state.tags);
-    renderFileList(state.files);
-    bindTagClicks();
-
-    if (state.files.length > 0) {
-      loadHaikuByIndex(0);
-    } else {
-      updateStatus();
-    }
+    initializeSemantic();
   }
 
-  /* =========================
-     Initialization
-     ========================= */
+  /* ========================= Initialization ========================= */
 
   function initializeSemantic() {
     if (!checkReady()) return;
@@ -258,9 +246,7 @@
     updateStatus();
   }
 
-  /* =========================
-     Loader events
-     ========================= */
+  /* ========================= Loader events ========================= */
 
   document.addEventListener("haikuManifestLoaded", () => {
     state.ready.manifest = true;

@@ -160,7 +160,7 @@
 }
 
 .semantic-main {
-  width: min(1600px, 92vw);
+  width: min(900px, 92vw);
 }
 
 /* Ensure equal height panels */
