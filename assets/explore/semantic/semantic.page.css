@@ -109,13 +109,13 @@
 }
 
 /* Make list items feel clickable without being loud */
-.results-list .result-item,
+.results-files .result-row,
 .filter-tags .tag-item {
   cursor: pointer;
   padding: 0.15rem 0;
 }
 
-.results-list .result-item:hover,
+.results-files .result-row:hover,
 .filter-tags .tag-item:hover {
   text-decoration: underline;
 }
@@ -153,7 +153,7 @@
   flex: 1;
 }
 
-.results-list {
+.results-files {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -206,27 +206,27 @@ main.explore,
    Semantic Explore – understated About-style links + scrolling
    ========================================================= */
 
-.semantic-layout .results-list a {
+.semantic-layout .results-files a {
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid rgba(47, 62, 70, 0.25);
   font-weight: 400;
 }
 
-.semantic-layout .results-list a:hover {
+.semantic-layout .results-files a:hover {
   border-bottom-color: rgba(47, 62, 70, 0.45);
 }
 
 /* Visible but quiet scrollbar */
-.semantic-layout .results-list::-webkit-scrollbar {
+.semantic-layout .results-files::-webkit-scrollbar {
   width: 8px;
 }
 
-.semantic-layout .results-list::-webkit-scrollbar-track {
+.semantic-layout .results-files::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.semantic-layout .results-list::-webkit-scrollbar-thumb {
+.semantic-layout .results-files::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }

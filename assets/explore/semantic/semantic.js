@@ -17,7 +17,7 @@
   const dom = {
     tagPanel: () => document.querySelector(".filter-tags"),
     tagInputHost: () => document.querySelector(".filter-input"),
-    fileList: () => document.querySelector(".results-list"),
+    fileList: () => document.querySelector(".results-files"),
     haikuDisplay: () => document.querySelector(".semantic-display"),
     resetBtn: () => document.querySelector(".filter-reset"),
     prevBtn: () => document.querySelector(".control-prev"),
