@@ -119,7 +119,7 @@
       .forEach(tag => {
         const ids = state.tagIndex[tag] || [];
         const el = document.createElement("div");
-        el.className = "tag";
+        el.className = "tag-item";
         el.textContent = `${tag} (${ids.length})`;
 
         el.onclick = () => filterFilesByTag(tag);

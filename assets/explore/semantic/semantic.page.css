@@ -162,10 +162,30 @@
 .filter-list {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
+}
+
+.filter-pairs {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-tags,
+.filter-results {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.filter-tags {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.5rem;
 }
 
 main.explore,
@@ -203,15 +223,15 @@ main.explore,
   border-radius: 4px;
 }
 
-.semantic-layout .filter-list::-webkit-scrollbar {
+.semantic-layout .filter-pairs::-webkit-scrollbar {
   width: 8px;
 }
 
-.semantic-layout .filter-list::-webkit-scrollbar-track {
+.semantic-layout .filter-pairs::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.semantic-layout .filter-list::-webkit-scrollbar-thumb {
+.semantic-layout .filter-pairs::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }
