@@ -1,7 +1,394 @@
-/* =========================
-   Structure Page Overrides
-   ========================= */
+/* ========================= Structure Page Overrides ========================= */
 
-/* Intentionally minimal.
-   Add page-specific overrides here only when needed. */
+/* ========================= Structure Layout Skeleton ========================= */
 
+/* ------------------------- Primary area (left) ------------------------- */
+
+.structure-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.structure-display .haiku-lines p {
+  font-family: 'Dancing Script', 'Satisfy', cursive;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: #2f2f2f;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.structure-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control-status {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ------------------------- Results column (middle) ------------------------- */
+
+.structure-results {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ------------------------- Filters column (right) ------------------------- */
+
+.structure-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.filter-input {
+  /* search input placeholder */
+}
+
+.filter-controls {
+  margin-top: auto;
+}
+
+.results-controls {
+  margin-top: auto;
+}
+
+/* ========================= Structure Haiku Display ============================ */
+
+.structure-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 2.5rem;
+  min-height: 200px;
+
+  text-align: center;
+
+}
+
+/* ======================== Structure panels, width, and scrolling =============== */
+
+/* Haiku reading width */
+.structure-display > * {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* Panel boundaries (hairline) */
+.structure-primary,
+.structure-results,
+.structure-filters {
+  border: 3px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle separation between filter sections */
+.structure-filters > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Make list items feel clickable without being loud */
+.results-files .result-row,
+.filter-tags .tag-item {
+  cursor: pointer;
+  padding: 0.15rem 0;
+}
+
+.results-files .result-row:hover,
+.filter-tags .tag-item:hover {
+  text-decoration: underline;
+}
+
+/* === Structure 3-panel layout === */
+
+.structure-main {
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+  gap: 12px;
+}
+
+.structure-main {
+  width: min(1200px, 92vw);
+  height: 34rem;
+}
+
+/* Ensure equal height panels */
+.structure-primary,
+.structure-results,
+.structure-filters {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Constrain scrollable panels to container */
+.structure-results,
+.structure-filters {
+  overflow: hidden;
+}
+
+/* Scroll only the content areas */
+.structure-display {
+  flex: 1;
+}
+
+.results-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.results-files {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.filter-list {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-pairs {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-tags,
+.filter-results {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.filter-results {
+  display: none;
+}
+
+.filter-tags {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.5rem;
+}
+
+main.explore,
+.structure-layout {
+  max-width: none;
+  width: 100%;
+}
+
+/* ==================== Structure Explore – understated About-style links + scrolling ============ */
+
+.structure-layout .results-files a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(47, 62, 70, 0.25);
+  font-weight: 400;
+}
+
+.structure-layout .results-files a:hover {
+  border-bottom-color: rgba(47, 62, 70, 0.45);
+}
+
+/* Visible but quiet scrollbar */
+.structure-layout .results-files::-webkit-scrollbar {
+  width: 8px;
+}
+
+.structure-layout .results-files::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.structure-layout .results-files::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.structure-layout .filter-tags::-webkit-scrollbar {
+  width: 8px;
+}
+
+.structure-layout .filter-tags::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.structure-layout .filter-tags::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+/* Hide tag footer inside haiku display (structure explore only) */
+.structure-display .haiku-tags {
+  display: none;
+}
+
+/* ========================= Structure Controls – Buttons ========================= */
+
+.structure-controls button,
+.filter-controls button {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0.35rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.structure-controls button:hover,
+.filter-controls button:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.structure-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ======================= Tag Styling Overrides (Structure Explore) ========================= */
+
+.structure-layout .filter-tags {
+  padding-top: 0.25rem;
+}
+
+/* Tag rows */
+.structure-layout .filter-tags .tag-item {
+  display: block;
+  padding: 0.35rem 0.4rem;
+  line-height: 1.35;
+  border-radius: 4px;
+
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Hover affordance (quiet) */
+.structure-layout .filter-tags .tag-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  text-decoration: none; /* override earlier underline */
+}
+
+/* Active / selected state (ONLY if JS already applies .active) */
+.structure-layout .filter-tags .tag-item.active {
+  background: rgba(0, 0, 0, 0.07);
+  font-weight: 500;
+}
+
+/* ======================== Button Styling Overrides (Structure Explore) ======================== */
+
+.structure-layout .structure-controls button,
+.structure-layout .filter-controls button {
+  border-radius: 6px;
+  line-height: 1.2;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+/* Hover */
+.structure-layout .structure-controls button:hover,
+.structure-layout .filter-controls button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Active / pressed */
+.structure-layout .structure-controls button:active,
+.structure-layout .filter-controls button:active {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Disabled */
+.structure-layout .structure-controls button:disabled,
+.structure-layout .filter-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ========================= Structure Tree ========================= */
+
+.structure-tree {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.25rem 0.25rem;
+}
+
+.structure-tree-root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tree-row {
+  line-height: 1.4;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tree-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tree-dir {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Caret */
+.tree-dir::before {
+  content: "▸";
+  display: inline-block;
+  width: 0.9rem;
+  opacity: 0.6;
+  transition: transform 120ms ease;
+}
+
+/* Expanded state */
+.tree-row[data-collapsed="false"] .tree-dir::before {
+  transform: rotate(90deg);
+}
+
+.tree-row:hover {
+  background: rgba(0, 0, 0, 0.035);
+  border-radius: 4px;
+}
+
+/* Ancestor: context */
+.hl-ancestor {
+  background: rgba(180, 160, 120, 0.12);
+}
+
+/* Match: stronger */
+.hl-match {
+  background: rgba(120, 160, 200, 0.22);
+}
+
+/* Exact: strongest */
+.hl-exact {
+  background: rgba(220, 120, 80, 0.32);
+  font-weight: 600;
+}
+
+/* Future: depth-based highlight gradients */

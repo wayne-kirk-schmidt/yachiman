@@ -1,6 +1,4 @@
-/* =========================
-   Root + Base
-   ========================= */
+/* ========================= Root + Base ========================= */
 
 :root {
   --paper: #fbfaf7;
@@ -21,9 +19,7 @@ body {
     url("/assets/Japanese-Paper.png") center / cover no-repeat fixed;
 }
 
-/* =========================
-   Layout
-   ========================= */
+/* ========================= Layout ========================= */
 
 main.explore {
   display: flex;
@@ -43,14 +39,13 @@ main.explore {
   align-items: start;
 }
 
-/* =========================
-   Cards
-   ========================= */
+/* ========================= Cards ========================= */
 
 .card {
   background: var(--card-bg);
   border-radius: 0.75rem;
   box-shadow: var(--shadow);
+  min-height: 0;
 }
 
 .structure-main {
@@ -61,9 +56,7 @@ main.explore {
   padding: 1.5rem;
 }
 
-/* =========================
-   Haiku iframe
-   ========================= */
+/* ========================= Haiku iframe ========================= */
 
 iframe#currentFrame {
   width: 100%;
@@ -71,9 +64,7 @@ iframe#currentFrame {
   border: 0;
 }
 
-/* =========================
-   Structure Navigation
-   ========================= */
+/* ========================= Structure Navigation ========================= */
 
 .structure-nav {
   display: flex;
@@ -97,9 +88,7 @@ iframe#currentFrame {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* =========================
-   Summary Count
-   ========================= */
+/* ========================= Structure Count ========================= */
 
 .structure-count {
   margin-top: 2.5rem;
@@ -109,9 +98,7 @@ iframe#currentFrame {
   opacity: 0.85;
 }
 
-/* =========================
-   Footer
-   ========================= */
+/* ========================= Footer ========================= */
 
 .footer.footer-wide {
   max-width: 960px;
