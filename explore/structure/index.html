@@ -1,34 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explore the Hall – Structure</title>
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap"
-    rel="stylesheet">
-  <!-- Structure-specific layout -->
+  <title>Structure Explore</title>
+
   <link rel="stylesheet" href="/assets/explore/structure/structure.base.css">
   <link rel="stylesheet" href="/assets/explore/structure/structure.page.css">
-</head>
-<body>
-<main class="explore">
-  <div class="row">
-    <div class="structure-layout">
-      <section class="card structure-main">
-      </section>
-      <!-- Right: Navigation + count -->
-    </div>
-  </div>
-</main>
 
+  <script src="/assets/haiku.manifest.js"></script>
+  <script src="/assets/haiku.tags.js"></script>
+  <script src="/assets/haiku.current.js"></script>
+  <script src="/assets/explore/structure/structure.js"></script>
+
+</head>
+
+<body>
+  <main class="explore">
+    <div class="row">
+      <div class="structure-layout">
+
+        <!-- =========================
+             Structure Main Card
+             ========================= -->
+        <section class="card structure-main">
+
+          <!-- Primary structure content -->
+          <div class="structure-primary">
+
+            <!-- Present-day / current entry -->
+            <div class="structure-display">
+              <!-- placeholder: current structure item -->
+            </div>
+
+            <!-- Controls bound to primary content -->
+            <div class="structure-controls">
+              <button class="control-prev">Previous</button>
+
+              <div class="control-status">
+                <!-- placeholder: e.g. 1 of 128 -->
+              </div>
+
+              <button class="control-next">Next</button>
+            </div>
+
+          </div>
+
+          <!-- File / result navigation -->
+          <div class="structure-results">
+            <div class="results-input">
+              <!-- intentionally empty (silent partner) -->
+            </div>
+            <div class="results-list">
+              <div class="results-files">
+                <!-- JS populates file list here -->
+              </div>
+            </div>
+            <div class="results-controls">
+              <!-- intentionally empty (silent partner) -->
+            </div>
+          </div>
+
+          <!-- Filters / search / tags -->
+          <div class="structure-filters">
+
+            <div class="filter-input">
+              <!-- placeholder: search input -->
+            </div>
+
+            <div class="filter-list">
+              <div class="filter-pairs">
+
+                <div class="filter-tags">
+                  <!-- placeholder: all tags -->
+                </div>
+
+                <div class="filter-results">
+                  <!-- placeholder: filtered tags / files -->
+                </div>
+
+              </div>
+            </div>
+
+            <div class="filter-controls">
+              <button class="filter-reset">Reset Filter</button>
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+</body>
 <!-- Structure Hall footer -->
 <footer class="footer footer-wide">
   <a href="/explore/">Home</a>
   <a href="/explore/semantic/">Semantic</a>
   <a href="/explore/summary/">Summary</a>
 </footer>
-
-</body>
 </html>
