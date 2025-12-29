@@ -280,3 +280,34 @@ main.explore,
   cursor: default;
 }
 
+/* =========================================================
+   Tag Styling Overrides (Semantic Explore)
+   ========================================================= */
+
+.semantic-layout .filter-tags {
+  padding-top: 0.25rem;
+}
+
+/* Tag rows */
+.semantic-layout .filter-tags .tag-item {
+  display: block;
+  padding: 0.35rem 0.4rem;
+  line-height: 1.35;
+  border-radius: 4px;
+
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Hover affordance (quiet) */
+.semantic-layout .filter-tags .tag-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  text-decoration: none; /* override earlier underline */
+}
+
+/* Active / selected state (ONLY if JS already applies .active) */
+.semantic-layout .filter-tags .tag-item.active {
+  background: rgba(0, 0, 0, 0.07);
+  font-weight: 500;
+}
+
