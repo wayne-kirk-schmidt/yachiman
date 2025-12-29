@@ -172,6 +172,16 @@
   overflow-y: auto;
 }
 
+/* Center file list text without breaking row behavior */
+.results-files {
+  text-align: center;
+}
+
+.results-files .result-row {
+  display: inline-block;
+  width: 100%;
+}
+
 .filter-list {
   flex: 1;
   min-height: 0;
