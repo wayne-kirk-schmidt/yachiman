@@ -172,15 +172,12 @@
   overflow-y: auto;
 }
 
-/* Center file list text without breaking row behavior */
+/* Center file list text without breaking scrolling */
 .results-files {
   text-align: center;
-  display: block;
-}
-
-.results-files .result-row {
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filter-list {
