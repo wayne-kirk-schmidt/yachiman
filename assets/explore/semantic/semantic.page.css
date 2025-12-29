@@ -311,3 +311,38 @@ main.explore,
   font-weight: 500;
 }
 
+/* =========================================================
+   Button Styling Overrides (Semantic Explore)
+   ========================================================= */
+
+.semantic-layout .semantic-controls button,
+.semantic-layout .filter-controls button {
+  border-radius: 6px;
+  line-height: 1.2;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+/* Hover */
+.semantic-layout .semantic-controls button:hover,
+.semantic-layout .filter-controls button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Active / pressed */
+.semantic-layout .semantic-controls button:active,
+.semantic-layout .filter-controls button:active {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Disabled */
+.semantic-layout .semantic-controls button:disabled,
+.semantic-layout .filter-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
