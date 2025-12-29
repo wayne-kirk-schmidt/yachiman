@@ -156,18 +156,24 @@ main > h1 {
   max-width: 40rem;
   margin: 0 auto;
   text-align: center;
+  padding: 2.75rem 0 3rem;
 }
 
 /* Haiku lines */
 .homepage-display .haiku-lines p {
   font-family: 'Satisfy', 'Dancing Script', cursive;
-  font-size: 1.25rem;
-  line-height: 1.75;
-  margin: 0.25rem 0;
+  font-size: 1.55rem;
+  line-height: 1.8;
+  margin: 0.36rem 0;
 }
 
 /* Hide tags on Home */
 .homepage-display .haiku-tags {
+  display: none;
+}
+
+/* Hide haiku date/title on Home */
+.homepage-display .haiku-title {
   display: none;
 }
 
