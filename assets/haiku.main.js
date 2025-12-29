@@ -1,10 +1,10 @@
 // Main Page behavior only.
-// Reads data/current_status.json and renders the page.
+// Reads data/current_haiku.json and renders the page.
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/data/current_status.json", { cache: "no-store" })
+  fetch("/data/current_haiku.json", { cache: "no-store" })
     .then(res => {
-      if (!res.ok) throw new Error("Failed to load current_status.json");
+      if (!res.ok) throw new Error("Failed to load current_haiku.json");
       return res.json();
     })
     .then(data => {
