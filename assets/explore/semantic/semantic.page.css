@@ -127,7 +127,7 @@
 .semantic-main {
   display: grid;
   grid-template-columns: 60% 20% 20%;
-  gap: 6px;
+  gap: 12px;
 }
 
 .semantic-main {
