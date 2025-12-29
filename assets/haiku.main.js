@@ -1,4 +1,4 @@
-// Summary behavior only.
+// Main Page behavior only.
 // Reads data/current_status.json and renders the page.
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(data => {
-      const display = document.querySelector(".summary-display");
-      const countEl = document.getElementById("summary-count");
+      const display = document.querySelector(".homepage-display");
+      const countEl = document.getElementById("homepage-count");
 
       if (display && data.current_haiku && data.current_haiku.path_html) {
         fetch("/" + data.current_haiku.path_html)
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch(err => {
-      // Quiet failure: summary should never break the page
+      // Quiet failure: this script should never break the page
       console.error(err);
     });
 });

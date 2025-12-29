@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Way Station for Seventeen</title>
 
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Satisfy&display=swap"
-    rel="stylesheet"
-  >
+  <!-- Summary behavior -->
+  <script src="/assets/haiku.main.js" defer></script>
 
   <!-- Hall styling (index only) -->
   <link rel="stylesheet" href="assets/haiku.main.css">
+
 </head>
 
 <body>
@@ -23,15 +21,7 @@
   <!-- Latest haiku only -->
   <section class="card haiku-card">
     <div class="divider"></div>
-    <iframe
-      class="embed"
-      id="currentFrame"
-      src=""
-      title="Current Entry"
-      loading="lazy"
-      style="width:100%; min-height:18rem; border:0;">
-    </iframe>
-
+    <div class="homepage-display haiku-inline"></div>
   </section>
 </main>
 
@@ -41,40 +31,6 @@
   <a href="/about/">About</a>
   <a href="/explore/">Explore</a>
 </footer>
-
-<script>
-/*
-  Index Hall loader
-  - Uses pipeline-built /assets/current_status.json
-  - Does NOT sort manifests
-  - Does NOT guess recency
-*/
-
-async function initHall() {
-  const frame = document.getElementById('currentFrame');
-  if (!frame) return;
-
-  try {
-    const res = await fetch('/assets/current_status.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('failed to load current_status.json');
-
-    const status = await res.json();
-    const path = status?.current_haiku?.path_html;
-    if (!path) throw new Error('no current haiku path');
-
-    const url = new URL(path, window.location.href);
-    url.searchParams.set('embed', '1');
-
-    frame.src = url.toString();
-
-  } catch (err) {
-    frame.outerHTML =
-      '<div style="opacity:.7; text-align:center; padding:.75rem;">No entries.</div>';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', initHall);
-</script>
 
 </body>
 </html>
