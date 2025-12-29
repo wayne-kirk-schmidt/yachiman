@@ -147,3 +147,27 @@ main > h1 {
   opacity: 0.65;
 }
 
+/* =========================================================
+   Home Page – Haiku Rendering (Summary contract)
+   ========================================================= */
+
+/* Center and constrain haiku block */
+.homepage-display {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Haiku lines */
+.homepage-display .haiku-lines p {
+  font-family: 'Satisfy', 'Dancing Script', cursive;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  margin: 0.25rem 0;
+}
+
+/* Hide tags on Home */
+.homepage-display .haiku-tags {
+  display: none;
+}
+
