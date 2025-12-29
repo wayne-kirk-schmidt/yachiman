@@ -175,6 +175,7 @@
 /* Center file list text without breaking row behavior */
 .results-files {
   text-align: center;
+  display: block;
 }
 
 .results-files .result-row {
