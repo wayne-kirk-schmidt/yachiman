@@ -69,7 +69,7 @@
 }
 
 .results-controls {
-  flex: 0 0 auto;
+  margin-top: auto;
 }
 
 /* =========================================================
@@ -153,11 +153,6 @@
 /* Scroll only the content areas */
 .semantic-display {
   flex: 1;
-}
-
-.results-input,
-.results-controls {
-  flex: 0 0 2rem;
 }
 
 .results-list {
