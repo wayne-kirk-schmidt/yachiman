@@ -102,7 +102,7 @@
 .semantic-primary,
 .semantic-results,
 .semantic-filters {
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 3px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Subtle separation between filter sections */
@@ -159,6 +159,8 @@
   flex: 1 1 auto;
   min-height: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .results-files {
