@@ -37,6 +37,8 @@
       .catch(err => console.error("[structure] haiku load failed", err));
   }
 
+  /* ========================= CURRENT HAIKU LOADING ========================= */
+
   function loadCurrentHaiku() {
     if (!window.HAIKU_CURRENT_PATH) return;
     loadHaiku(window.HAIKU_CURRENT_PATH);
@@ -98,6 +100,56 @@
     return root;
   }
 
+  /* ========================= APPLY HIGHLIGHTS ========================= */
+
+  function applyHighlights(query) {
+    clearHighlights();
+
+    if (!query) return;
+
+    const host = dom.treeHost();
+    if (!host) return;
+
+    const rows = Array.from(host.querySelectorAll(".tree-row"));
+
+    // Precompute indentation levels (numeric, stable)
+    const getDepth = row =>
+      parseFloat(row.style.paddingLeft || "0");
+
+    rows.forEach((row, idx) => {
+      if (row.dataset.type !== "file") return;
+
+      const path = (row.dataset.path || "").toLowerCase();
+      if (!path.includes(query)) return;
+
+      // Match strength
+      if (path.endsWith(query)) {
+        row.classList.add("hl-exact");
+      } else {
+        row.classList.add("hl-match");
+      }
+
+      // Ancestor propagation
+      let currentDepth = getDepth(row);
+
+      for (let i = idx - 1; i >= 0; i--) {
+        const prev = rows[i];
+        const prevDepth = getDepth(prev);
+
+        if (prevDepth < currentDepth) {
+          // Only directories become ancestors
+          if (prev.dataset.type === "dir") {
+            prev.classList.add("hl-ancestor");
+          }
+          currentDepth = prevDepth;
+        }
+
+        if (currentDepth === 0) break;
+      }
+    });
+  }
+
+
   /* ========================= QUERY (no logic yet) ========================= */
 
   function bindQuery() {
@@ -111,7 +163,7 @@
     input.addEventListener("input", e => {
       state.query = e.target.value.trim().toLowerCase();
       console.log("[structure] query:", state.query);
-      // highlight logic will be added later
+      applyHighlights(state.query);
     });
 
     host.appendChild(input);
@@ -120,6 +172,7 @@
   /* ========================= RESET (calm default) ========================= */
 
   function bindReset() {
+
     const btn = dom.resetBtn();
     if (!btn) return;
 
@@ -134,7 +187,9 @@
       // - clear highlights
       // - collapse tree
 
+      clearHighlights();
       loadCurrentHaiku();
+
     });
   }
 
