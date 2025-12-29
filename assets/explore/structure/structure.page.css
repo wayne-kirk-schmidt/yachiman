@@ -108,6 +108,14 @@
   text-decoration: underline;
 }
 
+/* === tree layout === */
+
+.tree-row.hl-ancestor:hover,
+.tree-row.hl-match:hover,
+.tree-row.hl-exact:hover {
+  background-blend-mode: multiply;
+}
+
 /* === Structure 3-panel layout === */
 
 .structure-main {
@@ -262,6 +270,11 @@ main.explore,
   cursor: default;
 }
 
+.structure-controls button {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+}
+
 /* ======================= Tag Styling Overrides (Structure Explore) ========================= */
 
 .structure-layout .filter-tags {
@@ -327,10 +340,11 @@ main.explore,
 /* ========================= Structure Tree ========================= */
 
 .structure-tree {
-  flex: 1;
+  flex: 1 1 auto;
   min-height: 0;
+  max-height: 100%;
   overflow-y: auto;
-  padding: 0.25rem 0.25rem;
+  padding: 0.25rem;
 }
 
 .structure-tree-root {
@@ -345,6 +359,11 @@ main.explore,
   user-select: none;
 }
 
+.tree-row[data-depth="1"] { font-size: 0.95rem; }
+.tree-row[data-depth="2"] { font-size: 0.92rem; }
+.tree-row[data-depth="3"] { font-size: 0.90rem; }
+.tree-row[data-depth="4"] { font-size: 0.88rem; }
+
 .tree-label {
   display: inline-flex;
   align-items: center;
@@ -354,6 +373,11 @@ main.explore,
 .tree-dir {
   cursor: pointer;
   font-weight: 500;
+}
+
+.tree-file {
+  font-weight: 400;
+  opacity: 0.85;
 }
 
 /* Caret */
@@ -389,6 +413,16 @@ main.explore,
 .hl-exact {
   background: rgba(220, 120, 80, 0.32);
   font-weight: 600;
+}
+
+/* Ancestors: styling */
+
+.hl-ancestor,
+.hl-match,
+.hl-exact {
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+  border-radius: 3px;
 }
 
 /* Future: depth-based highlight gradients */
