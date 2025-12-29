@@ -171,14 +171,6 @@
   overflow-y: auto;
 }
 
-.results-pairs {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
 .filter-list {
   flex: 1;
   min-height: 0;
@@ -239,19 +231,6 @@ main.explore,
 }
 
 .semantic-layout .results-files::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-}
-
-.semantic-layout .filter-pairs::-webkit-scrollbar {
-  width: 8px;
-}
-
-.semantic-layout .filter-pairs::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.semantic-layout .filter-pairs::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }
