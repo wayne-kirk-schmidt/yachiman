@@ -239,6 +239,19 @@ main.explore,
   border-radius: 4px;
 }
 
+.semantic-layout .filter-tags::-webkit-scrollbar {
+  width: 8px;
+}
+
+.semantic-layout .filter-tags::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.semantic-layout .filter-tags::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
 /* Hide tag footer inside haiku display (semantic explore only) */
 .semantic-display .haiku-tags {
   display: none;
