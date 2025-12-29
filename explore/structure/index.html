@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <title>Structure Explore</title>
 
+  <!-- Base + Page CSS -->
   <link rel="stylesheet" href="/assets/explore/structure/structure.base.css">
   <link rel="stylesheet" href="/assets/explore/structure/structure.page.css">
 
+  <!-- Data -->
   <script src="/assets/haiku.manifest.js"></script>
-  <script src="/assets/haiku.tags.js"></script>
   <script src="/assets/haiku.current.js"></script>
-  <script src="/assets/explore/structure/structure.js"></script>
 
+  <!-- Structure logic -->
+  <script src="/assets/explore/structure/structure.js"></script>
 </head>
 
 <body>
@@ -24,65 +26,33 @@
              ========================= -->
         <section class="card structure-main">
 
-          <!-- Primary structure content -->
-          <div class="structure-primary">
-
-            <!-- Present-day / current entry -->
+          <!-- =========================
+               Left: Haiku (Primary)
+               ========================= -->
+          <div class="structure-left">
             <div class="structure-display">
-              <!-- placeholder: current structure item -->
-            </div>
-
-            <!-- Controls bound to primary content -->
-            <div class="structure-controls">
-              <button class="control-prev">Previous</button>
-
-              <div class="control-status">
-                <!-- placeholder: e.g. 1 of 128 -->
-              </div>
-
-              <button class="control-next">Next</button>
-            </div>
-
-          </div>
-
-          <!-- File / result navigation -->
-          <div class="structure-results">
-            <div class="results-input">
-              <!-- intentionally empty (silent partner) -->
-            </div>
-            <div class="results-list">
-              <div class="results-files">
-                <!-- JS populates file list here -->
-              </div>
-            </div>
-            <div class="results-controls">
-              <!-- intentionally empty (silent partner) -->
+              <!-- JS loads current_haiku.json here -->
             </div>
           </div>
 
-          <!-- Filters / search / tags -->
-          <div class="structure-filters">
+          <!-- =========================
+               Right: Placement Context
+               ========================= -->
+          <div class="structure-right">
 
-            <div class="filter-input">
-              <!-- placeholder: search input -->
+            <!-- Query / locator -->
+            <div class="structure-query">
+              <!-- JS injects query input -->
             </div>
 
-            <div class="filter-list">
-              <div class="filter-pairs">
-
-                <div class="filter-tags">
-                  <!-- placeholder: all tags -->
-                </div>
-
-                <div class="filter-results">
-                  <!-- placeholder: filtered tags / files -->
-                </div>
-
-              </div>
+            <!-- Collapsed tree (scrollable) -->
+            <div class="structure-tree">
+              <!-- JS builds tree here -->
             </div>
 
-            <div class="filter-controls">
-              <button class="filter-reset">Reset Filter</button>
+            <!-- Reset -->
+            <div class="structure-reset">
+              <button class="structure-reset-btn">Reset</button>
             </div>
 
           </div>
@@ -93,6 +63,7 @@
     </div>
   </main>
 </body>
+
 <!-- Structure Hall footer -->
 <footer class="footer footer-wide">
   <a href="/explore/">Home</a>
