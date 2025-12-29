@@ -156,37 +156,51 @@ function renderTree() {
 
 /* ========================= NODE RENDERING ========================= */
 
-function renderNode(node, parentEl, depth) {
-  // skip rendering the synthetic root itself
-  if (node.name !== "root") {
-    const row = document.createElement("div");
-    row.className = `tree-row tree-${node.type}`;
-    row.style.paddingLeft = `${depth * 1.25}rem`;
+  function renderNode(node, parentEl, depth) {
+    // skip rendering the synthetic root itself
+    if (node.name !== "root") {
+      const row = document.createElement("div");
+      row.className = `tree-row tree-${node.type}`;
+      row.style.paddingLeft = `${depth * 1.25}rem`;
 
-    const label = document.createElement("span");
-    label.className = "tree-label";
-    label.textContent = node.name;
+      row.dataset.path = node.path;
+      row.dataset.type = node.type;
 
-    if (node.type === "file") {
-      label.classList.add("tree-file");
-      label.addEventListener("click", () => {
-        state.currentFile = node.path_html || node.path;
-        loadHaiku(state.currentFile);
-      });
-    } else {
-      label.classList.add("tree-dir");
+      const label = document.createElement("span");
+      label.className = "tree-label";
+      label.textContent = node.name;
+
+      if (node.type === "file") {
+        label.classList.add("tree-file");
+        label.addEventListener("click", () => {
+          state.currentFile = node.path_html || node.path;
+          loadHaiku(state.currentFile);
+        });
+      } else {
+        label.classList.add("tree-dir");
+      }
+
+      row.appendChild(label);
+      parentEl.appendChild(row);
     }
 
-    row.appendChild(label);
-    parentEl.appendChild(row);
+    if (node.children && node.children.length) {
+      node.children.forEach(child =>
+        renderNode(child, parentEl, depth + 1)
+      );
+    }
   }
 
-  if (node.children && node.children.length) {
-    node.children.forEach(child =>
-      renderNode(child, parentEl, depth + 1)
-    );
+  function clearHighlights() {
+    const host = dom.treeHost();
+    if (!host) return;
+
+    host.querySelectorAll(
+      ".hl-ancestor, .hl-match, .hl-exact"
+    ).forEach(el => {
+      el.classList.remove("hl-ancestor", "hl-match", "hl-exact");
+    });
   }
-}
 
   /* ========================= INIT ========================= */
 
