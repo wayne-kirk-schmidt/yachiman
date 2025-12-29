@@ -150,7 +150,7 @@
   }
 
 
-  /* ========================= QUERY (no logic yet) ========================= */
+  /* ========================= QUERY ========================= */
 
   function bindQuery() {
     const host = dom.queryHost();
@@ -169,7 +169,30 @@
     host.appendChild(input);
   }
 
-  /* ========================= RESET (calm default) ========================= */
+  /* ========================= TOGGLE CHILDREN ========================= */
+
+  function toggleChildren(row) {
+    const host = dom.treeHost();
+    if (!host) return;
+
+    const path = row.dataset.path;
+    const depth = Number(row.dataset.depth);
+    const isCollapsed = row.dataset.collapsed === "true";
+
+    host.querySelectorAll(".tree-row").forEach(child => {
+      const childDepth = Number(child.dataset.depth);
+      const childParent = child.dataset.parent;
+
+      if (childParent === path && childDepth === depth + 1) {
+        child.style.display = isCollapsed ? "" : "none";
+        child.dataset.collapsed = "true";
+      }
+    });
+
+    row.dataset.collapsed = isCollapsed ? "false" : "true";
+  }
+
+  /* ========================= RESET ========================= */
 
   function bindReset() {
 
@@ -183,11 +206,8 @@
 
       console.log("[structure] reset");
 
-      // later:
-      // - clear highlights
-      // - collapse tree
-
       clearHighlights();
+      collapseAll();
       loadCurrentHaiku();
 
     });
@@ -220,6 +240,9 @@ function renderTree() {
 
       row.dataset.path = node.path;
       row.dataset.type = node.type;
+      row.dataset.depth = depth;
+      row.dataset.parent = node.path.split("/").slice(0, -1).join("/");
+      row.dataset.collapsed = "true";
 
       const label = document.createElement("span");
       label.className = "tree-label";
@@ -233,8 +256,10 @@ function renderTree() {
         });
       } else {
         label.classList.add("tree-dir");
+        label.addEventListener("click", () => {
+          toggleChildren(row);
+        });
       }
-
       row.appendChild(label);
       parentEl.appendChild(row);
     }
@@ -257,6 +282,23 @@ function renderTree() {
     });
   }
 
+  /* ========================= COLLAPSE ALL ========================= */
+
+  function collapseAll() {
+    const host = dom.treeHost();
+    if (!host) return;
+
+    host.querySelectorAll(".tree-row").forEach(row => {
+      const depth = Number(row.dataset.depth || 0);
+
+      if (depth > 1) {
+        row.style.display = "none";
+      }
+
+      row.dataset.collapsed = "true";
+    });
+  }
+
   /* ========================= INIT ========================= */
 
   function init() {
@@ -273,6 +315,8 @@ function renderTree() {
     loadCurrentHaiku();
 
     renderTree();
+    collapseAll();
+
   }
 
 
