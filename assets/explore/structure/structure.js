@@ -1,13 +1,15 @@
 (function () {
   console.log("[structure] structure.js loaded");
 
+  /* =========================
+     STATE
+     ========================= */
+
   const state = {
-    allFiles: [],          // full manifest entries
-    fileById: {},          // id -> file object
-    tags: [],              // list of tag strings
-    tagIndex: {},          // tag -> [file ids]
-    filteredFiles: [],
-    currentIndex: -1
+    allFiles: [],
+    tree: null,          // hierarchical model (later)
+    query: "",
+    currentFile: null
   };
 
   /* =========================
@@ -15,25 +17,14 @@
      ========================= */
 
   const dom = {
-    tagPanel: () => document.querySelector(".filter-tags"),
-    tagInputHost: () => document.querySelector(".filter-input"),
-    fileList: () => document.querySelector(".results-files"),
     haikuDisplay: () => document.querySelector(".structure-display"),
-    resetBtn: () => document.querySelector(".filter-reset"),
-    prevBtn: () => document.querySelector(".control-prev"),
-    nextBtn: () => document.querySelector(".control-next")
+    queryHost: () => document.querySelector(".structure-query"),
+    treeHost: () => document.querySelector(".structure-tree"),
+    resetBtn: () => document.querySelector(".structure-reset-btn")
   };
 
-  function log(msg, data) {
-    if (data !== undefined) {
-      console.log(`[structure] ${msg}`, data);
-    } else {
-      console.log(`[structure] ${msg}`);
-    }
-  }
-
   /* =========================
-     HAIKU
+     HAIKU LOADING
      ========================= */
 
   function loadHaiku(pathHtml) {
@@ -44,7 +35,6 @@
     fetch("/" + pathHtml)
       .then(r => r.text())
       .then(html => {
-        // defensive cleanup
         const cleaned = html
           .replaceAll("{{tags}}", "")
           .replace(/^Tags:.*$/gmi, "");
@@ -53,148 +43,54 @@
       .catch(err => console.error("[structure] haiku load failed", err));
   }
 
-  function restoreInitialHaiku() {
+  function loadCurrentHaiku() {
     if (!window.HAIKU_CURRENT_PATH) return;
-
-    const idx = state.filteredFiles.findIndex(
-      f => f.path_html === window.HAIKU_CURRENT_PATH
-    );
-
-    if (idx >= 0) {
-      state.currentIndex = idx;
-    }
-
     loadHaiku(window.HAIKU_CURRENT_PATH);
+    state.currentFile = window.HAIKU_CURRENT_PATH;
   }
 
   /* =========================
-     FILE LIST
+     QUERY (no logic yet)
      ========================= */
 
-  function renderFileList() {
-    const list = dom.fileList();
-    if (!list) return;
-
-    list.style.flex = "1";
-    list.innerHTML = "";
-
-    state.filteredFiles.forEach((item, i) => {
-      const row = document.createElement("div");
-      row.className = "result-row";
-
-      const a = document.createElement("a");
-      a.className = "about-link";
-
-      a.href = "#";
-      a.textContent = item.id;
-
-      a.onclick = e => {
-        e.preventDefault();
-        state.currentIndex = i;
-        loadHaiku(item.path_html);
-      };
-
-      row.appendChild(a);
-      list.appendChild(row);
-    });
-  }
-
-  function renderAllFiles() {
-    state.filteredFiles = [...state.allFiles];
-    state.currentIndex = state.filteredFiles.length - 1;
-    renderFileList();
-  }
-
-  /* =========================
-     TAGS
-     ========================= */
-
-  function renderTags(filter = "") {
-    const panel = dom.tagPanel();
-    if (!panel) return;
-
-    panel.innerHTML = "";
-
-    state.tags
-      .filter(t => t.includes(filter))
-      .forEach(tag => {
-        const ids = state.tagIndex[tag] || [];
-        const el = document.createElement("div");
-        el.className = "tag-item";
-        el.textContent = `${tag} (${ids.length})`;
-
-        el.onclick = () => filterFilesByTag(tag);
-
-        panel.appendChild(el);
-      });
-  }
-
-  function filterFilesByTag(tag) {
-    const ids = state.tagIndex[tag];
-    if (!ids || ids.length === 0) {
-      state.filteredFiles = [];
-      state.currentIndex = -1;
-      renderFileList();
-      return;
-    }
-
-    state.filteredFiles = ids
-      .map(id => state.fileById[id])
-      .filter(Boolean);
-
-    state.currentIndex = state.filteredFiles.length - 1;
-    renderFileList();
-
-    loadHaiku(state.filteredFiles[state.currentIndex].path_html);
-  }
-
-  /* =========================
-     CONTROLS
-     ========================= */
-
-  function bindControls() {
-    const host = dom.tagInputHost();
+  function bindQuery() {
+    const host = dom.queryHost();
     if (!host) return;
 
     const input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "filter tags…";
+    input.placeholder = "locate in archive…";
 
-    input.oninput = e => {
-      renderTags(e.target.value.trim());
-    };
+    input.addEventListener("input", e => {
+      state.query = e.target.value.trim().toLowerCase();
+      console.log("[structure] query:", state.query);
+      // highlight logic will be added later
+    });
 
     host.appendChild(input);
+  }
 
-    const prev = dom.prevBtn();
-    if (prev) {
-      prev.onclick = () => {
-        if (state.currentIndex > 0) {
-          state.currentIndex--;
-          loadHaiku(state.filteredFiles[state.currentIndex].path_html);
-        }
-      };
-    }
+  /* =========================
+     RESET (calm default)
+     ========================= */
 
-    const next = dom.nextBtn();
-    if (next) {
-      next.onclick = () => {
-        if (state.currentIndex < state.filteredFiles.length - 1) {
-          state.currentIndex++;
-          loadHaiku(state.filteredFiles[state.currentIndex].path_html);
-        }
-      };
-    }
+  function bindReset() {
+    const btn = dom.resetBtn();
+    if (!btn) return;
 
-    const reset = dom.resetBtn();
-    if (reset) {
-      reset.onclick = () => {
-        input.value = "";
-        renderTags();
-        renderAllFiles();
-        restoreInitialHaiku();
-      };
-    }
+    btn.addEventListener("click", () => {
+      state.query = "";
+      const input = dom.queryHost()?.querySelector("input");
+      if (input) input.value = "";
+
+      console.log("[structure] reset");
+
+      // later:
+      // - clear highlights
+      // - collapse tree
+
+      loadCurrentHaiku();
+    });
   }
 
   /* =========================
@@ -202,31 +98,24 @@
      ========================= */
 
   function init() {
-    // manifest
-    state.allFiles = window.HAIKU_ALL.map(item => ({
-      ...item
-    }));
+    console.log("[structure] init");
 
-    state.allFiles.forEach(item => {
-      state.fileById[item.id] = item;
-    });
+    // manifest is already normalized into HAIKU_ALL
+    if (Array.isArray(window.HAIKU_ALL)) {
+      state.allFiles = [...window.HAIKU_ALL];
+    }
 
-    // tags
-    state.tags = window.HAIKU_TAGS;
-    state.tagIndex = window.HAIKU_TAG_INDEX;
+    bindQuery();
+    bindReset();
+    loadCurrentHaiku();
 
-    bindControls();
-    renderTags();
-    renderAllFiles();
-    restoreInitialHaiku();
+    // later:
+    // - buildTreeFromManifest()
+    // - renderTree()
   }
 
   function waitForData() {
-    if (
-      Array.isArray(window.HAIKU_ALL) &&
-      Array.isArray(window.HAIKU_TAGS) &&
-      window.HAIKU_TAG_INDEX
-    ) {
+    if (Array.isArray(window.HAIKU_ALL) && window.HAIKU_CURRENT_PATH) {
       init();
     } else {
       setTimeout(waitForData, 50);
