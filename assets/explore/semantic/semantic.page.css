@@ -99,13 +99,10 @@
 }
 
 /* Panel boundaries (hairline) */
-.semantic-primary {
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-}
-
+.semantic-primary,
 .semantic-results,
 .semantic-filters {
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Subtle separation between filter sections */
@@ -130,7 +127,7 @@
 .semantic-main {
   display: grid;
   grid-template-columns: 60% 20% 20%;
-  gap: 0;
+  gap: 6px;
 }
 
 .semantic-main {
