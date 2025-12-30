@@ -1,5 +1,5 @@
 :root {
-  --paper: url("../assets/Japanese-Paper.png");
+  --paper: url("/assets/Japanese-Paper.png");
   --ink: #1f2937;
   --accent: #f5d3b8;
   --accent-border: #e6b08a;
