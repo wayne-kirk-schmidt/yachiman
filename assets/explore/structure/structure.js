@@ -5,7 +5,9 @@
 
   const state = {
     allFiles: [],
-    tree: null,          // hierarchical model (later)
+    tree: null,          // hierarchical model
+    tokenIndex: {},      // token -> Set of node paths
+    rowByPath: {},       // path -> DOM row
     query: "",
     currentFile: null
   };
@@ -100,59 +102,79 @@
     return root;
   }
 
+  /* ========================= BUILD TOKEN INDEX ========================= */
+
+  function buildTokenIndex(root) {
+    state.tokenIndex = {};
+
+    function walk(node) {
+      if (node.path) {
+        const tokens = tokenizePath(node.path);
+
+        tokens.forEach(tok => {
+          if (!state.tokenIndex[tok]) {
+            state.tokenIndex[tok] = new Set();
+          }
+          state.tokenIndex[tok].add(node.path);
+        });
+      }
+
+      if (node.children) {
+        node.children.forEach(walk);
+      }
+    }
+    walk(root);
+  }
+
   /* ========================= GET DEPTH ========================= */
 
   function getDepth(row) {
     return Number(row.dataset.depth || 0);
   }
 
+  /* ========================= TOKENIZE PATH ========================= */
+
+  function tokenizePath(path) {
+    if (!path) return [];
+
+    const tokens = path
+      .toLowerCase()
+      .split(/[\/\.\-]+/)
+      .filter(Boolean);
+
+    // composite YYYY-MM-DD token (if present)
+    const dateMatch = path.match(/\d{4}-\d{2}-\d{2}/);
+    if (dateMatch) {
+      tokens.push(dateMatch[0]);
+    }
+    return tokens;
+  }
+
   /* ========================= APPLY HIGHLIGHTS ========================= */
 
   function applyHighlights(query) {
-    const rows = Array.from(
-      document.querySelectorAll(".tree-row")
-    );
-
-    // Clear existing highlights
-    rows.forEach(row => {
-      row.classList.remove("hl-match", "hl-exact", "hl-ancestor");
-    });
-
+    clearHighlights();
     if (!query) return;
 
-    const matchedRows = [];
+    const paths = state.tokenIndex[query];
+    if (!paths || paths.size === 0) return;
 
-    // PASS 1: find matches (O(n), no indexOf)
-    rows.forEach((row, index) => {
-      const label = row.querySelector(".tree-label");
-      if (!label) return;
+    const rowByPath = state.rowByPath;
 
-      const text = label.textContent.toLowerCase();
-      const exact = text === query;
-      const matched = exact || text.includes(query);
+    // highlight matches
+    paths.forEach(path => {
+      const row = rowByPath[path];
+      if (!row) return;
 
-      if (matched) {
-        row.classList.add(exact ? "hl-exact" : "hl-match");
-        matchedRows.push({
-          row,
-          depth: getDepth(row),
-          index
-        });
-      }
-    });
+      row.classList.add("hl-exact");
 
-    // PASS 2: mark ancestors
-    matchedRows.forEach(({ index, depth }) => {
-      let currentDepth = depth;
-      for (let i = index - 1; i >= 0; i--) {
-        const prev = rows[i];
-        const prevDepth = getDepth(prev);
-
-        if (prevDepth < currentDepth) {
-          prev.classList.add("hl-ancestor");
-          currentDepth = prevDepth;
-          if (currentDepth === 0) break;
-        }
+      // highlight ancestors
+      let parentPath = row.dataset.parent;
+      while (parentPath) {
+        const parentRow = rowByPath[parentPath];
+        if (!parentRow) break;
+        parentRow.classList.add("hl-ancestor");
+        parentPath = parentRow.dataset.parent;
       }
     });
   }
@@ -242,6 +264,15 @@ function renderTree() {
   host.appendChild(container);
 }
 
+/* ========================= CACHE ROW BY PATH ========================= */
+
+  function cacheRowByPath() {
+    state.rowByPath = {};
+    document.querySelectorAll(".tree-row").forEach(row => {
+      state.rowByPath[row.dataset.path] = row;
+    });
+  }
+
 /* ========================= NODE RENDERING ========================= */
 
   function renderNode(node, parentEl, depth) {
@@ -328,11 +359,14 @@ function renderTree() {
 
     state.tree = buildTreeFromManifest(state.allFiles);
 
+    buildTokenIndex(state.tree);
+
     bindQuery();
     bindReset();
     loadCurrentHaiku();
 
     renderTree();
+    cacheRowByPath();
     collapseAll();
 
   }
