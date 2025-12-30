@@ -191,8 +191,7 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
         ]
 
         # --- Build pages ---
-        for i, lines in enumerate(blocks, start=1):
-            seq = i
+        for lines in blocks:
 
             # Try to parse date from filename (expects YYYYMMDD.txt)
             stem = inbox_file.stem
@@ -207,14 +206,28 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
                 # fallback: today
                 date_str = datetime.now().strftime("%Y-%m-%d")
 
-            title = args.title or f"{date_str}.{seq:02d}"
-
             rel_dir = Path(date_str.replace("-", "/"))
             out_dir = data_dir / rel_dir
             out_dir.mkdir(parents=True, exist_ok=True)
 
+            existing = []
+            for p in out_dir.glob("haiku.*.*.json"):
+                m = re.search(r"\.(\d+)\.json$", p.name)
+                if m:
+                    existing.append(int(m.group(1)))
+
+            seq = max(existing) + 1 if existing else 1
+
+            title = args.title or f"{date_str}.{seq:02d}"
             html_path = out_dir / f"haiku.{date_str}.{seq:02d}.html"
             json_path = out_dir / f"haiku.{date_str}.{seq:02d}.json"
+
+            if args.mode != "rebuild":
+                if html_path.exists() or json_path.exists():
+                    raise RuntimeError(
+                        f"Refusing to overwrite existing files: "
+                        f"{html_path.name}, {json_path.name}"
+                    )
 
             # --- Extract tags (words minus stopwords) ---
             all_text = " ".join(lines)
