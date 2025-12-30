@@ -399,22 +399,6 @@ main.explore,
   border-radius: 4px;
 }
 
-/* Ancestor: context */
-.hl-ancestor {
-  background: rgba(180, 160, 120, 0.12);
-}
-
-/* Match: stronger */
-.hl-match {
-  background: rgba(120, 160, 200, 0.22);
-}
-
-/* Exact: strongest */
-.hl-exact {
-  background: rgba(220, 120, 80, 0.32);
-  font-weight: 600;
-}
-
 /* Ancestors: styling */
 
 .hl-ancestor,
@@ -425,4 +409,95 @@ main.explore,
   border-radius: 3px;
 }
 
-/* Future: depth-based highlight gradients */
+/* ========================= Depth-based Heat Refinement ========================= */
+
+/* Ancestors: cooler, depth-aware */
+.tree-row[data-depth="1"].hl-ancestor { background: rgba(180, 160, 120, 0.08); }
+.tree-row[data-depth="2"].hl-ancestor { background: rgba(180, 160, 120, 0.12); }
+.tree-row[data-depth="3"].hl-ancestor { background: rgba(180, 160, 120, 0.16); }
+.tree-row[data-depth="4"].hl-ancestor { background: rgba(180, 160, 120, 0.20); }
+
+/* Matches: warmer */
+.tree-row[data-depth="1"].hl-match { background: rgba(120, 160, 200, 0.18); }
+.tree-row[data-depth="2"].hl-match { background: rgba(120, 160, 200, 0.22); }
+.tree-row[data-depth="3"].hl-match { background: rgba(120, 160, 200, 0.26); }
+.tree-row[data-depth="4"].hl-match { background: rgba(120, 160, 200, 0.30); }
+
+/* Exact match: hottest, depth-independent emphasis */
+.hl-exact {
+  background: rgba(220, 120, 80, 0.38);
+  font-weight: 600;
+}
+
+/* ======================================================================
+   Structure Tree – Final Additions (post-review, additive only)
+   ====================================================================== */
+
+/* === Prevent horizontal spillover (long paths / filenames) === */
+
+.structure-tree {
+  overflow-x: hidden;
+}
+
+.tree-row {
+  max-width: 100%;
+}
+
+.tree-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* === Click affordance (subtle, no buttons) === */
+
+.tree-dir:hover,
+.tree-file:hover {
+  text-decoration: underline;
+}
+
+/* === Active (currently loaded) file === */
+/* JS may toggle .is-active on the row */
+
+.tree-row.is-active {
+  background: rgba(60, 60, 60, 0.08);
+  font-weight: 500;
+}
+
+/* === Reset button emphasis (still understated) === */
+
+.structure-reset-btn {
+  border-color: rgba(120, 80, 60, 0.45);
+}
+
+.structure-reset-btn:hover {
+  background: rgba(120, 80, 60, 0.08);
+}
+
+/* === Query input styling === */
+
+.structure-query input {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.structure-query input:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.45);
+}
+
+/* === Directory vs file tone (very subtle differentiation) === */
+
+.tree-dir {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.tree-file {
+  color: rgba(0, 0, 0, 0.7);
+}
+
