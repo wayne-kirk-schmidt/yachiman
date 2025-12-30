@@ -183,10 +183,6 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
         # --- Load content ---
         content = inbox_file.read_text(encoding="utf-8")
 
-        ### # --- Split into haikus (by blank line separation) ---
-        ### blocks = [block.strip().splitlines()
-        ###           for block in content.strip().split("\n\n") if block.strip()]
-
         # --- Split into haikus (by explicit ### separator) ---
         blocks = [
             block.strip().splitlines()
@@ -261,6 +257,9 @@ def phase_pages(args, project_root, inbox_dir, archive_dir, assets_dir, data_dir
         shutil.move(str(inbox_file), archive_subdir / inbox_file.name)
         logger.debug(f"Moved {inbox_file} to {archive_subdir}")
 
+    # --- Build Current_Haiku Json file ---
+    phase_current_haiku(project_root, data_dir, assets_dir)
+
 # ----------------------------
 # Tags phase
 # ----------------------------
@@ -316,8 +315,51 @@ def phase_tags(args, data_dir: Path):
     logger.info(f"Built {tags_json_path}")
 
 # ----------------------------
-# Manifest phase
+# Current Haiku
 # ----------------------------
+def phase_current_haiku(project_root: Path, data_dir: Path, assets_dir: Path):
+    """
+    Build assets/current_haiku.json from existing haiku JSON files.
+    Triggered by phase_pages only.
+    """
+
+    haiku_entries = []
+
+    for json_file in data_dir.rglob("haiku.*.json"):
+        try:
+            with json_file.open(encoding="utf-8") as f:
+                data = json.load(f)
+
+            haiku_entries.append(data)
+
+        except Exception as e:
+            logger.error(f"Failed to read {json_file}: {e}")
+
+    if not haiku_entries:
+        logger.warning("No haiku entries found; skipping current_haiku.json")
+        return
+
+    # total count
+    current_count = len(haiku_entries)
+
+    # determine most recent by (date, seq)
+    latest = max(
+        haiku_entries,
+        key=lambda h: (h.get("date", ""), int(h.get("seq", 0)))
+    )
+
+    out = {
+        "current_count": current_count,
+        "current_haiku": {
+            "path_html": latest["path_html"]
+        }
+    }
+
+    out_path = assets_dir / "current_haiku.json"
+    out_path.write_text(json.dumps(out, indent=2), encoding="utf-8")
+
+    logger.info(f"Built {out_path}")
+
 # ----------------------------
 # Manifest phase
 # ----------------------------
