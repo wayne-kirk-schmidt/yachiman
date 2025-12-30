@@ -100,72 +100,59 @@
     return root;
   }
 
+  /* ========================= GET DEPTH ========================= */
+
+  function getDepth(row) {
+    return Number(row.dataset.depth || 0);
+  }
+
   /* ========================= APPLY HIGHLIGHTS ========================= */
 
   function applyHighlights(query) {
-    clearHighlights();
+    const rows = Array.from(
+      document.querySelectorAll(".tree-row")
+    );
+
+    // Clear existing highlights
+    rows.forEach(row => {
+      row.classList.remove("hl-match", "hl-exact", "hl-ancestor");
+    });
+
     if (!query) return;
-
-    const host = dom.treeHost();
-    if (!host) return;
-
-    const rows = Array.from(host.querySelectorAll(".tree-row"));
-
-    const getDepth = row =>
-      parseFloat(row.style.paddingLeft || "0");
 
     const matchedRows = [];
 
-    /* ---------- PASS 1: direct matches (files + dirs) ---------- */
-
-    rows.forEach(row => {
-      const type = row.dataset.type;
+    // PASS 1: find matches (O(n), no indexOf)
+    rows.forEach((row, index) => {
       const label = row.querySelector(".tree-label");
       if (!label) return;
 
-      const name = label.textContent.toLowerCase();
-      const path = (row.dataset.path || "").toLowerCase();
-
-      let matched = false;
-
-      if (type === "file" && name.includes(query)) {
-        matched = true;
-        if (name === query || path.endsWith(query)) {
-          row.classList.add("hl-exact");
-        } else {
-          row.classList.add("hl-match");
-        }
-      }
-
-      if (type === "dir" && name.includes(query)) {
-        matched = true;
-        row.classList.add("hl-match");
-      }
+      const text = label.textContent.toLowerCase();
+      const exact = text === query;
+      const matched = exact || text.includes(query);
 
       if (matched) {
+        row.classList.add(exact ? "hl-exact" : "hl-match");
         matchedRows.push({
           row,
           depth: getDepth(row),
-          index: rows.indexOf(row)
+          index
         });
       }
     });
-  
-    /* ---------- PASS 2: ancestor propagation ---------- */
 
+    // PASS 2: mark ancestors
     matchedRows.forEach(({ index, depth }) => {
       let currentDepth = depth;
-
       for (let i = index - 1; i >= 0; i--) {
         const prev = rows[i];
         const prevDepth = getDepth(prev);
 
-        if (prevDepth < currentDepth && prev.dataset.type === "dir") {
+        if (prevDepth < currentDepth) {
           prev.classList.add("hl-ancestor");
           currentDepth = prevDepth;
+          if (currentDepth === 0) break;
         }
-
-        if (currentDepth === 0) break;
       }
     });
   }
@@ -180,10 +167,16 @@
     input.type = "text";
     input.placeholder = "locate in archive…";
 
+    let _queryTimer = null;
+
     input.addEventListener("input", e => {
       state.query = e.target.value.trim().toLowerCase();
       console.log("[structure] query:", state.query);
-      applyHighlights(state.query);
+
+      clearTimeout(_queryTimer);
+      _queryTimer = setTimeout(() => {
+        applyHighlights(state.query);
+      }, 120);
     });
 
     host.appendChild(input);
@@ -227,7 +220,7 @@
       console.log("[structure] reset");
 
       clearHighlights();
-      collapseAll();
+      collapseAll()
       loadCurrentHaiku();
 
     });
@@ -321,7 +314,12 @@ function renderTree() {
 
   /* ========================= INIT ========================= */
 
+  let _initialized = false;
+
   function init() {
+    if (_initialized) return;
+    _initialized = true;
+
     console.log("[structure] init");
 
     if (Array.isArray(window.HAIKU_ALL)) {
@@ -339,13 +337,20 @@ function renderTree() {
 
   }
 
+  let _waitTries = 0;
 
   function waitForData() {
     if (Array.isArray(window.HAIKU_ALL) && window.HAIKU_CURRENT_PATH) {
       init();
-    } else {
-      setTimeout(waitForData, 50);
+      return;
     }
+
+    if (_waitTries++ > 200) {
+      console.warn("[structure] waitForData timeout");
+      return;
+    }
+
+    setTimeout(waitForData, 50);
   }
 
   window.addEventListener("DOMContentLoaded", waitForData);

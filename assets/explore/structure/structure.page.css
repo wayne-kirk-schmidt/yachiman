@@ -113,7 +113,7 @@
 .tree-row.hl-ancestor:hover,
 .tree-row.hl-match:hover,
 .tree-row.hl-exact:hover {
-  background-blend-mode: multiply;
+  background: inherit;
 }
 
 /* === Structure 3-panel layout === */
@@ -385,13 +385,8 @@ main.explore,
   content: "▸";
   display: inline-block;
   width: 0.9rem;
-  opacity: 0.6;
-  transition: transform 120ms ease;
-}
-
-/* Expanded state */
-.tree-row[data-collapsed="false"] .tree-dir::before {
-  transform: rotate(90deg);
+  opacity: 0.35;
+  transform: none !important;
 }
 
 .tree-row:hover {
@@ -399,13 +394,19 @@ main.explore,
   border-radius: 4px;
 }
 
+.tree-row.hl-ancestor:hover,
+.tree-row.hl-match:hover,
+.tree-row.hl-exact:hover {
+  background: inherit;
+}
+
 /* Ancestors: styling */
 
 .hl-ancestor,
 .hl-match,
 .hl-exact {
-  padding-left: 0.15rem;
-  padding-right: 0.15rem;
+  padding-left: 0;
+  padding-right: 0;
   border-radius: 3px;
 }
 
