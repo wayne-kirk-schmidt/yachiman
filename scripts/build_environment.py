@@ -355,7 +355,7 @@ def phase_current_haiku(project_root: Path, data_dir: Path, assets_dir: Path):
         }
     }
 
-    out_path = assets_dir / "current_haiku.json"
+    out_path = data_dir / "current_haiku.json"
     out_path.write_text(json.dumps(out, indent=2), encoding="utf-8")
 
     logger.info(f"Built {out_path}")
