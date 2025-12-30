@@ -187,7 +187,7 @@
 
     const input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "locate in archive…";
+    input.placeholder = "Open data or Type here to explore";
 
     let _queryTimer = null;
 
