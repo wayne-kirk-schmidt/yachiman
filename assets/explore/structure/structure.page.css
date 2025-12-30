@@ -122,6 +122,8 @@
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 12px;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .structure-main {
