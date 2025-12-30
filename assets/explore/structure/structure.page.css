@@ -442,9 +442,9 @@ main.explore,
 }
 
 .tree-label {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: visible;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* === Click affordance (subtle, no buttons) === */
