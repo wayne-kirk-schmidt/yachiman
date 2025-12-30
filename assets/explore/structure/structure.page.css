@@ -134,6 +134,7 @@
 .structure-results,
 .structure-filters {
   height: 100%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
 }
@@ -359,10 +360,10 @@ main.explore,
   user-select: none;
 }
 
-.tree-row[data-depth="1"] { font-size: 0.95rem; }
-.tree-row[data-depth="2"] { font-size: 0.92rem; }
-.tree-row[data-depth="3"] { font-size: 0.90rem; }
-.tree-row[data-depth="4"] { font-size: 0.88rem; }
+.tree-row[data-depth="1"] { font-size: 1.02rem; }
+.tree-row[data-depth="2"] { font-size: 1.05rem; }
+.tree-row[data-depth="3"] { font-size: 1.08rem; }
+.tree-row[data-depth="4"] { font-size: 1.11rem; }
 
 .tree-label {
   display: inline-flex;
@@ -380,13 +381,9 @@ main.explore,
   opacity: 0.85;
 }
 
-/* Caret */
+/* Tree Directory Styling */
 .tree-dir::before {
-  content: "▸";
-  display: inline-block;
-  width: 0.9rem;
-  opacity: 0.35;
-  transform: none !important;
+  content: none;
 }
 
 .tree-row:hover {
