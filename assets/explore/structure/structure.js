@@ -104,7 +104,6 @@
 
   function applyHighlights(query) {
     clearHighlights();
-
     if (!query) return;
 
     const host = dom.treeHost();
@@ -112,35 +111,57 @@
 
     const rows = Array.from(host.querySelectorAll(".tree-row"));
 
-    // Precompute indentation levels (numeric, stable)
     const getDepth = row =>
       parseFloat(row.style.paddingLeft || "0");
 
-    rows.forEach((row, idx) => {
-      if (row.dataset.type !== "file") return;
+    const matchedRows = [];
 
+    /* ---------- PASS 1: direct matches (files + dirs) ---------- */
+
+    rows.forEach(row => {
+      const type = row.dataset.type;
+      const label = row.querySelector(".tree-label");
+      if (!label) return;
+
+      const name = label.textContent.toLowerCase();
       const path = (row.dataset.path || "").toLowerCase();
-      if (!path.includes(query)) return;
 
-      // Match strength
-      if (path.endsWith(query)) {
-        row.classList.add("hl-exact");
-      } else {
+      let matched = false;
+
+      if (type === "file" && name.includes(query)) {
+        matched = true;
+        if (name === query || path.endsWith(query)) {
+          row.classList.add("hl-exact");
+        } else {
+          row.classList.add("hl-match");
+        }
+      }
+
+      if (type === "dir" && name.includes(query)) {
+        matched = true;
         row.classList.add("hl-match");
       }
 
-      // Ancestor propagation
-      let currentDepth = getDepth(row);
+      if (matched) {
+        matchedRows.push({
+          row,
+          depth: getDepth(row),
+          index: rows.indexOf(row)
+        });
+      }
+    });
+  
+    /* ---------- PASS 2: ancestor propagation ---------- */
 
-      for (let i = idx - 1; i >= 0; i--) {
+    matchedRows.forEach(({ index, depth }) => {
+      let currentDepth = depth;
+
+      for (let i = index - 1; i >= 0; i--) {
         const prev = rows[i];
         const prevDepth = getDepth(prev);
 
-        if (prevDepth < currentDepth) {
-          // Only directories become ancestors
-          if (prev.dataset.type === "dir") {
-            prev.classList.add("hl-ancestor");
-          }
+        if (prevDepth < currentDepth && prev.dataset.type === "dir") {
+          prev.classList.add("hl-ancestor");
           currentDepth = prevDepth;
         }
 
@@ -148,7 +169,6 @@
       }
     });
   }
-
 
   /* ========================= QUERY ========================= */
 
